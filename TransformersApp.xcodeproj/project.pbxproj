@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E254A64E257A00800058F6C6 /* DecodingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A64D257A00800058F6C6 /* DecodingType.swift */; };
+		E254A653257A017A0058F6C6 /* TransformersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A652257A017A0058F6C6 /* TransformersInteractor.swift */; };
 		E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C32579EF83007BBCD2 /* AppDelegate.swift */; };
 		E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */; };
 		E2C948CD2579EF86007BBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CC2579EF86007BBCD2 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		E254A64D257A00800058F6C6 /* DecodingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingType.swift; sourceTree = "<group>"; };
+		E254A652257A017A0058F6C6 /* TransformersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersInteractor.swift; sourceTree = "<group>"; };
 		E2C948C02579EF83007BBCD2 /* TransformersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C948C32579EF83007BBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,9 +163,10 @@
 		E2C949002579F21C007BBCD2 /* Transformers */ = {
 			isa = PBXGroup;
 			children = (
+				E2C9490B2579F274007BBCD2 /* TransformersProtocols.swift */,
 				E2C949012579F235007BBCD2 /* TransformersViewController.swift */,
 				E2C949062579F241007BBCD2 /* TransformersViewModel.swift */,
-				E2C9490B2579F274007BBCD2 /* TransformersProtocols.swift */,
+				E254A652257A017A0058F6C6 /* TransformersInteractor.swift */,
 			);
 			path = Transformers;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				E2C9491C2579F3AA007BBCD2 /* Endpoint.swift in Sources */,
 				E2C949122579F391007BBCD2 /* APIClient.swift in Sources */,
 				E2C949072579F241007BBCD2 /* TransformersViewModel.swift in Sources */,
+				E254A653257A017A0058F6C6 /* TransformersInteractor.swift in Sources */,
 				E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */,
 				E2C949172579F39E007BBCD2 /* APIError.swift in Sources */,
 				E2C949272579F451007BBCD2 /* Dictionary+PercentEscaped.swift in Sources */,

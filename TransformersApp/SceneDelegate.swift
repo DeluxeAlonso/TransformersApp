@@ -17,7 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         self.window = UIWindow(windowScene: windowScene)
 
-        let viewModel = TransformersViewModel(authClient: AuthClient())
+        let interactor = TransformersInteractor(authClient: AuthClient())
+        let viewModel = TransformersViewModel(interactor: interactor)
         let viewController = TransformersViewController(viewModel: viewModel)
 
         self.window?.rootViewController = UINavigationController(rootViewController: viewController)

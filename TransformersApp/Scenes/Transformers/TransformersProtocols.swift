@@ -12,3 +12,9 @@ protocol TransformersViewModelProtocol {
     func getTransformers()
     
 }
+
+protocol TransformersInteractorProtocol {
+
+    func getToken(completion: @escaping (Result<String, Error>) -> Void)
+
+}

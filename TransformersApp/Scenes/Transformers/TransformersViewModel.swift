@@ -9,14 +9,14 @@ import Foundation
 
 struct TransformersViewModel: TransformersViewModelProtocol {
 
-    private let authClient: AuthClient
+    private let interactor: TransformersInteractorProtocol
 
-    init(authClient: AuthClient) {
-        self.authClient = authClient
+    init(interactor: TransformersInteractorProtocol) {
+        self.interactor = interactor
     }
 
     func getTransformers() {
-        authClient.getAccessToken { result in
+        interactor.getToken { result in
             switch result {
             case .success(let token):
                 print(token)
