@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C32579EF83007BBCD2 /* AppDelegate.swift */; };
+		E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */; };
+		E2C948C82579EF83007BBCD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C72579EF83007BBCD2 /* ViewController.swift */; };
+		E2C948CB2579EF83007BBCD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C948C92579EF83007BBCD2 /* Main.storyboard */; };
+		E2C948CD2579EF86007BBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CC2579EF86007BBCD2 /* Assets.xcassets */; };
+		E2C948D02579EF86007BBCD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CE2579EF86007BBCD2 /* LaunchScreen.storyboard */; };
+		E2C948DB2579EF86007BBCD2 /* TransformersAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948DA2579EF86007BBCD2 /* TransformersAppTests.swift */; };
+		E2C948E62579EF86007BBCD2 /* TransformersAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948E52579EF86007BBCD2 /* TransformersAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E2C948D72579EF86007BBCD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2C948B82579EF83007BBCD2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2C948BF2579EF83007BBCD2;
+			remoteInfo = TransformersApp;
+		};
+		E2C948E22579EF86007BBCD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2C948B82579EF83007BBCD2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E2C948BF2579EF83007BBCD2;
+			remoteInfo = TransformersApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E2C948C02579EF83007BBCD2 /* TransformersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2C948C32579EF83007BBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E2C948C72579EF83007BBCD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E2C948CA2579EF83007BBCD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E2C948CC2579EF86007BBCD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E2C948CF2579EF86007BBCD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E2C948D12579EF86007BBCD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2C948D62579EF86007BBCD2 /* TransformersAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransformersAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2C948DA2579EF86007BBCD2 /* TransformersAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersAppTests.swift; sourceTree = "<group>"; };
+		E2C948DC2579EF86007BBCD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2C948E12579EF86007BBCD2 /* TransformersAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransformersAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2C948E52579EF86007BBCD2 /* TransformersAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersAppUITests.swift; sourceTree = "<group>"; };
+		E2C948E72579EF86007BBCD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E2C948BD2579EF83007BBCD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2C948D32579EF86007BBCD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2C948DE2579EF86007BBCD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E2C948B72579EF83007BBCD2 = {
+			isa = PBXGroup;
+			children = (
+				E2C948C22579EF83007BBCD2 /* TransformersApp */,
+				E2C948D92579EF86007BBCD2 /* TransformersAppTests */,
+				E2C948E42579EF86007BBCD2 /* TransformersAppUITests */,
+				E2C948C12579EF83007BBCD2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E2C948C12579EF83007BBCD2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E2C948C02579EF83007BBCD2 /* TransformersApp.app */,
+				E2C948D62579EF86007BBCD2 /* TransformersAppTests.xctest */,
+				E2C948E12579EF86007BBCD2 /* TransformersAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E2C948C22579EF83007BBCD2 /* TransformersApp */ = {
+			isa = PBXGroup;
+			children = (
+				E2C948C32579EF83007BBCD2 /* AppDelegate.swift */,
+				E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */,
+				E2C948C72579EF83007BBCD2 /* ViewController.swift */,
+				E2C948C92579EF83007BBCD2 /* Main.storyboard */,
+				E2C948CC2579EF86007BBCD2 /* Assets.xcassets */,
+				E2C948CE2579EF86007BBCD2 /* LaunchScreen.storyboard */,
+				E2C948D12579EF86007BBCD2 /* Info.plist */,
+			);
+			path = TransformersApp;
+			sourceTree = "<group>";
+		};
+		E2C948D92579EF86007BBCD2 /* TransformersAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				E2C948DA2579EF86007BBCD2 /* TransformersAppTests.swift */,
+				E2C948DC2579EF86007BBCD2 /* Info.plist */,
+			);
+			path = TransformersAppTests;
+			sourceTree = "<group>";
+		};
+		E2C948E42579EF86007BBCD2 /* TransformersAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E2C948E52579EF86007BBCD2 /* TransformersAppUITests.swift */,
+				E2C948E72579EF86007BBCD2 /* Info.plist */,
+			);
+			path = TransformersAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E2C948BF2579EF83007BBCD2 /* TransformersApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2C948EA2579EF86007BBCD2 /* Build configuration list for PBXNativeTarget "TransformersApp" */;
+			buildPhases = (
+				E2C948BC2579EF83007BBCD2 /* Sources */,
+				E2C948BD2579EF83007BBCD2 /* Frameworks */,
+				E2C948BE2579EF83007BBCD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TransformersApp;
+			productName = TransformersApp;
+			productReference = E2C948C02579EF83007BBCD2 /* TransformersApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E2C948D52579EF86007BBCD2 /* TransformersAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2C948ED2579EF86007BBCD2 /* Build configuration list for PBXNativeTarget "TransformersAppTests" */;
+			buildPhases = (
+				E2C948D22579EF86007BBCD2 /* Sources */,
+				E2C948D32579EF86007BBCD2 /* Frameworks */,
+				E2C948D42579EF86007BBCD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2C948D82579EF86007BBCD2 /* PBXTargetDependency */,
+			);
+			name = TransformersAppTests;
+			productName = TransformersAppTests;
+			productReference = E2C948D62579EF86007BBCD2 /* TransformersAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E2C948E02579EF86007BBCD2 /* TransformersAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2C948F02579EF86007BBCD2 /* Build configuration list for PBXNativeTarget "TransformersAppUITests" */;
+			buildPhases = (
+				E2C948DD2579EF86007BBCD2 /* Sources */,
+				E2C948DE2579EF86007BBCD2 /* Frameworks */,
+				E2C948DF2579EF86007BBCD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2C948E32579EF86007BBCD2 /* PBXTargetDependency */,
+			);
+			name = TransformersAppUITests;
+			productName = TransformersAppUITests;
+			productReference = E2C948E12579EF86007BBCD2 /* TransformersAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2C948B82579EF83007BBCD2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					E2C948BF2579EF83007BBCD2 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					E2C948D52579EF86007BBCD2 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = E2C948BF2579EF83007BBCD2;
+					};
+					E2C948E02579EF86007BBCD2 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = E2C948BF2579EF83007BBCD2;
+					};
+				};
+			};
+			buildConfigurationList = E2C948BB2579EF83007BBCD2 /* Build configuration list for PBXProject "TransformersApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E2C948B72579EF83007BBCD2;
+			productRefGroup = E2C948C12579EF83007BBCD2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2C948BF2579EF83007BBCD2 /* TransformersApp */,
+				E2C948D52579EF86007BBCD2 /* TransformersAppTests */,
+				E2C948E02579EF86007BBCD2 /* TransformersAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E2C948BE2579EF83007BBCD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2C948D02579EF86007BBCD2 /* LaunchScreen.storyboard in Resources */,
+				E2C948CD2579EF86007BBCD2 /* Assets.xcassets in Resources */,
+				E2C948CB2579EF83007BBCD2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2C948D42579EF86007BBCD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2C948DF2579EF86007BBCD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E2C948BC2579EF83007BBCD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2C948C82579EF83007BBCD2 /* ViewController.swift in Sources */,
+				E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */,
+				E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2C948D22579EF86007BBCD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2C948DB2579EF86007BBCD2 /* TransformersAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2C948DD2579EF86007BBCD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2C948E62579EF86007BBCD2 /* TransformersAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2C948D82579EF86007BBCD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2C948BF2579EF83007BBCD2 /* TransformersApp */;
+			targetProxy = E2C948D72579EF86007BBCD2 /* PBXContainerItemProxy */;
+		};
+		E2C948E32579EF86007BBCD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E2C948BF2579EF83007BBCD2 /* TransformersApp */;
+			targetProxy = E2C948E22579EF86007BBCD2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E2C948C92579EF83007BBCD2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2C948CA2579EF83007BBCD2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E2C948CE2579EF86007BBCD2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2C948CF2579EF86007BBCD2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E2C948E82579EF86007BBCD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E2C948E92579EF86007BBCD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E2C948EB2579EF86007BBCD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E95KU8J3PN;
+				INFOPLIST_FILE = TransformersApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Alonso.TransformersApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E2C948EC2579EF86007BBCD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E95KU8J3PN;
+				INFOPLIST_FILE = TransformersApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Alonso.TransformersApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E2C948EE2579EF86007BBCD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E95KU8J3PN;
+				INFOPLIST_FILE = TransformersAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Alonso.TransformersAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TransformersApp.app/TransformersApp";
+			};
+			name = Debug;
+		};
+		E2C948EF2579EF86007BBCD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E95KU8J3PN;
+				INFOPLIST_FILE = TransformersAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Alonso.TransformersAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TransformersApp.app/TransformersApp";
+			};
+			name = Release;
+		};
+		E2C948F12579EF86007BBCD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E95KU8J3PN;
+				INFOPLIST_FILE = TransformersAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Alonso.TransformersAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TransformersApp;
+			};
+			name = Debug;
+		};
+		E2C948F22579EF86007BBCD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E95KU8J3PN;
+				INFOPLIST_FILE = TransformersAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Alonso.TransformersAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TransformersApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E2C948BB2579EF83007BBCD2 /* Build configuration list for PBXProject "TransformersApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2C948E82579EF86007BBCD2 /* Debug */,
+				E2C948E92579EF86007BBCD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2C948EA2579EF86007BBCD2 /* Build configuration list for PBXNativeTarget "TransformersApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2C948EB2579EF86007BBCD2 /* Debug */,
+				E2C948EC2579EF86007BBCD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2C948ED2579EF86007BBCD2 /* Build configuration list for PBXNativeTarget "TransformersAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2C948EE2579EF86007BBCD2 /* Debug */,
+				E2C948EF2579EF86007BBCD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2C948F02579EF86007BBCD2 /* Build configuration list for PBXNativeTarget "TransformersAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2C948F12579EF86007BBCD2 /* Debug */,
+				E2C948F22579EF86007BBCD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E2C948B82579EF83007BBCD2 /* Project object */;
+}
