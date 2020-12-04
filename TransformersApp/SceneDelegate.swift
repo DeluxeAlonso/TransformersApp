@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         self.window = UIWindow(windowScene: windowScene)
 
-        let interactor = TransformersInteractor(keychainManager: KeychainManager.shared, authClient: AuthClient())
+        let interactor = TransformersInteractor(secureStorage: SecureStorage.shared, authClient: AuthClient())
         let viewModel = TransformersViewModel(interactor: interactor)
         let viewController = TransformersViewController(viewModel: viewModel)
 

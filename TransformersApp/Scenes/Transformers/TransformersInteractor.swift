@@ -9,21 +9,28 @@ import Foundation
 
 class TransformersInteractor: TransformersInteractorProtocol {
 
-    private let keychainManager: KeychainManager
-    private let authClient: AuthClient
+    private let secureStorage: SecureStorageProtocol
+    private let authClient: AuthClientProtocol
 
-    init(keychainManager: KeychainManager, authClient: AuthClient) {
-        self.keychainManager = keychainManager
+    init(secureStorage: SecureStorageProtocol, authClient: AuthClientProtocol) {
+        self.secureStorage = secureStorage
         self.authClient = authClient
     }
 
     func getToken(completion: @escaping (Result<String, Error>) -> Void) {
+        if let existingToken = secureStorage.getAccessToken() {
+            completion(.success(existingToken))
+            return
+        }
+
         authClient.getAccessToken { result in
             switch result {
             case .success(let tokenResult):
-                self.keychainManager.token = tokenResult.token
+                self.secureStorage.setAccessToken(tokenResult.token)
                 completion(.success(tokenResult.token))
             case .failure(let error):
+                // If we receive an auth error we delete the access token.
+                if error.isAuthError { self.secureStorage.deleteAccessToken() }
                 completion(.failure(error))
             }
         }
