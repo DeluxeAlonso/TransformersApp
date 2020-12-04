@@ -29,8 +29,6 @@ class TransformersInteractor: TransformersInteractorProtocol {
                 self.secureStorage.setAccessToken(tokenResult.token)
                 completion(.success(tokenResult.token))
             case .failure(let error):
-                // If we receive an auth error we delete the access token.
-                if error.isAuthError { self.secureStorage.deleteAccessToken() }
                 completion(.failure(error))
             }
         }
