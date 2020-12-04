@@ -7,13 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E254A64E257A00800058F6C6 /* DecodingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A64D257A00800058F6C6 /* DecodingType.swift */; };
 		E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C32579EF83007BBCD2 /* AppDelegate.swift */; };
 		E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */; };
-		E2C948C82579EF83007BBCD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C72579EF83007BBCD2 /* ViewController.swift */; };
 		E2C948CD2579EF86007BBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CC2579EF86007BBCD2 /* Assets.xcassets */; };
 		E2C948D02579EF86007BBCD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CE2579EF86007BBCD2 /* LaunchScreen.storyboard */; };
 		E2C948DB2579EF86007BBCD2 /* TransformersAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948DA2579EF86007BBCD2 /* TransformersAppTests.swift */; };
 		E2C948E62579EF86007BBCD2 /* TransformersAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948E52579EF86007BBCD2 /* TransformersAppUITests.swift */; };
+		E2C949022579F235007BBCD2 /* TransformersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C949012579F235007BBCD2 /* TransformersViewController.swift */; };
+		E2C949072579F241007BBCD2 /* TransformersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C949062579F241007BBCD2 /* TransformersViewModel.swift */; };
+		E2C9490C2579F274007BBCD2 /* TransformersProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9490B2579F274007BBCD2 /* TransformersProtocols.swift */; };
+		E2C949122579F391007BBCD2 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C949112579F391007BBCD2 /* APIClient.swift */; };
+		E2C949172579F39E007BBCD2 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C949162579F39E007BBCD2 /* APIError.swift */; };
+		E2C9491C2579F3AA007BBCD2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9491B2579F3AA007BBCD2 /* Endpoint.swift */; };
+		E2C949222579F42C007BBCD2 /* URLRequest+ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C949212579F42C007BBCD2 /* URLRequest+ContentType.swift */; };
+		E2C949272579F451007BBCD2 /* Dictionary+PercentEscaped.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C949262579F451007BBCD2 /* Dictionary+PercentEscaped.swift */; };
+		E2C949402579F694007BBCD2 /* CharacterSet+Filtering.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9493F2579F694007BBCD2 /* CharacterSet+Filtering.swift */; };
+		E2C949472579F6D5007BBCD2 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C949462579F6D5007BBCD2 /* AuthClient.swift */; };
+		E2C9494F2579F6DC007BBCD2 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9494E2579F6DC007BBCD2 /* AuthProvider.swift */; };
+		E2C949582579F916007BBCD2 /* AccessTokenResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C949572579F916007BBCD2 /* AccessTokenResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E254A64D257A00800058F6C6 /* DecodingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingType.swift; sourceTree = "<group>"; };
 		E2C948C02579EF83007BBCD2 /* TransformersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C948C32579EF83007BBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E2C948C72579EF83007BBCD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E2C948CC2579EF86007BBCD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2C948CF2579EF86007BBCD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2C948D12579EF86007BBCD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +59,18 @@
 		E2C948E12579EF86007BBCD2 /* TransformersAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransformersAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C948E52579EF86007BBCD2 /* TransformersAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersAppUITests.swift; sourceTree = "<group>"; };
 		E2C948E72579EF86007BBCD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2C949012579F235007BBCD2 /* TransformersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersViewController.swift; sourceTree = "<group>"; };
+		E2C949062579F241007BBCD2 /* TransformersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersViewModel.swift; sourceTree = "<group>"; };
+		E2C9490B2579F274007BBCD2 /* TransformersProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersProtocols.swift; sourceTree = "<group>"; };
+		E2C949112579F391007BBCD2 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		E2C949162579F39E007BBCD2 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		E2C9491B2579F3AA007BBCD2 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E2C949212579F42C007BBCD2 /* URLRequest+ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+ContentType.swift"; sourceTree = "<group>"; };
+		E2C949262579F451007BBCD2 /* Dictionary+PercentEscaped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+PercentEscaped.swift"; sourceTree = "<group>"; };
+		E2C9493F2579F694007BBCD2 /* CharacterSet+Filtering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Filtering.swift"; sourceTree = "<group>"; };
+		E2C949462579F6D5007BBCD2 /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
+		E2C9494E2579F6DC007BBCD2 /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
+		E2C949572579F916007BBCD2 /* AccessTokenResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +121,10 @@
 		E2C948C22579EF83007BBCD2 /* TransformersApp */ = {
 			isa = PBXGroup;
 			children = (
+				E2C948FF2579F212007BBCD2 /* Scenes */,
+				E2C949102579F2D4007BBCD2 /* Networking */,
 				E2C948C32579EF83007BBCD2 /* AppDelegate.swift */,
 				E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */,
-				E2C948C72579EF83007BBCD2 /* ViewController.swift */,
 				E2C948CC2579EF86007BBCD2 /* Assets.xcassets */,
 				E2C948CE2579EF86007BBCD2 /* LaunchScreen.storyboard */,
 				E2C948D12579EF86007BBCD2 /* Info.plist */,
@@ -123,6 +148,73 @@
 				E2C948E72579EF86007BBCD2 /* Info.plist */,
 			);
 			path = TransformersAppUITests;
+			sourceTree = "<group>";
+		};
+		E2C948FF2579F212007BBCD2 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E2C949002579F21C007BBCD2 /* Transformers */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E2C949002579F21C007BBCD2 /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				E2C949012579F235007BBCD2 /* TransformersViewController.swift */,
+				E2C949062579F241007BBCD2 /* TransformersViewModel.swift */,
+				E2C9490B2579F274007BBCD2 /* TransformersProtocols.swift */,
+			);
+			path = Transformers;
+			sourceTree = "<group>";
+		};
+		E2C949102579F2D4007BBCD2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E2C949532579F82B007BBCD2 /* FeedResults */,
+				E2C949442579F6BD007BBCD2 /* Services */,
+				E2C949202579F412007BBCD2 /* Extensions */,
+				E2C949112579F391007BBCD2 /* APIClient.swift */,
+				E2C949162579F39E007BBCD2 /* APIError.swift */,
+				E2C9491B2579F3AA007BBCD2 /* Endpoint.swift */,
+				E254A64D257A00800058F6C6 /* DecodingType.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E2C949202579F412007BBCD2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2C9493F2579F694007BBCD2 /* CharacterSet+Filtering.swift */,
+				E2C949212579F42C007BBCD2 /* URLRequest+ContentType.swift */,
+				E2C949262579F451007BBCD2 /* Dictionary+PercentEscaped.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E2C949442579F6BD007BBCD2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E2C949452579F6C8007BBCD2 /* Auth */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E2C949452579F6C8007BBCD2 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E2C949462579F6D5007BBCD2 /* AuthClient.swift */,
+				E2C9494E2579F6DC007BBCD2 /* AuthProvider.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		E2C949532579F82B007BBCD2 /* FeedResults */ = {
+			isa = PBXGroup;
+			children = (
+				E2C949572579F916007BBCD2 /* AccessTokenResult.swift */,
+			);
+			path = FeedResults;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +346,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2C948C82579EF83007BBCD2 /* ViewController.swift in Sources */,
+				E2C949472579F6D5007BBCD2 /* AuthClient.swift in Sources */,
+				E254A64E257A00800058F6C6 /* DecodingType.swift in Sources */,
+				E2C949582579F916007BBCD2 /* AccessTokenResult.swift in Sources */,
+				E2C949022579F235007BBCD2 /* TransformersViewController.swift in Sources */,
+				E2C949222579F42C007BBCD2 /* URLRequest+ContentType.swift in Sources */,
+				E2C9491C2579F3AA007BBCD2 /* Endpoint.swift in Sources */,
+				E2C949122579F391007BBCD2 /* APIClient.swift in Sources */,
+				E2C949072579F241007BBCD2 /* TransformersViewModel.swift in Sources */,
 				E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */,
+				E2C949172579F39E007BBCD2 /* APIError.swift in Sources */,
+				E2C949272579F451007BBCD2 /* Dictionary+PercentEscaped.swift in Sources */,
 				E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */,
+				E2C9490C2579F274007BBCD2 /* TransformersProtocols.swift in Sources */,
+				E2C9494F2579F6DC007BBCD2 /* AuthProvider.swift in Sources */,
+				E2C949402579F694007BBCD2 /* CharacterSet+Filtering.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
