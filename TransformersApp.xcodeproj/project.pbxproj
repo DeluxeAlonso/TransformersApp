@@ -13,7 +13,9 @@
 		E254A64E257A00800058F6C6 /* DecodingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A64D257A00800058F6C6 /* DecodingType.swift */; };
 		E254A653257A017A0058F6C6 /* TransformersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A652257A017A0058F6C6 /* TransformersInteractor.swift */; };
 		E254A66D257A041F0058F6C6 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A66C257A041F0058F6C6 /* KeychainStorage.swift */; };
-		E254A69C257A05750058F6C6 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A69B257A05750058F6C6 /* KeychainManager.swift */; };
+		E254A69C257A05750058F6C6 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A69B257A05750058F6C6 /* SecureStorage.swift */; };
+		E2A31B8A257AD5FE00A415D5 /* SecureStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31B89257AD5FD00A415D5 /* SecureStorageProtocol.swift */; };
+		E2A31B9B257ADC1500A415D5 /* AuthClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31B9A257ADC1500A415D5 /* AuthClientProtocol.swift */; };
 		E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C32579EF83007BBCD2 /* AppDelegate.swift */; };
 		E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */; };
 		E2C948CD2579EF86007BBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CC2579EF86007BBCD2 /* Assets.xcassets */; };
@@ -64,7 +66,9 @@
 		E254A64D257A00800058F6C6 /* DecodingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingType.swift; sourceTree = "<group>"; };
 		E254A652257A017A0058F6C6 /* TransformersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersInteractor.swift; sourceTree = "<group>"; };
 		E254A66C257A041F0058F6C6 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
-		E254A69B257A05750058F6C6 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		E254A69B257A05750058F6C6 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
+		E2A31B89257AD5FD00A415D5 /* SecureStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageProtocol.swift; sourceTree = "<group>"; };
+		E2A31B9A257ADC1500A415D5 /* AuthClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClientProtocol.swift; sourceTree = "<group>"; };
 		E2C948C02579EF83007BBCD2 /* TransformersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C948C32579EF83007BBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,9 +149,19 @@
 		E254A66B257A04130058F6C6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				E254A66C257A041F0058F6C6 /* KeychainStorage.swift */,
+				E2A31B88257AD5EE00A415D5 /* SecureStorage */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E2A31B88257AD5EE00A415D5 /* SecureStorage */ = {
+			isa = PBXGroup;
+			children = (
+				E2A31B89257AD5FD00A415D5 /* SecureStorageProtocol.swift */,
+				E254A69B257A05750058F6C6 /* SecureStorage.swift */,
+				E254A66C257A041F0058F6C6 /* KeychainStorage.swift */,
+			);
+			path = SecureStorage;
 			sourceTree = "<group>";
 		};
 		E2C948B72579EF83007BBCD2 = {
@@ -175,8 +189,8 @@
 		E2C948C22579EF83007BBCD2 /* TransformersApp */ = {
 			isa = PBXGroup;
 			children = (
-				E254A66B257A04130058F6C6 /* Helpers */,
 				E2C948FF2579F212007BBCD2 /* Scenes */,
+				E254A66B257A04130058F6C6 /* Helpers */,
 				E2C949102579F2D4007BBCD2 /* Networking */,
 				E2C948C32579EF83007BBCD2 /* AppDelegate.swift */,
 				E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */,
@@ -234,7 +248,6 @@
 				E2C949162579F39E007BBCD2 /* APIError.swift */,
 				E2C9491B2579F3AA007BBCD2 /* Endpoint.swift */,
 				E254A64D257A00800058F6C6 /* DecodingType.swift */,
-				E254A69B257A05750058F6C6 /* KeychainManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -262,6 +275,7 @@
 			children = (
 				E2C949462579F6D5007BBCD2 /* AuthClient.swift */,
 				E2C9494E2579F6DC007BBCD2 /* AuthProvider.swift */,
+				E2A31B9A257ADC1500A415D5 /* AuthClientProtocol.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -513,8 +527,9 @@
 			files = (
 				E2C949472579F6D5007BBCD2 /* AuthClient.swift in Sources */,
 				E254A64E257A00800058F6C6 /* DecodingType.swift in Sources */,
+				E2A31B8A257AD5FE00A415D5 /* SecureStorageProtocol.swift in Sources */,
 				E2C949582579F916007BBCD2 /* AccessTokenResult.swift in Sources */,
-				E254A69C257A05750058F6C6 /* KeychainManager.swift in Sources */,
+				E254A69C257A05750058F6C6 /* SecureStorage.swift in Sources */,
 				E2C949022579F235007BBCD2 /* TransformersViewController.swift in Sources */,
 				E254A66D257A041F0058F6C6 /* KeychainStorage.swift in Sources */,
 				E2C949222579F42C007BBCD2 /* URLRequest+ContentType.swift in Sources */,
@@ -524,6 +539,7 @@
 				E254A653257A017A0058F6C6 /* TransformersInteractor.swift in Sources */,
 				E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */,
 				E2C949172579F39E007BBCD2 /* APIError.swift in Sources */,
+				E2A31B9B257ADC1500A415D5 /* AuthClientProtocol.swift in Sources */,
 				E2C949272579F451007BBCD2 /* Dictionary+PercentEscaped.swift in Sources */,
 				E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */,
 				E2C9490C2579F274007BBCD2 /* TransformersProtocols.swift in Sources */,

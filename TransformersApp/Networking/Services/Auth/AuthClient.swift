@@ -7,9 +7,11 @@
 
 import Foundation
 
-class AuthClient: APIClient {
+class AuthClient: AuthClientProtocol, APIClient {
 
     let session: URLSession
+
+    // MARK: - Initializers
 
     init(configuration: URLSessionConfiguration) {
         configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
@@ -19,6 +21,8 @@ class AuthClient: APIClient {
     convenience init() {
         self.init(configuration: .default)
     }
+
+    // MARK: - AuthClientProtocol
 
     func getAccessToken(completion: @escaping (Result<AccessTokenResult, APIError>) -> Void) {
         fetch(with: AuthProvider.getToken.request, as: .propertyList, decode: { json -> AccessTokenResult? in
