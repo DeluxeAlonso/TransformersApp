@@ -9,9 +9,11 @@ import Foundation
 
 class TransformersInteractor: TransformersInteractorProtocol {
 
+    private let keychainManager: KeychainManager
     private let authClient: AuthClient
 
-    init(authClient: AuthClient) {
+    init(keychainManager: KeychainManager, authClient: AuthClient) {
+        self.keychainManager = keychainManager
         self.authClient = authClient
     }
 
@@ -19,6 +21,7 @@ class TransformersInteractor: TransformersInteractorProtocol {
         authClient.getAccessToken { result in
             switch result {
             case .success(let tokenResult):
+                self.keychainManager.token = tokenResult.token
                 completion(.success(tokenResult.token))
             case .failure(let error):
                 completion(.failure(error))

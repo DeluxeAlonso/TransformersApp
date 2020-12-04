@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,8 @@
 		B2FE35643AFFB818F20E3A4F /* Pods_TransformersApp_TransformersAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652FAC9CAA337546B657C97E /* Pods_TransformersApp_TransformersAppUITests.framework */; };
 		E254A64E257A00800058F6C6 /* DecodingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A64D257A00800058F6C6 /* DecodingType.swift */; };
 		E254A653257A017A0058F6C6 /* TransformersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A652257A017A0058F6C6 /* TransformersInteractor.swift */; };
+		E254A66D257A041F0058F6C6 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A66C257A041F0058F6C6 /* KeychainStorage.swift */; };
+		E254A69C257A05750058F6C6 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A69B257A05750058F6C6 /* KeychainManager.swift */; };
 		E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C32579EF83007BBCD2 /* AppDelegate.swift */; };
 		E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */; };
 		E2C948CD2579EF86007BBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CC2579EF86007BBCD2 /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 		C11F09A8122E94BC61A70C1C /* Pods_TransformersApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransformersApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E254A64D257A00800058F6C6 /* DecodingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingType.swift; sourceTree = "<group>"; };
 		E254A652257A017A0058F6C6 /* TransformersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersInteractor.swift; sourceTree = "<group>"; };
+		E254A66C257A041F0058F6C6 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
+		E254A69B257A05750058F6C6 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		E2C948C02579EF83007BBCD2 /* TransformersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C948C32579EF83007BBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,7 +129,6 @@
 				194831BAF8D3F05541D33AF6 /* Pods-TransformersAppTests.debug.xcconfig */,
 				62B88A7D0D06D6FB1F61687E /* Pods-TransformersAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -137,6 +140,14 @@
 				5494F1EAF4B3A5F24D5AE357 /* Pods_TransformersAppTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E254A66B257A04130058F6C6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E254A66C257A041F0058F6C6 /* KeychainStorage.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		E2C948B72579EF83007BBCD2 = {
@@ -164,6 +175,7 @@
 		E2C948C22579EF83007BBCD2 /* TransformersApp */ = {
 			isa = PBXGroup;
 			children = (
+				E254A66B257A04130058F6C6 /* Helpers */,
 				E2C948FF2579F212007BBCD2 /* Scenes */,
 				E2C949102579F2D4007BBCD2 /* Networking */,
 				E2C948C32579EF83007BBCD2 /* AppDelegate.swift */,
@@ -222,6 +234,7 @@
 				E2C949162579F39E007BBCD2 /* APIError.swift */,
 				E2C9491B2579F3AA007BBCD2 /* Endpoint.swift */,
 				E254A64D257A00800058F6C6 /* DecodingType.swift */,
+				E254A69B257A05750058F6C6 /* KeychainManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -501,7 +514,9 @@
 				E2C949472579F6D5007BBCD2 /* AuthClient.swift in Sources */,
 				E254A64E257A00800058F6C6 /* DecodingType.swift in Sources */,
 				E2C949582579F916007BBCD2 /* AccessTokenResult.swift in Sources */,
+				E254A69C257A05750058F6C6 /* KeychainManager.swift in Sources */,
 				E2C949022579F235007BBCD2 /* TransformersViewController.swift in Sources */,
+				E254A66D257A041F0058F6C6 /* KeychainStorage.swift in Sources */,
 				E2C949222579F42C007BBCD2 /* URLRequest+ContentType.swift in Sources */,
 				E2C9491C2579F3AA007BBCD2 /* Endpoint.swift in Sources */,
 				E2C949122579F391007BBCD2 /* APIClient.swift in Sources */,
