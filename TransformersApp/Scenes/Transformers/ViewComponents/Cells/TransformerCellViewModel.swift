@@ -24,7 +24,7 @@ struct TransformerCellViewModel: TransformerCellViewModelProtocol {
     init(_ transformer: Transformer) {
         name = transformer.name
         rating = "\(transformer.rating)"
-        iconName = transformer.type.rawValue
+        iconName = transformer.type.iconName
     }
 
 }

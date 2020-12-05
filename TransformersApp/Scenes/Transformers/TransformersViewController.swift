@@ -33,17 +33,28 @@ class TransformersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
         setupBindings()
 
         viewModel.getTransformers()
     }
 
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: animated)
+    }
+
     // MARK: - Private
 
     private func setupUI() {
+        title = "Transformers"
+        setupNavigationBar()
         setupTableView()
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonAction))
+        navigationItem.leftBarButtonItem = editButtonItem
     }
 
     private func setupTableView() {
@@ -79,6 +90,12 @@ class TransformersViewController: UIViewController {
         }
     }
 
+    // MARK: - Actions
+
+    @objc func addButtonAction() {
+
+    }
+
 }
 
 // MARK: - UITableViewDataSource
@@ -96,10 +113,20 @@ extension TransformersViewController: UITableViewDataSource {
         return cell
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Delete")
+        }
+    }
+
 }
 
 // MARK: - UITableViewDelegate
 
 extension TransformersViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
 }

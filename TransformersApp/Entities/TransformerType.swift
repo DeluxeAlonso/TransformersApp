@@ -10,4 +10,13 @@ enum TransformerType: String, Codable {
     case autobot = "A"
     case decepticon = "D"
 
+    var iconName: String {
+        switch self {
+        case .autobot:
+            return "Autobot"
+        case .decepticon:
+            return "Decepticon"
+        }
+    }
+
 }
