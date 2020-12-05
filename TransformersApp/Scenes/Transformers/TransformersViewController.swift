@@ -33,6 +33,9 @@ class TransformersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupUI()
+        setupBindings()
+
         viewModel.getTransformers()
     }
 
@@ -67,7 +70,7 @@ class TransformersViewController: UIViewController {
 
     // MARK: - Reactive Behavior
 
-    private func setupBinding() {
+    private func setupBindings() {
         viewModel.viewState.bindAndFire { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.configureView(with: state)
