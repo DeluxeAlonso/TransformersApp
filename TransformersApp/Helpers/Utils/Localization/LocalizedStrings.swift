@@ -9,6 +9,7 @@ import Foundation
 
 enum LocalizedStrings: String, Localizable {
 
+    case transformersTitle
     case emptyTransformersTitle
 
     var tableName: String {
