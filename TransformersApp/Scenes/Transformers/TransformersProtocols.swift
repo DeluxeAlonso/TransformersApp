@@ -9,6 +9,9 @@ import Foundation
 
 protocol TransformersViewModelProtocol {
 
+    var viewState: Bindable<TransformersViewState> { get }
+    var transformerCells: [TransformerCellViewModelProtocol] { get }
+
     func getTransformers()
     
 }

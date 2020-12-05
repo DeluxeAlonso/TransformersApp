@@ -16,6 +16,15 @@
 		E254A69C257A05750058F6C6 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A69B257A05750058F6C6 /* SecureStorage.swift */; };
 		E2A31B8A257AD5FE00A415D5 /* SecureStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31B89257AD5FD00A415D5 /* SecureStorageProtocol.swift */; };
 		E2A31B9B257ADC1500A415D5 /* AuthClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31B9A257ADC1500A415D5 /* AuthClientProtocol.swift */; };
+		E2A31BA0257AEEE600A415D5 /* TransformersViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31B9F257AEEE600A415D5 /* TransformersViewState.swift */; };
+		E2A31BA6257AF26C00A415D5 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BA5257AF26C00A415D5 /* Bindable.swift */; };
+		E2A31BAD257AF43800A415D5 /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BAC257AF43800A415D5 /* UIView+Layout.swift */; };
+		E2A31BB4257AF5AE00A415D5 /* TransformerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BB3257AF5AE00A415D5 /* TransformerTableViewCell.swift */; };
+		E2A31BB9257AF5C000A415D5 /* TransformerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BB8257AF5C000A415D5 /* TransformerCellViewModel.swift */; };
+		E2A31BBF257AF5EF00A415D5 /* Transformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BBE257AF5EF00A415D5 /* Transformer.swift */; };
+		E2A31BC4257AF60100A415D5 /* TransformerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BC3257AF60100A415D5 /* TransformerType.swift */; };
+		E2A31BC9257B0E8C00A415D5 /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BC8257B0E8C00A415D5 /* UITableView+Register.swift */; };
+		E2A31BCE257B116B00A415D5 /* Dequeuable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BCD257B116B00A415D5 /* Dequeuable.swift */; };
 		E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C32579EF83007BBCD2 /* AppDelegate.swift */; };
 		E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */; };
 		E2C948CD2579EF86007BBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CC2579EF86007BBCD2 /* Assets.xcassets */; };
@@ -69,6 +78,15 @@
 		E254A69B257A05750058F6C6 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		E2A31B89257AD5FD00A415D5 /* SecureStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageProtocol.swift; sourceTree = "<group>"; };
 		E2A31B9A257ADC1500A415D5 /* AuthClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClientProtocol.swift; sourceTree = "<group>"; };
+		E2A31B9F257AEEE600A415D5 /* TransformersViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersViewState.swift; sourceTree = "<group>"; };
+		E2A31BA5257AF26C00A415D5 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		E2A31BAC257AF43800A415D5 /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		E2A31BB3257AF5AE00A415D5 /* TransformerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTableViewCell.swift; sourceTree = "<group>"; };
+		E2A31BB8257AF5C000A415D5 /* TransformerCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerCellViewModel.swift; sourceTree = "<group>"; };
+		E2A31BBE257AF5EF00A415D5 /* Transformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformer.swift; sourceTree = "<group>"; };
+		E2A31BC3257AF60100A415D5 /* TransformerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerType.swift; sourceTree = "<group>"; };
+		E2A31BC8257B0E8C00A415D5 /* UITableView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
+		E2A31BCD257B116B00A415D5 /* Dequeuable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dequeuable.swift; sourceTree = "<group>"; };
 		E2C948C02579EF83007BBCD2 /* TransformersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C948C32579EF83007BBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +167,8 @@
 		E254A66B257A04130058F6C6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E2A31BAA257AF42100A415D5 /* Extensions */,
+				E2A31BA4257AF26400A415D5 /* Protocols */,
 				E2A31B88257AD5EE00A415D5 /* SecureStorage */,
 			);
 			path = Helpers;
@@ -162,6 +182,58 @@
 				E254A66C257A041F0058F6C6 /* KeychainStorage.swift */,
 			);
 			path = SecureStorage;
+			sourceTree = "<group>";
+		};
+		E2A31BA4257AF26400A415D5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E2A31BA5257AF26C00A415D5 /* Bindable.swift */,
+				E2A31BCD257B116B00A415D5 /* Dequeuable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E2A31BAA257AF42100A415D5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2A31BAB257AF42700A415D5 /* UI */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E2A31BAB257AF42700A415D5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E2A31BAC257AF43800A415D5 /* UIView+Layout.swift */,
+				E2A31BC8257B0E8C00A415D5 /* UITableView+Register.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E2A31BB1257AF58D00A415D5 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				E2A31BB2257AF59700A415D5 /* Cells */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		E2A31BB2257AF59700A415D5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E2A31BB3257AF5AE00A415D5 /* TransformerTableViewCell.swift */,
+				E2A31BB8257AF5C000A415D5 /* TransformerCellViewModel.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E2A31BBD257AF5E600A415D5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E2A31BBE257AF5EF00A415D5 /* Transformer.swift */,
+				E2A31BC3257AF60100A415D5 /* TransformerType.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		E2C948B72579EF83007BBCD2 = {
@@ -189,6 +261,7 @@
 		E2C948C22579EF83007BBCD2 /* TransformersApp */ = {
 			isa = PBXGroup;
 			children = (
+				E2A31BBD257AF5E600A415D5 /* Entities */,
 				E2C948FF2579F212007BBCD2 /* Scenes */,
 				E254A66B257A04130058F6C6 /* Helpers */,
 				E2C949102579F2D4007BBCD2 /* Networking */,
@@ -230,10 +303,12 @@
 		E2C949002579F21C007BBCD2 /* Transformers */ = {
 			isa = PBXGroup;
 			children = (
+				E2A31BB1257AF58D00A415D5 /* ViewComponents */,
 				E2C9490B2579F274007BBCD2 /* TransformersProtocols.swift */,
 				E2C949012579F235007BBCD2 /* TransformersViewController.swift */,
 				E2C949062579F241007BBCD2 /* TransformersViewModel.swift */,
 				E254A652257A017A0058F6C6 /* TransformersInteractor.swift */,
+				E2A31B9F257AEEE600A415D5 /* TransformersViewState.swift */,
 			);
 			path = Transformers;
 			sourceTree = "<group>";
@@ -527,19 +602,28 @@
 			files = (
 				E2C949472579F6D5007BBCD2 /* AuthClient.swift in Sources */,
 				E254A64E257A00800058F6C6 /* DecodingType.swift in Sources */,
+				E2A31BC9257B0E8C00A415D5 /* UITableView+Register.swift in Sources */,
 				E2A31B8A257AD5FE00A415D5 /* SecureStorageProtocol.swift in Sources */,
 				E2C949582579F916007BBCD2 /* AccessTokenResult.swift in Sources */,
+				E2A31BA6257AF26C00A415D5 /* Bindable.swift in Sources */,
 				E254A69C257A05750058F6C6 /* SecureStorage.swift in Sources */,
 				E2C949022579F235007BBCD2 /* TransformersViewController.swift in Sources */,
 				E254A66D257A041F0058F6C6 /* KeychainStorage.swift in Sources */,
 				E2C949222579F42C007BBCD2 /* URLRequest+ContentType.swift in Sources */,
+				E2A31BC4257AF60100A415D5 /* TransformerType.swift in Sources */,
 				E2C9491C2579F3AA007BBCD2 /* Endpoint.swift in Sources */,
 				E2C949122579F391007BBCD2 /* APIClient.swift in Sources */,
 				E2C949072579F241007BBCD2 /* TransformersViewModel.swift in Sources */,
+				E2A31BAD257AF43800A415D5 /* UIView+Layout.swift in Sources */,
+				E2A31BBF257AF5EF00A415D5 /* Transformer.swift in Sources */,
 				E254A653257A017A0058F6C6 /* TransformersInteractor.swift in Sources */,
 				E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */,
+				E2A31BB4257AF5AE00A415D5 /* TransformerTableViewCell.swift in Sources */,
 				E2C949172579F39E007BBCD2 /* APIError.swift in Sources */,
 				E2A31B9B257ADC1500A415D5 /* AuthClientProtocol.swift in Sources */,
+				E2A31BCE257B116B00A415D5 /* Dequeuable.swift in Sources */,
+				E2A31BB9257AF5C000A415D5 /* TransformerCellViewModel.swift in Sources */,
+				E2A31BA0257AEEE600A415D5 /* TransformersViewState.swift in Sources */,
 				E2C949272579F451007BBCD2 /* Dictionary+PercentEscaped.swift in Sources */,
 				E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */,
 				E2C9490C2579F274007BBCD2 /* TransformersProtocols.swift in Sources */,

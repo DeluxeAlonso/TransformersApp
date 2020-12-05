@@ -11,9 +11,22 @@ struct TransformersViewModel: TransformersViewModelProtocol {
 
     private let interactor: TransformersInteractorProtocol
 
+    let viewState: Bindable<TransformersViewState> = Bindable(.initial)
+
+    // MARK: - Computed Properties
+
+    var transformerCells: [TransformerCellViewModelProtocol] {
+        let transformers = viewState.value.currentTransformers
+        return transformers.map { TransformerCellViewModel($0) }
+    }
+
+    // MARK: - Initializers
+
     init(interactor: TransformersInteractorProtocol) {
         self.interactor = interactor
     }
+
+    // MARK: - Public
 
     func getTransformers() {
         interactor.getToken { result in
