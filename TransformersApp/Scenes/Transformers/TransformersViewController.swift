@@ -10,7 +10,7 @@ import UIKit
 class TransformersViewController: UIViewController {
 
     lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
+        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -64,7 +64,7 @@ class TransformersViewController: UIViewController {
         case .initial, .loading:
             tableView.tableFooterView = LoadingFooterView()
         case .error(let error):
-            tableView.tableFooterView = TitledFooterView(title: error.description)
+            tableView.tableFooterView = TitledFooterView(title: error.localizedDescription)
         }
     }
 

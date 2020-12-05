@@ -32,9 +32,9 @@ struct TransformersViewModel: TransformersViewModelProtocol {
         interactor.getTransformers { result in
             switch result {
             case .success(let transformers):
-                print(transformers)
+                self.viewState.value = transformers.isEmpty ? .empty : .populated(transformers)
             case .failure(let error):
-                print(error)
+                self.viewState.value = .error(error)
             }
         }
     }

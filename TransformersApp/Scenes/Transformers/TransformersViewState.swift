@@ -13,7 +13,7 @@ enum TransformersViewState {
     case loading
     case empty
     case populated([Transformer])
-    case error(ErrorDescriptable)
+    case error(Error)
 
     var currentTransformers: [Transformer] {
         switch self {
