@@ -9,12 +9,15 @@ import Foundation
 
 protocol TransformersViewModelProtocol {
 
+    var viewState: Bindable<TransformersViewState> { get }
+    var transformerCells: [TransformerCellViewModelProtocol] { get }
+
     func getTransformers()
     
 }
 
 protocol TransformersInteractorProtocol {
 
-    func getToken(completion: @escaping (Result<String, Error>) -> Void)
+    func getTransformers(completion: @escaping (Result<[Transformer], Error>) -> Void)
 
 }
