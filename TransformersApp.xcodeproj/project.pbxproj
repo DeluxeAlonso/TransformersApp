@@ -25,6 +25,13 @@
 		E2A31BC4257AF60100A415D5 /* TransformerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BC3257AF60100A415D5 /* TransformerType.swift */; };
 		E2A31BC9257B0E8C00A415D5 /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BC8257B0E8C00A415D5 /* UITableView+Register.swift */; };
 		E2A31BCE257B116B00A415D5 /* Dequeuable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BCD257B116B00A415D5 /* Dequeuable.swift */; };
+		E2A31BD4257B12DA00A415D5 /* TransformerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BD3257B12DA00A415D5 /* TransformerClient.swift */; };
+		E2A31BD9257B12E600A415D5 /* TransformerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BD8257B12E600A415D5 /* TransformerProvider.swift */; };
+		E2A31BDE257B12F100A415D5 /* TransformerClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BDD257B12F100A415D5 /* TransformerClientProtocol.swift */; };
+		E2A31BE3257B155E00A415D5 /* TransformersResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BE2257B155E00A415D5 /* TransformersResult.swift */; };
+		E2A31BEF257B195C00A415D5 /* LoadingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BEE257B195C00A415D5 /* LoadingFooterView.swift */; };
+		E2A31BF4257B197300A415D5 /* TitledFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BF3257B197300A415D5 /* TitledFooterView.swift */; };
+		E2A31BFA257B1A0800A415D5 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BF9257B1A0800A415D5 /* FontHelper.swift */; };
 		E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C32579EF83007BBCD2 /* AppDelegate.swift */; };
 		E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */; };
 		E2C948CD2579EF86007BBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CC2579EF86007BBCD2 /* Assets.xcassets */; };
@@ -87,6 +94,13 @@
 		E2A31BC3257AF60100A415D5 /* TransformerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerType.swift; sourceTree = "<group>"; };
 		E2A31BC8257B0E8C00A415D5 /* UITableView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
 		E2A31BCD257B116B00A415D5 /* Dequeuable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dequeuable.swift; sourceTree = "<group>"; };
+		E2A31BD3257B12DA00A415D5 /* TransformerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerClient.swift; sourceTree = "<group>"; };
+		E2A31BD8257B12E600A415D5 /* TransformerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerProvider.swift; sourceTree = "<group>"; };
+		E2A31BDD257B12F100A415D5 /* TransformerClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerClientProtocol.swift; sourceTree = "<group>"; };
+		E2A31BE2257B155E00A415D5 /* TransformersResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersResult.swift; sourceTree = "<group>"; };
+		E2A31BEE257B195C00A415D5 /* LoadingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingFooterView.swift; sourceTree = "<group>"; };
+		E2A31BF3257B197300A415D5 /* TitledFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledFooterView.swift; sourceTree = "<group>"; };
+		E2A31BF9257B1A0800A415D5 /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		E2C948C02579EF83007BBCD2 /* TransformersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C948C32579EF83007BBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +181,8 @@
 		E254A66B257A04130058F6C6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E2A31BF8257B1A0000A415D5 /* Utils */,
+				E2A31BED257B192D00A415D5 /* ViewComponents */,
 				E2A31BAA257AF42100A415D5 /* Extensions */,
 				E2A31BA4257AF26400A415D5 /* Protocols */,
 				E2A31B88257AD5EE00A415D5 /* SecureStorage */,
@@ -234,6 +250,33 @@
 				E2A31BC3257AF60100A415D5 /* TransformerType.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		E2A31BD2257B12BF00A415D5 /* Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				E2A31BD3257B12DA00A415D5 /* TransformerClient.swift */,
+				E2A31BD8257B12E600A415D5 /* TransformerProvider.swift */,
+				E2A31BDD257B12F100A415D5 /* TransformerClientProtocol.swift */,
+			);
+			path = Transformers;
+			sourceTree = "<group>";
+		};
+		E2A31BED257B192D00A415D5 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				E2A31BEE257B195C00A415D5 /* LoadingFooterView.swift */,
+				E2A31BF3257B197300A415D5 /* TitledFooterView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		E2A31BF8257B1A0000A415D5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E2A31BF9257B1A0800A415D5 /* FontHelper.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		E2C948B72579EF83007BBCD2 = {
@@ -341,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				E2C949452579F6C8007BBCD2 /* Auth */,
+				E2A31BD2257B12BF00A415D5 /* Transformers */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -359,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				E2C949572579F916007BBCD2 /* AccessTokenResult.swift */,
+				E2A31BE2257B155E00A415D5 /* TransformersResult.swift */,
 			);
 			path = FeedResults;
 			sourceTree = "<group>";
@@ -610,6 +655,7 @@
 				E2C949022579F235007BBCD2 /* TransformersViewController.swift in Sources */,
 				E254A66D257A041F0058F6C6 /* KeychainStorage.swift in Sources */,
 				E2C949222579F42C007BBCD2 /* URLRequest+ContentType.swift in Sources */,
+				E2A31BE3257B155E00A415D5 /* TransformersResult.swift in Sources */,
 				E2A31BC4257AF60100A415D5 /* TransformerType.swift in Sources */,
 				E2C9491C2579F3AA007BBCD2 /* Endpoint.swift in Sources */,
 				E2C949122579F391007BBCD2 /* APIClient.swift in Sources */,
@@ -620,14 +666,20 @@
 				E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */,
 				E2A31BB4257AF5AE00A415D5 /* TransformerTableViewCell.swift in Sources */,
 				E2C949172579F39E007BBCD2 /* APIError.swift in Sources */,
+				E2A31BD4257B12DA00A415D5 /* TransformerClient.swift in Sources */,
 				E2A31B9B257ADC1500A415D5 /* AuthClientProtocol.swift in Sources */,
 				E2A31BCE257B116B00A415D5 /* Dequeuable.swift in Sources */,
+				E2A31BF4257B197300A415D5 /* TitledFooterView.swift in Sources */,
 				E2A31BB9257AF5C000A415D5 /* TransformerCellViewModel.swift in Sources */,
 				E2A31BA0257AEEE600A415D5 /* TransformersViewState.swift in Sources */,
+				E2A31BEF257B195C00A415D5 /* LoadingFooterView.swift in Sources */,
 				E2C949272579F451007BBCD2 /* Dictionary+PercentEscaped.swift in Sources */,
 				E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */,
+				E2A31BFA257B1A0800A415D5 /* FontHelper.swift in Sources */,
 				E2C9490C2579F274007BBCD2 /* TransformersProtocols.swift in Sources */,
 				E2C9494F2579F6DC007BBCD2 /* AuthProvider.swift in Sources */,
+				E2A31BD9257B12E600A415D5 /* TransformerProvider.swift in Sources */,
+				E2A31BDE257B12F100A415D5 /* TransformerClientProtocol.swift in Sources */,
 				E2C949402579F694007BBCD2 /* CharacterSet+Filtering.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

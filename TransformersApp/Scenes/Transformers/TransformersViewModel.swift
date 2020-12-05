@@ -29,10 +29,10 @@ struct TransformersViewModel: TransformersViewModelProtocol {
     // MARK: - Public
 
     func getTransformers() {
-        interactor.getToken { result in
+        interactor.getTransformers { result in
             switch result {
-            case .success(let token):
-                print(token)
+            case .success(let transformers):
+                print(transformers)
             case .failure(let error):
                 print(error)
             }

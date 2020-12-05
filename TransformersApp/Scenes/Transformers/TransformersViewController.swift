@@ -52,10 +52,27 @@ class TransformersViewController: UIViewController {
         tableView.delegate = self
     }
 
+    private func configureView(with state: TransformersViewState) {
+        switch state {
+        case .empty:
+            tableView.tableFooterView = TitledFooterView(title: "Empty")
+        case .populated:
+            tableView.tableFooterView = UIView()
+        case .initial, .loading:
+            tableView.tableFooterView = LoadingFooterView()
+        case .error(let error):
+            tableView.tableFooterView = TitledFooterView(title: error.description)
+        }
+    }
+
     // MARK: - Reactive Behavior
 
     private func setupBinding() {
-
+        viewModel.viewState.bindAndFire { [weak self] state in
+            guard let strongSelf = self else { return }
+            strongSelf.configureView(with: state)
+            strongSelf.tableView.reloadData()
+        }
     }
 
 }
@@ -63,7 +80,7 @@ class TransformersViewController: UIViewController {
 // MARK: - UITableViewDataSource
 
 extension TransformersViewController: UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.transformerCells.count
     }
