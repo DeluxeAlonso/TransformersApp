@@ -53,7 +53,11 @@ class TransformersViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonAction))
+        let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self,
+                                               action: #selector(addButtonAction))
+        let warBarButtonItem =  UIBarButtonItem(barButtonSystemItem: .compose, target: self,
+                                                action: #selector(warButtonAction))
+        navigationItem.rightBarButtonItems = [addBarButtonItem, warBarButtonItem]
         navigationItem.leftBarButtonItem = editButtonItem
     }
 
@@ -93,6 +97,10 @@ class TransformersViewController: UIViewController {
     // MARK: - Actions
 
     @objc func addButtonAction() {
+
+    }
+
+    @objc func warButtonAction() {
 
     }
 
