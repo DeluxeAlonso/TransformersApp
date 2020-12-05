@@ -47,7 +47,7 @@ class TransformersViewController: UIViewController {
     // MARK: - Private
 
     private func setupUI() {
-        title = "Transformers"
+        title = LocalizedStrings.transformersTitle.localized
         setupNavigationBar()
         setupTableView()
     }
