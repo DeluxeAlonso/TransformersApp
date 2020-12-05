@@ -16,6 +16,7 @@ class TransformersViewController: UIViewController {
     }()
 
     private let viewModel: TransformersViewModelProtocol
+    weak var coordinator: TransformersCoordinatorProtocol?
 
     // MARK: - Initializers
 

@@ -40,6 +40,10 @@
 		E2A31C2A257B509000A415D5 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31C29257B509000A415D5 /* LocalizedStrings.swift */; };
 		E2A31C2F257B509E00A415D5 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31C2E257B509E00A415D5 /* Localizable.swift */; };
 		E2A31C34257B50C500A415D5 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31C33257B50C500A415D5 /* String+Localized.swift */; };
+		E2A31C39257B529100A415D5 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31C38257B529100A415D5 /* Coordinator.swift */; };
+		E2A31C3E257B543E00A415D5 /* TransformersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31C3D257B543E00A415D5 /* TransformersCoordinator.swift */; };
+		E2A31C43257B54E900A415D5 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31C42257B54E900A415D5 /* SplashCoordinator.swift */; };
+		E2A31C50257B59FB00A415D5 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31C4F257B59FB00A415D5 /* SplashView.swift */; };
 		E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C32579EF83007BBCD2 /* AppDelegate.swift */; };
 		E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */; };
 		E2C948CD2579EF86007BBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CC2579EF86007BBCD2 /* Assets.xcassets */; };
@@ -118,6 +122,10 @@
 		E2A31C29257B509000A415D5 /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		E2A31C2E257B509E00A415D5 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		E2A31C33257B50C500A415D5 /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		E2A31C38257B529100A415D5 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E2A31C3D257B543E00A415D5 /* TransformersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersCoordinator.swift; sourceTree = "<group>"; };
+		E2A31C42257B54E900A415D5 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
+		E2A31C4F257B59FB00A415D5 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		E2C948C02579EF83007BBCD2 /* TransformersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C948C32579EF83007BBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +230,7 @@
 			children = (
 				E2A31BA5257AF26C00A415D5 /* Bindable.swift */,
 				E2A31BCD257B116B00A415D5 /* Dequeuable.swift */,
+				E2A31C38257B529100A415D5 /* Coordinator.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -304,6 +313,8 @@
 				E2A31C04257B282900A415D5 /* SplashViewModel.swift */,
 				E2A31C09257B287D00A415D5 /* SplashProtocols.swift */,
 				E2A31C0E257B289200A415D5 /* SplashInteractor.swift */,
+				E2A31C42257B54E900A415D5 /* SplashCoordinator.swift */,
+				E2A31C4F257B59FB00A415D5 /* SplashView.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -343,8 +354,8 @@
 		E2C948C22579EF83007BBCD2 /* TransformersApp */ = {
 			isa = PBXGroup;
 			children = (
-				E2A31BBD257AF5E600A415D5 /* Entities */,
 				E2C948FF2579F212007BBCD2 /* Scenes */,
+				E2A31BBD257AF5E600A415D5 /* Entities */,
 				E254A66B257A04130058F6C6 /* Helpers */,
 				E2C949102579F2D4007BBCD2 /* Networking */,
 				E2C948C32579EF83007BBCD2 /* AppDelegate.swift */,
@@ -393,6 +404,7 @@
 				E2C949062579F241007BBCD2 /* TransformersViewModel.swift */,
 				E254A652257A017A0058F6C6 /* TransformersInteractor.swift */,
 				E2A31B9F257AEEE600A415D5 /* TransformersViewState.swift */,
+				E2A31C3D257B543E00A415D5 /* TransformersCoordinator.swift */,
 			);
 			path = Transformers;
 			sourceTree = "<group>";
@@ -698,6 +710,8 @@
 				E2A31C0F257B289200A415D5 /* SplashInteractor.swift in Sources */,
 				E2A31BA6257AF26C00A415D5 /* Bindable.swift in Sources */,
 				E254A69C257A05750058F6C6 /* SecureStorage.swift in Sources */,
+				E2A31C50257B59FB00A415D5 /* SplashView.swift in Sources */,
+				E2A31C3E257B543E00A415D5 /* TransformersCoordinator.swift in Sources */,
 				E2C949022579F235007BBCD2 /* TransformersViewController.swift in Sources */,
 				E254A66D257A041F0058F6C6 /* KeychainStorage.swift in Sources */,
 				E2C949222579F42C007BBCD2 /* URLRequest+ContentType.swift in Sources */,
@@ -716,6 +730,7 @@
 				E2A31C34257B50C500A415D5 /* String+Localized.swift in Sources */,
 				E2C949172579F39E007BBCD2 /* APIError.swift in Sources */,
 				E2A31BD4257B12DA00A415D5 /* TransformerClient.swift in Sources */,
+				E2A31C39257B529100A415D5 /* Coordinator.swift in Sources */,
 				E2A31B9B257ADC1500A415D5 /* AuthClientProtocol.swift in Sources */,
 				E2A31BCE257B116B00A415D5 /* Dequeuable.swift in Sources */,
 				E2A31BF4257B197300A415D5 /* TitledFooterView.swift in Sources */,
@@ -729,6 +744,7 @@
 				E2C9490C2579F274007BBCD2 /* TransformersProtocols.swift in Sources */,
 				E2C9494F2579F6DC007BBCD2 /* AuthProvider.swift in Sources */,
 				E2A31BD9257B12E600A415D5 /* TransformerProvider.swift in Sources */,
+				E2A31C43257B54E900A415D5 /* SplashCoordinator.swift in Sources */,
 				E2A31BDE257B12F100A415D5 /* TransformerClientProtocol.swift in Sources */,
 				E2C949402579F694007BBCD2 /* CharacterSet+Filtering.swift in Sources */,
 			);

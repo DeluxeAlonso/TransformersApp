@@ -5,7 +5,7 @@
 //  Created by Alonso on 12/4/20.
 //
 
-import Foundation
+import UIKit
 
 protocol SplashViewModelProtocol {
 
@@ -19,4 +19,9 @@ protocol SplashInteractorProtocol {
 
     func updateTokenIfNeeded(completion: @escaping (Error?) -> Void)
 
+}
+
+protocol SplashCoordinatorProtocol {
+
+    func showTransformersList(from viewController: UIViewController?)
 }

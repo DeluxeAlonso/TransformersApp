@@ -21,3 +21,7 @@ protocol TransformersInteractorProtocol {
     func getTransformers(completion: @escaping (Result<[Transformer], Error>) -> Void)
 
 }
+
+protocol TransformersCoordinatorProtocol: class {
+
+}
