@@ -58,7 +58,7 @@ class TransformersViewController: UIViewController {
     private func configureView(with state: TransformersViewState) {
         switch state {
         case .empty:
-            tableView.tableFooterView = TitledFooterView(title: "Empty")
+            tableView.tableFooterView = TitledFooterView(title: LocalizedStrings.emptyTransformersTitle.localized)
         case .populated:
             tableView.tableFooterView = UIView()
         case .initial, .loading:
