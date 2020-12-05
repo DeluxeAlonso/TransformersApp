@@ -17,11 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         self.window = UIWindow(windowScene: windowScene)
 
-        let interactor = TransformersInteractor(secureStorage: SecureStorage.shared, authClient: AuthClient(), transformerClient: TransformerClient())
-        let viewModel = TransformersViewModel(interactor: interactor)
-        let viewController = TransformersViewController(viewModel: viewModel)
+        let interactor =  SplashInteractor(secureStorage: SecureStorage.shared, authClient: AuthClient())
+        let viewModel = SplashViewModel(interactor: interactor)
+        let viewController = SplashViewController(viewModel: viewModel)
 
-        self.window?.rootViewController = UINavigationController(rootViewController: viewController)
+        self.window?.rootViewController = viewController
         self.window?.makeKeyAndVisible()
     }
 

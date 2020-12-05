@@ -27,12 +27,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zGK-0o-Nfs" secondAttribute="bottom" constant="8" id="DXf-RT-TrF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zGK-0o-Nfs" secondAttribute="bottom" id="DXf-RT-TrF"/>
                             <constraint firstItem="zGK-0o-Nfs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="imR-dh-xcw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zGK-0o-Nfs" secondAttribute="trailing" constant="8" id="pU3-UF-gsB"/>
-                            <constraint firstItem="zGK-0o-Nfs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="vPu-Wl-bwt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zGK-0o-Nfs" secondAttribute="trailing" id="pU3-UF-gsB"/>
+                            <constraint firstItem="zGK-0o-Nfs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vPu-Wl-bwt"/>
                             <constraint firstItem="zGK-0o-Nfs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vv3-yA-mFM"/>
-                            <constraint firstItem="zGK-0o-Nfs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="wVM-Fm-IGP"/>
+                            <constraint firstItem="zGK-0o-Nfs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wVM-Fm-IGP"/>
                         </constraints>
                     </view>
                 </viewController>

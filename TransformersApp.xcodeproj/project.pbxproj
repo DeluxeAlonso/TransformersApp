@@ -32,6 +32,10 @@
 		E2A31BEF257B195C00A415D5 /* LoadingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BEE257B195C00A415D5 /* LoadingFooterView.swift */; };
 		E2A31BF4257B197300A415D5 /* TitledFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BF3257B197300A415D5 /* TitledFooterView.swift */; };
 		E2A31BFA257B1A0800A415D5 /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BF9257B1A0800A415D5 /* FontHelper.swift */; };
+		E2A31C00257B281100A415D5 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31BFF257B281100A415D5 /* SplashViewController.swift */; };
+		E2A31C05257B282900A415D5 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31C04257B282900A415D5 /* SplashViewModel.swift */; };
+		E2A31C0A257B287D00A415D5 /* SplashProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31C09257B287D00A415D5 /* SplashProtocols.swift */; };
+		E2A31C0F257B289200A415D5 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31C0E257B289200A415D5 /* SplashInteractor.swift */; };
 		E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C32579EF83007BBCD2 /* AppDelegate.swift */; };
 		E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */; };
 		E2C948CD2579EF86007BBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CC2579EF86007BBCD2 /* Assets.xcassets */; };
@@ -101,6 +105,10 @@
 		E2A31BEE257B195C00A415D5 /* LoadingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingFooterView.swift; sourceTree = "<group>"; };
 		E2A31BF3257B197300A415D5 /* TitledFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledFooterView.swift; sourceTree = "<group>"; };
 		E2A31BF9257B1A0800A415D5 /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
+		E2A31BFF257B281100A415D5 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		E2A31C04257B282900A415D5 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		E2A31C09257B287D00A415D5 /* SplashProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashProtocols.swift; sourceTree = "<group>"; };
+		E2A31C0E257B289200A415D5 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		E2C948C02579EF83007BBCD2 /* TransformersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C948C32579EF83007BBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -279,6 +287,17 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		E2A31BFE257B280200A415D5 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				E2A31BFF257B281100A415D5 /* SplashViewController.swift */,
+				E2A31C04257B282900A415D5 /* SplashViewModel.swift */,
+				E2A31C09257B287D00A415D5 /* SplashProtocols.swift */,
+				E2A31C0E257B289200A415D5 /* SplashInteractor.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		E2C948B72579EF83007BBCD2 = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +357,7 @@
 		E2C948FF2579F212007BBCD2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E2A31BFE257B280200A415D5 /* Splash */,
 				E2C949002579F21C007BBCD2 /* Transformers */,
 			);
 			path = Scenes;
@@ -646,10 +666,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2C949472579F6D5007BBCD2 /* AuthClient.swift in Sources */,
+				E2A31C05257B282900A415D5 /* SplashViewModel.swift in Sources */,
 				E254A64E257A00800058F6C6 /* DecodingType.swift in Sources */,
 				E2A31BC9257B0E8C00A415D5 /* UITableView+Register.swift in Sources */,
 				E2A31B8A257AD5FE00A415D5 /* SecureStorageProtocol.swift in Sources */,
+				E2A31C00257B281100A415D5 /* SplashViewController.swift in Sources */,
 				E2C949582579F916007BBCD2 /* AccessTokenResult.swift in Sources */,
+				E2A31C0F257B289200A415D5 /* SplashInteractor.swift in Sources */,
 				E2A31BA6257AF26C00A415D5 /* Bindable.swift in Sources */,
 				E254A69C257A05750058F6C6 /* SecureStorage.swift in Sources */,
 				E2C949022579F235007BBCD2 /* TransformersViewController.swift in Sources */,
@@ -661,6 +684,7 @@
 				E2C949122579F391007BBCD2 /* APIClient.swift in Sources */,
 				E2C949072579F241007BBCD2 /* TransformersViewModel.swift in Sources */,
 				E2A31BAD257AF43800A415D5 /* UIView+Layout.swift in Sources */,
+				E2A31C0A257B287D00A415D5 /* SplashProtocols.swift in Sources */,
 				E2A31BBF257AF5EF00A415D5 /* Transformer.swift in Sources */,
 				E254A653257A017A0058F6C6 /* TransformersInteractor.swift in Sources */,
 				E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */,
