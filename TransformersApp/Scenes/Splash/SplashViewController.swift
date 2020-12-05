@@ -9,20 +9,16 @@ import UIKit
 
 class SplashViewController: UIViewController {
 
-    lazy var logoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+    private var splashView: SplashView!
 
-        return imageView
-    }()
-
-    var viewModel: SplashViewModelProtocol
+    private var viewModel: SplashViewModelProtocol
+    private var coordinator: SplashCoordinatorProtocol
 
     // MARK: - Initializers
 
-    init(viewModel: SplashViewModelProtocol) {
+    init(viewModel: SplashViewModelProtocol, coordinator: SplashCoordinatorProtocol) {
         self.viewModel = viewModel
+        self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -32,31 +28,23 @@ class SplashViewController: UIViewController {
 
     // MARK: - Lifecycle
 
+    override func loadView() {
+        splashView = SplashView()
+        view = splashView
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupUI()
         setupBindings()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        // We can get the window and scene of this view controller
+        // only after it has been added to the window hierarchy.
         viewModel.updateAccessToken()
-    }
-
-    // MARK: - Private
-
-    private func setupUI() {
-        view.addSubview(logoImageView)
-        NSLayoutConstraint.activate([logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                                     logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-                                     logoImageView.heightAnchor.constraint(equalTo: logoImageView.widthAnchor),
-                                     logoImageView.topAnchor.constraint(greaterThanOrEqualTo: view.topAnchor),
-                                     logoImageView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
-                                     logoImageView.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor),
-                                     logoImageView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor)])
-        logoImageView.image = UIImage(named: "TransformersSplashLogo")
     }
 
     // MARK: - Reactive Behavior
@@ -64,25 +52,8 @@ class SplashViewController: UIViewController {
     private func setupBindings() {
         viewModel.accessTokenUpdated = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.initialTransition(from: strongSelf.view.window)
+            strongSelf.coordinator.showTransformersList(from: self)
         }
-    }
-
-    func initialTransition(from window: UIWindow?) {
-        guard let window = window else { return }
-        UIView.transition(with: window,
-                          duration: 0.5,
-                          options: [UIView.AnimationOptions.curveEaseOut,
-                                    UIView.AnimationOptions.transitionCrossDissolve],
-                          animations: {},
-                          completion: { _ in
-
-                            let interactor = TransformersInteractor(secureStorage: SecureStorage.shared, transformerClient: TransformerClient())
-                            let viewModel = TransformersViewModel(interactor: interactor)
-                            let viewController = TransformersViewController(viewModel: viewModel)
-
-                            window.rootViewController = UINavigationController(rootViewController: viewController)
-        })
     }
 
 }

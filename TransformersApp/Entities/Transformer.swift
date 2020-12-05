@@ -24,4 +24,18 @@ struct Transformer: Codable {
         strength + intelligence + speed + endurance + firepower
     }
 
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case strength
+        case intelligence
+        case speed
+        case endurance
+        case rank
+        case courage
+        case firepower
+        case skill
+        case type = "team"
+    }
+
 }

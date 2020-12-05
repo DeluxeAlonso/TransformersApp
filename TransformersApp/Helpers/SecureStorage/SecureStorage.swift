@@ -14,13 +14,12 @@ class SecureStorage: SecureStorageProtocol {
     @KeychainStorage(key: Constants.accessTokenKey)
     private var token: String?
 
-    // MARK: - Initializers
-
     init() {}
 
     // MARK: - SecureStorageProtocol
 
     func getAccessToken() -> String? {
+        print(token)
         return token
     }
 

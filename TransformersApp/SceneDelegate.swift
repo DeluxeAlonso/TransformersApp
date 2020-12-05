@@ -17,11 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         self.window = UIWindow(windowScene: windowScene)
 
-        let interactor =  SplashInteractor(secureStorage: SecureStorage.shared, authClient: AuthClient())
-        let viewModel = SplashViewModel(interactor: interactor)
-        let viewController = SplashViewController(viewModel: viewModel)
-
-        self.window?.rootViewController = viewController
+        self.window?.rootViewController = SplashBuilder.buildViewController()
         self.window?.makeKeyAndVisible()
     }
 

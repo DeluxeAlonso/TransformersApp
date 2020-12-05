@@ -7,13 +7,7 @@
 
 import Foundation
 
-protocol ErrorDescriptable {
-
-    var description: String { get }
-
-}
-
-enum APIError: Error, ErrorDescriptable {
+enum APIError: Error {
 
     case notAuthenticated
     case notFound
@@ -44,19 +38,6 @@ enum APIError: Error, ErrorDescriptable {
         switch self {
         case .notAuthenticated: return true
         default: return false
-        }
-    }
-
-    var description: String {
-        switch self {
-        case .notAuthenticated:
-            return ErrorMessages.Default.NotAuthorized
-        case .notFound:
-            return ErrorMessages.Default.NotFound
-        case .networkProblem, .unknown:
-            return ErrorMessages.Default.ServerError
-        case .requestFailed, .badRequest, .invalidData:
-            return ErrorMessages.Default.RequestFailed
         }
     }
 

@@ -10,12 +10,13 @@ import UIKit
 class TransformersViewController: UIViewController {
 
     lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
+        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
 
     private let viewModel: TransformersViewModelProtocol
+    weak var coordinator: TransformersCoordinatorProtocol?
 
     // MARK: - Initializers
 
@@ -32,17 +33,32 @@ class TransformersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
         setupBindings()
 
         viewModel.getTransformers()
     }
 
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: animated)
+    }
+
     // MARK: - Private
 
     private func setupUI() {
+        title = "Transformers"
+        setupNavigationBar()
         setupTableView()
+    }
+
+    private func setupNavigationBar() {
+        let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self,
+                                               action: #selector(addButtonAction))
+        let warBarButtonItem =  UIBarButtonItem(barButtonSystemItem: .compose, target: self,
+                                                action: #selector(warButtonAction))
+        navigationItem.rightBarButtonItems = [addBarButtonItem, warBarButtonItem]
+        navigationItem.leftBarButtonItem = editButtonItem
     }
 
     private func setupTableView() {
@@ -58,13 +74,13 @@ class TransformersViewController: UIViewController {
     private func configureView(with state: TransformersViewState) {
         switch state {
         case .empty:
-            tableView.tableFooterView = TitledFooterView(title: "Empty")
+            tableView.tableFooterView = TitledFooterView(title: LocalizedStrings.emptyTransformersTitle.localized)
         case .populated:
             tableView.tableFooterView = UIView()
         case .initial, .loading:
             tableView.tableFooterView = LoadingFooterView()
         case .error(let error):
-            tableView.tableFooterView = TitledFooterView(title: error.description)
+            tableView.tableFooterView = TitledFooterView(title: error.localizedDescription)
         }
     }
 
@@ -76,6 +92,16 @@ class TransformersViewController: UIViewController {
             strongSelf.configureView(with: state)
             strongSelf.tableView.reloadData()
         }
+    }
+
+    // MARK: - Actions
+
+    @objc func addButtonAction() {
+
+    }
+
+    @objc func warButtonAction() {
+
     }
 
 }
@@ -95,10 +121,20 @@ extension TransformersViewController: UITableViewDataSource {
         return cell
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Delete")
+        }
+    }
+
 }
 
 // MARK: - UITableViewDelegate
 
 extension TransformersViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
 }

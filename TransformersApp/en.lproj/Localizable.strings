@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  TransformersApp
+
+  Created by Alonso on 12/5/20.
+  
+*/
+
+"emptyTransformersTitle" = "There are no transformers to show";
