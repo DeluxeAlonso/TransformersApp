@@ -14,6 +14,7 @@
 		E254A653257A017A0058F6C6 /* TransformersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A652257A017A0058F6C6 /* TransformersInteractor.swift */; };
 		E254A66D257A041F0058F6C6 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A66C257A041F0058F6C6 /* KeychainStorage.swift */; };
 		E254A69C257A05750058F6C6 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A69B257A05750058F6C6 /* SecureStorage.swift */; };
+		E28E7AB2257B5E8100D910EB /* SplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E7AB1257B5E8100D910EB /* SplashBuilder.swift */; };
 		E2A31B8A257AD5FE00A415D5 /* SecureStorageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31B89257AD5FD00A415D5 /* SecureStorageProtocol.swift */; };
 		E2A31B9B257ADC1500A415D5 /* AuthClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31B9A257ADC1500A415D5 /* AuthClientProtocol.swift */; };
 		E2A31BA0257AEEE600A415D5 /* TransformersViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31B9F257AEEE600A415D5 /* TransformersViewState.swift */; };
@@ -95,6 +96,7 @@
 		E254A652257A017A0058F6C6 /* TransformersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersInteractor.swift; sourceTree = "<group>"; };
 		E254A66C257A041F0058F6C6 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		E254A69B257A05750058F6C6 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
+		E28E7AB1257B5E8100D910EB /* SplashBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBuilder.swift; sourceTree = "<group>"; };
 		E2A31B89257AD5FD00A415D5 /* SecureStorageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorageProtocol.swift; sourceTree = "<group>"; };
 		E2A31B9A257ADC1500A415D5 /* AuthClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClientProtocol.swift; sourceTree = "<group>"; };
 		E2A31B9F257AEEE600A415D5 /* TransformersViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersViewState.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				E2A31C0E257B289200A415D5 /* SplashInteractor.swift */,
 				E2A31C42257B54E900A415D5 /* SplashCoordinator.swift */,
 				E2A31C4F257B59FB00A415D5 /* SplashView.swift */,
+				E28E7AB1257B5E8100D910EB /* SplashBuilder.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				E2A31BD4257B12DA00A415D5 /* TransformerClient.swift in Sources */,
 				E2A31C39257B529100A415D5 /* Coordinator.swift in Sources */,
 				E2A31B9B257ADC1500A415D5 /* AuthClientProtocol.swift in Sources */,
+				E28E7AB2257B5E8100D910EB /* SplashBuilder.swift in Sources */,
 				E2A31BCE257B116B00A415D5 /* Dequeuable.swift in Sources */,
 				E2A31BF4257B197300A415D5 /* TitledFooterView.swift in Sources */,
 				E2A31BB9257AF5C000A415D5 /* TransformerCellViewModel.swift in Sources */,

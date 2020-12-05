@@ -21,6 +21,7 @@ class SecureStorage: SecureStorageProtocol {
     // MARK: - SecureStorageProtocol
 
     func getAccessToken() -> String? {
+        print(token)
         return token
     }
 

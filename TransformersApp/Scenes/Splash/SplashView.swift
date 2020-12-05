@@ -21,6 +21,7 @@ class SplashView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupUI()
     }
 
     required init?(coder: NSCoder) {
