@@ -31,6 +31,11 @@ class SplashView: UIView {
     // MARK: - Private
 
     private func setupUI() {
+        if #available(iOS 13.0, *) {
+            backgroundColor = .systemBackground
+        } else {
+            backgroundColor = .white
+        }
         addSubview(logoImageView)
         NSLayoutConstraint.activate(
             [

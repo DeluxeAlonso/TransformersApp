@@ -16,6 +16,7 @@ protocol TransformersViewModelProtocol {
 
     func getTransformers()
     func removeTransformer(at index: Int)
+    func transformer(at index: Int) -> Transformer
     
 }
 
@@ -27,5 +28,8 @@ protocol TransformersInteractorProtocol {
 }
 
 protocol TransformersCoordinatorProtocol: class {
+
+    func showTransformerAddForm()
+    func showTransformerEditForm(for transformer: Transformer)
 
 }

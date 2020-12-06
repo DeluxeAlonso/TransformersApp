@@ -58,6 +58,10 @@ class TransformersViewModel: TransformersViewModelProtocol {
         }
     }
 
+    func transformer(at index: Int) -> Transformer {
+        return transformers[index]
+    }
+
     // MARK: - Private
 
     private func startLoadingForCell(at index: Int) {

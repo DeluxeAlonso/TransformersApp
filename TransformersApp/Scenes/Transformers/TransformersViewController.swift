@@ -47,6 +47,11 @@ class TransformersViewController: UIViewController, Alertable {
     // MARK: - Private
 
     private func setupUI() {
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemBackground
+        } else {
+            view.backgroundColor = .white
+        }
         title = LocalizedStrings.transformersTitle.localized
         setupNavigationBar()
         setupTableView()
@@ -103,7 +108,7 @@ class TransformersViewController: UIViewController, Alertable {
     // MARK: - Actions
 
     @objc func addButtonAction() {
-
+        coordinator?.showTransformerAddForm()
     }
 
     @objc func warButtonAction() {
@@ -141,6 +146,8 @@ extension TransformersViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let transformerToEdit = viewModel.transformer(at: indexPath.row)
+        coordinator?.showTransformerEditForm(for: transformerToEdit)
     }
 
 }
