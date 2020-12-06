@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TransformersViewController: UIViewController {
+class TransformersViewController: UIViewController, Alertable {
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
@@ -91,6 +91,12 @@ class TransformersViewController: UIViewController {
             guard let strongSelf = self else { return }
             strongSelf.configureView(with: state)
             strongSelf.tableView.reloadSections([.zero], with: .fade)
+        }
+
+        viewModel.receivedError.bind { [weak self] error in
+            guard let strongSelf = self, let error = error else { return }
+            strongSelf.showAlert(title: LocalizedStrings.errorAlertTitle.localized,
+                                 message: error.localizedDescription)
         }
     }
 

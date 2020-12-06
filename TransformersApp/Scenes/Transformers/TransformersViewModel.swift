@@ -7,18 +7,23 @@
 
 import Foundation
 
-struct TransformersViewModel: TransformersViewModelProtocol {
+class TransformersViewModel: TransformersViewModelProtocol {
 
     private let interactor: TransformersInteractorProtocol
 
     let viewState: Bindable<TransformersViewState> = Bindable(.initial)
+    let receivedError: Bindable<Error?> = Bindable(nil)
 
     // MARK: - Computed Properties
 
-    var transformerCells: [TransformerCellViewModelProtocol] {
-        let transformers = viewState.value.currentTransformers
-        return transformers.map { TransformerCellViewModel($0) }
+    private var transformers: [Transformer] = [] {
+        didSet {
+            transformerCells = transformers.map { TransformerCellViewModel($0) }
+            viewState.value = transformers.isEmpty ? .empty : .populated
+        }
     }
+
+    var transformerCells: [TransformerCellViewModelProtocol] = []
 
     // MARK: - Initializers
 
@@ -32,7 +37,7 @@ struct TransformersViewModel: TransformersViewModelProtocol {
         interactor.getTransformers { result in
             switch result {
             case .success(let transformers):
-                self.viewState.value = transformers.isEmpty ? .empty : .populated(transformers)
+                self.transformers = transformers
             case .failure(let error):
                 self.viewState.value = .error(error)
             }
@@ -40,15 +45,29 @@ struct TransformersViewModel: TransformersViewModelProtocol {
     }
 
     func removeTransformer(at index: Int) {
-        var transformers = viewState.value.currentTransformers
         let transformerToDelete = transformers[index]
 
+        startLoadingForCell(at: index)
         interactor.deleteTransformer(with: transformerToDelete.id) { error in
-            if error == nil {
-                transformers.remove(at: index)
-                self.viewState.value = transformers.isEmpty ? .empty : .populated(transformers)
+            self.stopLoadingForCell(at: index)
+            guard error == nil else {
+                self.receivedError.value = error
+                return
             }
+            self.transformers.remove(at: index)
         }
+    }
+
+    // MARK: - Private
+
+    private func startLoadingForCell(at index: Int) {
+        let cellModelToStart = transformerCells[index]
+        cellModelToStart.startLoading()
+    }
+
+    private func stopLoadingForCell(at index: Int) {
+        let cellModelToStart = transformerCells[index]
+        cellModelToStart.stopLoading()
     }
     
 }

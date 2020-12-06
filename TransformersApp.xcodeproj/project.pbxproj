@@ -11,6 +11,8 @@
 		B0D7255A2CF16885E8A397FB /* Pods_TransformersApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11F09A8122E94BC61A70C1C /* Pods_TransformersApp.framework */; };
 		B2FE35643AFFB818F20E3A4F /* Pods_TransformersApp_TransformersAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652FAC9CAA337546B657C97E /* Pods_TransformersApp_TransformersAppUITests.framework */; };
 		E222618E257C2234005F3273 /* EmptyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222618D257C2234005F3273 /* EmptyResult.swift */; };
+		E2226193257CA6DB005F3273 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2226192257CA6DB005F3273 /* Alertable.swift */; };
+		E2226198257CA8C8005F3273 /* TransformerCellState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2226197257CA8C8005F3273 /* TransformerCellState.swift */; };
 		E254A64E257A00800058F6C6 /* DecodingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A64D257A00800058F6C6 /* DecodingType.swift */; };
 		E254A653257A017A0058F6C6 /* TransformersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A652257A017A0058F6C6 /* TransformersInteractor.swift */; };
 		E254A66D257A041F0058F6C6 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A66C257A041F0058F6C6 /* KeychainStorage.swift */; };
@@ -94,6 +96,8 @@
 		B67441565501DE9117CD34DA /* Pods-TransformersApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransformersApp.debug.xcconfig"; path = "Target Support Files/Pods-TransformersApp/Pods-TransformersApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C11F09A8122E94BC61A70C1C /* Pods_TransformersApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TransformersApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E222618D257C2234005F3273 /* EmptyResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResult.swift; sourceTree = "<group>"; };
+		E2226192257CA6DB005F3273 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		E2226197257CA8C8005F3273 /* TransformerCellState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerCellState.swift; sourceTree = "<group>"; };
 		E254A64D257A00800058F6C6 /* DecodingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingType.swift; sourceTree = "<group>"; };
 		E254A652257A017A0058F6C6 /* TransformersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersInteractor.swift; sourceTree = "<group>"; };
 		E254A66C257A041F0058F6C6 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 				E2A31BA5257AF26C00A415D5 /* Bindable.swift */,
 				E2A31BCD257B116B00A415D5 /* Dequeuable.swift */,
 				E2A31C38257B529100A415D5 /* Coordinator.swift */,
+				E2226192257CA6DB005F3273 /* Alertable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			children = (
 				E2A31BB3257AF5AE00A415D5 /* TransformerTableViewCell.swift */,
 				E2A31BB8257AF5C000A415D5 /* TransformerCellViewModel.swift */,
+				E2226197257CA8C8005F3273 /* TransformerCellState.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -730,6 +736,8 @@
 				E2A31C0A257B287D00A415D5 /* SplashProtocols.swift in Sources */,
 				E2A31BBF257AF5EF00A415D5 /* Transformer.swift in Sources */,
 				E254A653257A017A0058F6C6 /* TransformersInteractor.swift in Sources */,
+				E2226198257CA8C8005F3273 /* TransformerCellState.swift in Sources */,
+				E2226193257CA6DB005F3273 /* Alertable.swift in Sources */,
 				E2A31C2F257B509E00A415D5 /* Localizable.swift in Sources */,
 				E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */,
 				E2A31BB4257AF5AE00A415D5 /* TransformerTableViewCell.swift in Sources */,
