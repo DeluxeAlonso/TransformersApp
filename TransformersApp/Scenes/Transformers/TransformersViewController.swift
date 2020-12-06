@@ -90,7 +90,7 @@ class TransformersViewController: UIViewController {
         viewModel.viewState.bindAndFire { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.configureView(with: state)
-            strongSelf.tableView.reloadData()
+            strongSelf.tableView.reloadSections([.zero], with: .fade)
         }
     }
 
@@ -123,7 +123,7 @@ extension TransformersViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            print("Delete")
+            viewModel.removeTransformer(at: indexPath.row)
         }
     }
 

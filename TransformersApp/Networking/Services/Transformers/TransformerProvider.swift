@@ -10,6 +10,7 @@ import Foundation
 enum TransformerProvider {
 
     case getTransformers(accessToken: String)
+    case deleteTransformer(accessToken: String, transformerId: String)
 
 }
 
@@ -22,26 +23,28 @@ extension TransformerProvider: Endpoint {
         switch self {
         case .getTransformers:
             return "/transformers"
+        case .deleteTransformer(_, let id):
+            return "/transformers/\(id)"
         }
     }
 
     var headers: [String : String]? {
         switch self {
-        case .getTransformers(let accessToken):
+        case .getTransformers(let accessToken), .deleteTransformer(let accessToken, _):
             return ["Authorization": "Bearer \(accessToken)"]
         }
     }
 
     var params: [String : Any]? {
         switch self {
-        case .getTransformers:
+        case .getTransformers, .deleteTransformer:
             return nil
         }
     }
 
     var parameterEncoding: ParameterEnconding {
         switch self {
-        case .getTransformers:
+        case .getTransformers, .deleteTransformer:
             return .defaultEncoding
         }
     }
@@ -50,6 +53,8 @@ extension TransformerProvider: Endpoint {
         switch self {
         case .getTransformers:
             return .get
+        case .deleteTransformer:
+            return .delete
         }
     }
 

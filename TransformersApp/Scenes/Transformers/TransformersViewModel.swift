@@ -38,5 +38,17 @@ struct TransformersViewModel: TransformersViewModelProtocol {
             }
         }
     }
+
+    func removeTransformer(at index: Int) {
+        var transformers = viewState.value.currentTransformers
+        let transformerToDelete = transformers[index]
+
+        interactor.deleteTransformer(with: transformerToDelete.id) { error in
+            if error == nil {
+                transformers.remove(at: index)
+                self.viewState.value = transformers.isEmpty ? .empty : .populated(transformers)
+            }
+        }
+    }
     
 }

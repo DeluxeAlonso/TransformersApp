@@ -11,5 +11,8 @@ protocol TransformerClientProtocol {
 
     func getTransformers(accessToken: String,
                          completion: @escaping (Result<TransformersResult, APIError>) -> Void)
+
+    func deleteTransformer(with id: String, accessToken: String,
+                           completion: @escaping (Result<EmptyResult, APIError>) -> Void)
     
 }

@@ -31,6 +31,11 @@ extension APIClient {
                 completion?(nil, .requestFailed)
                 return
             }
+            // Handles empty response
+            guard httpResponse.statusCode != 204 else {
+                completion?(EmptyResult(), nil)
+                return
+            }
             if httpResponse.statusCode == 200 || httpResponse.statusCode == 201 {
                 if let data = data {
                     do {
