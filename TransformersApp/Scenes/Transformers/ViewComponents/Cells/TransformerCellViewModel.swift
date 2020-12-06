@@ -13,18 +13,33 @@ protocol TransformerCellViewModelProtocol {
     var rating: String { get }
     var iconName: String { get }
 
+    var state: Bindable<TransformerCellState> { get }
+
+    func startLoading()
+    func stopLoading()
+
 }
 
-struct TransformerCellViewModel: TransformerCellViewModelProtocol {
+class TransformerCellViewModel: TransformerCellViewModelProtocol {
 
     let name: String
     let rating: String
     let iconName: String
 
+    let state: Bindable<TransformerCellState> = Bindable(.regular)
+
     init(_ transformer: Transformer) {
         name = transformer.name
         rating = "\(transformer.rating)"
         iconName = transformer.type.iconName
+    }
+
+    func startLoading() {
+        state.value = .loading
+    }
+
+    func stopLoading() {
+        state.value = .regular
     }
 
 }

@@ -12,6 +12,8 @@ enum LocalizedStrings: String, Localizable {
     case transformersTitle
     case emptyTransformersTitle
 
+    case errorAlertTitle
+
     var tableName: String {
         return "Localizable"
     }

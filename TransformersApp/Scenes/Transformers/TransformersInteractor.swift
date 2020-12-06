@@ -37,4 +37,19 @@ class TransformersInteractor: TransformersInteractorProtocol {
         }
     }
 
+    func deleteTransformer(with id: String, completion: @escaping (Error?) -> Void) {
+        guard let token = secureStorage.getAccessToken() else {
+            completion(APIError.invalidData)
+            return
+        }
+        transformerClient.deleteTransformer(with: id, accessToken: token) { result in
+            switch result {
+            case .success:
+                completion(nil)
+            case .failure(let error):
+                completion(error)
+            }
+        }
+    }
+
 }

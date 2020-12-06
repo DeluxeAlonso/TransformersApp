@@ -9,7 +9,14 @@ import UIKit
 
 class TransformerTableViewCell: UITableViewCell {
 
-    lazy var iconImageView: UIImageView = {
+    private lazy var activityIndicatorView: UIActivityIndicatorView = {
+        let activityIndicatorView = UIActivityIndicatorView(style: .white)
+        activityIndicatorView.color = .darkGray
+        activityIndicatorView.startAnimating()
+        return activityIndicatorView
+    }()
+
+    private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -17,7 +24,7 @@ class TransformerTableViewCell: UITableViewCell {
         return imageView
     }()
 
-    lazy var nameLabel: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = FontHelper.Default.mediumLight
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -25,7 +32,7 @@ class TransformerTableViewCell: UITableViewCell {
         return label
     }()
 
-    lazy var ratingLabel: UILabel = {
+    private lazy var ratingLabel: UILabel = {
         let label = UILabel()
         label.font = FontHelper.Default.mediumBold
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -62,8 +69,6 @@ class TransformerTableViewCell: UITableViewCell {
     // MARK: - Private
 
     private func setupUI() {
-        accessoryType = .disclosureIndicator
-
         contentView.addSubview(iconImageView)
         NSLayoutConstraint.activate(
             [
@@ -99,6 +104,20 @@ class TransformerTableViewCell: UITableViewCell {
         )
     }
 
+    private func configureUI(with state: TransformerCellState) {
+        switch state {
+        case .regular:
+            accessoryView = nil
+            editingAccessoryView = nil
+
+            accessoryType = .disclosureIndicator
+            editingAccessoryType = .disclosureIndicator
+        case .loading:
+            accessoryView = activityIndicatorView
+            editingAccessoryView = activityIndicatorView
+        }
+    }
+
     // MARK: - Reactive Behavior
 
     private func setupBindings() {
@@ -107,6 +126,11 @@ class TransformerTableViewCell: UITableViewCell {
         nameLabel.text = viewModel.name
         ratingLabel.text = viewModel.rating
         iconImageView.image = UIImage(named: viewModel.iconName)
+
+        viewModel.state.bindAndFire { [weak self] state in
+            guard let strongSelf = self else { return }
+            strongSelf.configureUI(with: state)
+        }
     }
 
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TransformersViewController: UIViewController {
+class TransformersViewController: UIViewController, Alertable {
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
@@ -90,7 +90,13 @@ class TransformersViewController: UIViewController {
         viewModel.viewState.bindAndFire { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.configureView(with: state)
-            strongSelf.tableView.reloadData()
+            strongSelf.tableView.reloadSections([.zero], with: .fade)
+        }
+
+        viewModel.receivedError.bind { [weak self] error in
+            guard let strongSelf = self, let error = error else { return }
+            strongSelf.showAlert(title: LocalizedStrings.errorAlertTitle.localized,
+                                 message: error.localizedDescription)
         }
     }
 
@@ -123,7 +129,7 @@ extension TransformersViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            print("Delete")
+            viewModel.removeTransformer(at: indexPath.row)
         }
     }
 

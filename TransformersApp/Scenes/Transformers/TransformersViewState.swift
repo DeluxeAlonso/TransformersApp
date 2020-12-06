@@ -12,16 +12,7 @@ enum TransformersViewState {
     case initial
     case loading
     case empty
-    case populated([Transformer])
+    case populated
     case error(Error)
-
-    var currentTransformers: [Transformer] {
-        switch self {
-        case .populated(let transformers):
-            return transformers
-        case .empty, .error, .initial, .loading:
-            return []
-        }
-    }
 
 }
