@@ -61,16 +61,16 @@ extension Transformer: Comparable {
 
     static func < (lhs: Transformer, rhs: Transformer) -> Bool {
 
-        if lhs.courage - rhs.courage > 4 {
-            return false
+        if rhs.courage - lhs.courage >= 4 {
+            return true
         }
 
-        if lhs.strength - rhs.strength > 3 {
-            return false
+        if rhs.strength - lhs.strength >= 3 {
+            return true
         }
 
-        if lhs.skill - rhs.skill > 3 {
-            return false
+        if rhs.skill - lhs.skill >= 3 {
+            return true
         }
 
         return lhs.rating < rhs.rating

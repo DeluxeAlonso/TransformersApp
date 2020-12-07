@@ -78,6 +78,7 @@
 		E2B74DE3257E0A5E00AFA16F /* TransformersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DE2257E0A5E00AFA16F /* TransformersTests.swift */; };
 		E2B74DEB257E0A7700AFA16F /* MockTransformersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DEA257E0A7700AFA16F /* MockTransformersInteractor.swift */; };
 		E2B74DF0257E0AFC00AFA16F /* MockTransformerDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DEF257E0AFC00AFA16F /* MockTransformerDetailInteractor.swift */; };
+		E2C4F281257E873600CE1530 /* TransformerWarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C4F280257E873500CE1530 /* TransformerWarTests.swift */; };
 		E2C5578D257E6C8C00B45C23 /* UIRefreshControl+EndRefreshing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C5578C257E6C8C00B45C23 /* UIRefreshControl+EndRefreshing.swift */; };
 		E2C55792257E79D500B45C23 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C55791257E79D500B45C23 /* ColorPalette.swift */; };
 		E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C32579EF83007BBCD2 /* AppDelegate.swift */; };
@@ -198,6 +199,7 @@
 		E2B74DE2257E0A5E00AFA16F /* TransformersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersTests.swift; sourceTree = "<group>"; };
 		E2B74DEA257E0A7700AFA16F /* MockTransformersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTransformersInteractor.swift; sourceTree = "<group>"; };
 		E2B74DEF257E0AFC00AFA16F /* MockTransformerDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTransformerDetailInteractor.swift; sourceTree = "<group>"; };
+		E2C4F280257E873500CE1530 /* TransformerWarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerWarTests.swift; sourceTree = "<group>"; };
 		E2C5578C257E6C8C00B45C23 /* UIRefreshControl+EndRefreshing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+EndRefreshing.swift"; sourceTree = "<group>"; };
 		E2C55791257E79D500B45C23 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		E2C948C02579EF83007BBCD2 /* TransformersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -593,6 +595,7 @@
 				E2B74DE2257E0A5E00AFA16F /* TransformersTests.swift */,
 				E2CF3AFF257E112500705CE5 /* AddTransformerTests.swift */,
 				E2CF3B04257E113500705CE5 /* EditTransformerTests.swift */,
+				E2C4F280257E873500CE1530 /* TransformerWarTests.swift */,
 			);
 			path = TransformersAppTests;
 			sourceTree = "<group>";
@@ -1014,6 +1017,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2B74DF0257E0AFC00AFA16F /* MockTransformerDetailInteractor.swift in Sources */,
+				E2C4F281257E873600CE1530 /* TransformerWarTests.swift in Sources */,
 				E2CF3B00257E112600705CE5 /* AddTransformerTests.swift in Sources */,
 				E2B74DEB257E0A7700AFA16F /* MockTransformersInteractor.swift in Sources */,
 				E2B74DE3257E0A5E00AFA16F /* TransformersTests.swift in Sources */,
