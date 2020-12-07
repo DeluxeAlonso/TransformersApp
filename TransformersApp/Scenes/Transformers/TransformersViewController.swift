@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol TransformersUpdatable {
+
+    func didCreateOrUpdateNewTransformer(transformer: Transformer)
+
+}
+
 class TransformersViewController: UIViewController, Alertable {
 
     lazy var tableView: UITableView = {
@@ -36,6 +42,7 @@ class TransformersViewController: UIViewController, Alertable {
         setupUI()
         setupBindings()
 
+        coordinator?.setUpdateDelegate(self)
         viewModel.getTransformers()
     }
 
@@ -109,6 +116,12 @@ class TransformersViewController: UIViewController, Alertable {
             strongSelf.tableView.refreshControl?.endRefreshing()
         }
 
+        viewModel.receivedWarResultMessage.bind { [weak self] errorMessage in
+            guard let strongSelf = self, let errorMessage = errorMessage else { return }
+            strongSelf.showAlert(title: "War Result",
+                                 message: errorMessage)
+        }
+
         viewModel.receivedErrorMessage.bind { [weak self] errorMessage in
             guard let strongSelf = self, let errorMessage = errorMessage else { return }
             strongSelf.tableView.refreshControl?.endRefreshing()
@@ -124,7 +137,7 @@ class TransformersViewController: UIViewController, Alertable {
     }
 
     @objc func warButtonAction() {
-
+        viewModel.startWar()
     }
 
     @objc func refreshControlAction() {
@@ -168,12 +181,12 @@ extension TransformersViewController: UITableViewDelegate {
 
 }
 
-extension UIRefreshControl {
+// MARK: - TransformersUpdatable
 
-    func endRefreshing(with delay: TimeInterval = 0.5) {
-        if isRefreshing {
-            perform(#selector(UIRefreshControl.endRefreshing), with: nil, afterDelay: delay)
-        }
+extension TransformersViewController: TransformersUpdatable {
+
+    func didCreateOrUpdateNewTransformer(transformer: Transformer) {
+        viewModel.updateTransformerList(with: transformer)
     }
 
 }

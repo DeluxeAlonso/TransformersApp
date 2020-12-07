@@ -14,6 +14,7 @@ class AddTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProtoc
     var navigationController: UINavigationController
 
     var presentingViewController: UIViewController!
+    var transformerUpdateable: TransformersUpdatable?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -40,6 +41,11 @@ class AddTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProtoc
         presentedViewController?.dismiss(animated: true) { [weak self] in
             self?.parentCoordinator?.childDidFinish()
         }
+    }
+
+    func close(with resultingTransformer: Transformer) {
+        transformerUpdateable?.didCreateOrUpdateNewTransformer(transformer: resultingTransformer)
+        close()
     }
 
 }

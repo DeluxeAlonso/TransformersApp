@@ -38,3 +38,24 @@ struct Transformer: Codable {
     }
 
 }
+
+extension Transformer: Comparable {
+
+    static func < (lhs: Transformer, rhs: Transformer) -> Bool {
+
+        if lhs.courage - rhs.courage > 4 {
+            return false
+        }
+
+        if lhs.strength - rhs.strength > 3 {
+            return false
+        }
+
+        if lhs.skill - rhs.skill > 3 {
+            return false
+        }
+
+        return lhs.rating < rhs.rating
+    }
+
+}
