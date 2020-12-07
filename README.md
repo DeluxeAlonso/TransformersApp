@@ -13,7 +13,7 @@ Clone the repository and run pod install. Open the workspace file and run the pr
 ## Screenshots
 
 <img src="Screenshots/List.png" width=200 height=433> <img src="Screenshots/Add.png" width=200 height=433>
-<img src="Screenshots/Detail.png" width=200 height=433>
+<img src="Screenshots/Detail.png" width=200 height=433><img src="Screenshots/War.png" width=200 height=433>
 
 ## Third-party libraries
 
