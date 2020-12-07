@@ -16,6 +16,7 @@ class AddTransformerViewModel: TransformerDetailViewModelProtocol {
     private var typeInputFormCells: [TransformerTypeCellViewModelProtocol] = []
 
     let savedTransformer: Bindable<Transformer?> = Bindable(nil)
+    let startLoading: Bindable<Bool> = Bindable(false)
     let receivedErrorMessage: Bindable<String?> = Bindable(nil)
 
     var formSections: [TransformerFormSection]
@@ -139,7 +140,9 @@ class AddTransformerViewModel: TransformerDetailViewModelProtocol {
 
         guard let params  = request.dictionary else { fatalError() }
 
+        startLoading.value = true
         interactor.createTransformer(with: params) { result in
+            self.startLoading.value = false
             switch result {
             case .success(let transformer):
                 self.savedTransformer.value = transformer

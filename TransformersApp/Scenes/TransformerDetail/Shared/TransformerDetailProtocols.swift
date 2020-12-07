@@ -10,6 +10,7 @@ import Foundation
 protocol TransformerDetailViewModelProtocol {
 
     var savedTransformer: Bindable<Transformer?> { get }
+    var startLoading: Bindable<Bool> { get }
     var receivedErrorMessage: Bindable<String?> { get }
 
     var formSections: [TransformerFormSection] { get }

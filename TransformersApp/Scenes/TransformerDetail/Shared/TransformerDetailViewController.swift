@@ -9,6 +9,12 @@ import UIKit
 
 class TransformerDetailViewController: UIViewController, Alertable {
 
+    lazy var saveBarButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self,
+                                            action: #selector(saveButtonAction))
+        return barButtonItem
+    }()
+
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.allowsSelection = false
@@ -21,10 +27,6 @@ class TransformerDetailViewController: UIViewController, Alertable {
     weak var coordinator: TransformerDetailCoordinatorProtocol?
 
     var showCloseButton: Bool = false
-
-    deinit {
-        print("AAAKAKAKAAK")
-    }
 
     // MARK: - Initializers
 
@@ -64,15 +66,8 @@ class TransformerDetailViewController: UIViewController, Alertable {
     }
 
     private func setupNavigationBar() {
-        let saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self,
-                                               action: #selector(saveButtonAction))
-        if viewModel.shouldAllowEditing() {
-            navigationItem.rightBarButtonItems = [saveBarButtonItem, editButtonItem]
-        } else {
-            navigationItem.rightBarButtonItems = [saveBarButtonItem]
-        }
-
-        tableView.setEditing(viewModel.shouldStartOnEditMode(), animated: false)
+        let allowEditing = viewModel.shouldAllowEditing()
+        navigationItem.rightBarButtonItems = allowEditing ? [saveBarButtonItem, editButtonItem] : [saveBarButtonItem]
 
         if showCloseButton {
             let closeBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self,
@@ -91,6 +86,19 @@ class TransformerDetailViewController: UIViewController, Alertable {
 
         tableView.dataSource = self
         tableView.delegate = self
+
+        tableView.setEditing(viewModel.shouldStartOnEditMode(), animated: false)
+    }
+
+    private func showActivityIndicator() {
+        let indicator = UIActivityIndicatorView(style: .white)
+        indicator.hidesWhenStopped = true
+        indicator.startAnimating()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: indicator)
+    }
+
+    private func hideActivityIndicator() {
+        navigationItem.rightBarButtonItem = saveBarButtonItem
     }
 
     // MARK: - Reactive Behavior
@@ -99,6 +107,11 @@ class TransformerDetailViewController: UIViewController, Alertable {
         viewModel.savedTransformer.bind { [weak self] savedTransformer in
             guard let strongSelf = self else { return }
             strongSelf.coordinator?.close()
+        }
+
+        viewModel.startLoading.bind { [weak self] loading in
+            guard let strongSelf = self else { return }
+            loading ? strongSelf.showActivityIndicator() : strongSelf.hideActivityIndicator()
         }
 
         viewModel.receivedErrorMessage.bind { [weak self] errorMessage in
