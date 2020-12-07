@@ -40,7 +40,7 @@ class TransformerDetailViewController: UIViewController, Alertable {
     }
 
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -55,12 +55,9 @@ class TransformerDetailViewController: UIViewController, Alertable {
     // MARK: - Private
 
     private func setupUI() {
-        if #available(iOS 13.0, *) {
-            view.backgroundColor = .systemBackground
-        } else {
-            view.backgroundColor = .white
-        }
         title = LocalizedStrings.transformersTitle.localized
+        view.backgroundColor = ColorPalette.defaulBackgroundColor
+        
         setupNavigationBar()
         setupTableView()
     }
@@ -149,29 +146,29 @@ extension TransformerDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let section = viewModel.formSections[section]
         switch section {
-        case .name(let forms):
-            return forms.count
-        case .value(let forms):
-            return forms.count
-        case .type(let forms):
-            return forms.count
+        case .name(let inputs):
+            return inputs.count
+        case .value(let inputs):
+            return inputs.count
+        case .type(let inputs):
+            return inputs.count
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let form = viewModel.form(for: indexPath.section, at: indexPath.row)
-        switch form.type {
+        let inputs = viewModel.input(for: indexPath.section, at: indexPath.row)
+        switch inputs.type {
         case .text:
             let cell = tableView.dequeueReusableCell(with: TransformerTextInputTableViewCell.self, for: indexPath)
-            cell.viewModel = viewModel.textInputModel(for: form.identifier)
+            cell.viewModel = viewModel.textInputModel(for: inputs.identifier)
             return cell
         case .value:
             let cell = tableView.dequeueReusableCell(with: TransformerValueInputTableViewCell.self, for: indexPath)
-            cell.viewModel = viewModel.valueInputModel(for: form.identifier)
+            cell.viewModel = viewModel.valueInputModel(for: inputs.identifier)
             return cell
         case .type:
             let cell = tableView.dequeueReusableCell(with: TransformerTypeInputTableViewCell.self, for: indexPath)
-            cell.viewModel = viewModel.typeInputModel(for: form.identifier)
+            cell.viewModel = viewModel.typeInputModel(for: inputs.identifier)
             return cell
         }
     }

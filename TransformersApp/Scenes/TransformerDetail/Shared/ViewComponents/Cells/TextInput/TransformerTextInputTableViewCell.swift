@@ -16,7 +16,7 @@ class TransformerTextInputTableViewCell: UITableViewCell {
         return textField
     }()
 
-    var viewModel: TransformerTextCellViewModelProtocol? {
+    var viewModel: TransformerTextInputCellViewModelProtocol? {
         didSet {
             setupBindings()
         }

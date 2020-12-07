@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol TransformerValueCellViewModelProtocol: class {
+protocol TransformerValueInputCellViewModelProtocol: class {
 
     var identifier: TransformerInputIdentifier { get }
     var inputTitle: String { get }
@@ -15,7 +15,7 @@ protocol TransformerValueCellViewModelProtocol: class {
 
 }
 
-final class TransformerValueCellViewModel: TransformerValueCellViewModelProtocol {
+final class TransformerValueInputCellViewModel: TransformerValueInputCellViewModelProtocol {
 
     let identifier: TransformerInputIdentifier
     let inputTitle: String

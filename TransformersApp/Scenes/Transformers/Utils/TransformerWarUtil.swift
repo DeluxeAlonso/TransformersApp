@@ -72,6 +72,15 @@ class TransformerWarUtil {
         }
     }
 
+    /**
+     Performs a battle between a single autobot and a single decepticon.
+
+     - Parameter autobot: Battling autobot.
+     - Parameter decepticon: Battling decepticon.
+
+
+     - Returns: A battle result
+     */
     func performSingleBattle(autobot: Transformer, decepticon: Transformer) -> SingleBattleResult {
         let autobotHasReservedName = Contants.ReservedNames.contains(autobot.name)
         let decepticonHasReservedName = Contants.ReservedNames.contains(decepticon.name)
@@ -91,6 +100,7 @@ class TransformerWarUtil {
             return .draw
         }
 
+        // Use Comparable protocol methods in Transformer type to apply comparison rules.
         switch autobot < decepticon {
         case true:
             return .decepticon

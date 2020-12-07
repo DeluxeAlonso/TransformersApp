@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct TeamTypeInputForm: TransformerFormProtocol {
+struct TeamTypeInputForm: TransformerInputProtocol {
 
     var identifier: TransformerInputIdentifier = .team
 
-    var type: TransformerFormType = .type
+    var type: TransformerInputType = .type
 
 }

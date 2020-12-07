@@ -41,7 +41,7 @@ class TransformerTypeInputTableViewCell: UITableViewCell {
         return button
     }()
 
-    var viewModel: TransformerTypeCellViewModelProtocol? {
+    var viewModel: TransformerTypeInputCellViewModelProtocol? {
         didSet {
             setupBindings()
         }

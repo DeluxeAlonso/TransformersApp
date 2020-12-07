@@ -7,14 +7,14 @@
 
 import UIKit
 
-class AddTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProtocol {
+final class AddTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProtocol {
 
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
     var navigationController: UINavigationController
 
     var presentingViewController: UIViewController!
-    var transformerUpdateable: TransformersUpdatable?
+    weak var updateDelegate: TransformersUpdateDelegate?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -44,7 +44,7 @@ class AddTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProtoc
     }
 
     func close(with resultingTransformer: Transformer) {
-        transformerUpdateable?.didCreateOrUpdateNewTransformer(transformer: resultingTransformer)
+        updateDelegate?.didCreateOrUpdateNewTransformer(transformer: resultingTransformer)
         close()
     }
 

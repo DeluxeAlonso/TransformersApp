@@ -39,20 +39,38 @@ struct Transformer: Codable {
 
 }
 
+// MARK: - Equatable
+
+extension Transformer: Equatable {
+
+    static func == (lhs: Transformer, rhs: Transformer) -> Bool {
+        return lhs.strength == rhs.strength
+            && lhs.intelligence == rhs.intelligence
+            && lhs.speed == rhs.speed
+            && lhs.endurance == rhs.endurance
+            && lhs.courage == rhs.courage
+            && lhs.firepower == rhs.firepower
+            && lhs.skill == rhs.skill
+    }
+
+}
+
+// MARK: - Comparable
+
 extension Transformer: Comparable {
 
     static func < (lhs: Transformer, rhs: Transformer) -> Bool {
 
-        if lhs.courage - rhs.courage > 4 {
-            return false
+        if rhs.courage - lhs.courage >= 4 {
+            return true
         }
 
-        if lhs.strength - rhs.strength > 3 {
-            return false
+        if rhs.strength - lhs.strength >= 3 {
+            return true
         }
 
-        if lhs.skill - rhs.skill > 3 {
-            return false
+        if rhs.skill - lhs.skill >= 3 {
+            return true
         }
 
         return lhs.rating < rhs.rating

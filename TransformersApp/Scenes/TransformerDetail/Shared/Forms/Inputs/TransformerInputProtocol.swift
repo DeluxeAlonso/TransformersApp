@@ -1,13 +1,13 @@
 //
-//  TransformerFormProtocol.swift
+//  TransformerInputProtocol.swift
 //  TransformersApp
 //
 //  Created by Alonso on 12/6/20.
 //
 
-protocol TransformerFormProtocol {
+protocol TransformerInputProtocol {
 
     var identifier: TransformerInputIdentifier { get }
-    var type: TransformerFormType { get }
+    var type: TransformerInputType { get }
 
 }

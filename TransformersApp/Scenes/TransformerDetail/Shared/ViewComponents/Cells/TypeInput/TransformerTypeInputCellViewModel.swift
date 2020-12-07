@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol TransformerTypeCellViewModelProtocol: class {
+protocol TransformerTypeInputCellViewModelProtocol: class {
 
     var identifier: TransformerInputIdentifier { get }
     var value: TransformerType? { get set }
 
 }
 
-final class TransformerTypeCellViewModel: TransformerTypeCellViewModelProtocol {
+final class TransformerTypeInputCellViewModel: TransformerTypeInputCellViewModelProtocol {
 
     let identifier: TransformerInputIdentifier
     var value: TransformerType?

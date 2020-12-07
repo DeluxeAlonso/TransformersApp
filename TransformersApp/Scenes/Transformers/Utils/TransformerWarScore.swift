@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ Represents the winning team and includes information of winners and losers in case the war does not end in a draw.
+ */
 enum WarWinningTeam {
     case autobots(winnersNames: [String], losersNames: [String])
     case decepticons(winnersNames: [String], losersNames: [String])
@@ -35,6 +38,9 @@ enum WarWinningTeam {
     }
 }
 
+/**
+ A single battle result that can be a winning autobot, decepticons, a draw, o a finish draw (draw that end the war).
+ */
 enum SingleBattleResult {
     case autobot
     case decepticon

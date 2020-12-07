@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol TransformersUpdatable {
+protocol TransformersUpdateDelegate: class {
 
     func didCreateOrUpdateNewTransformer(transformer: Transformer)
 
@@ -42,7 +42,6 @@ class TransformersViewController: UIViewController, Alertable {
         setupUI()
         setupBindings()
 
-        coordinator?.setUpdateDelegate(self)
         viewModel.getTransformers()
     }
 
@@ -54,12 +53,8 @@ class TransformersViewController: UIViewController, Alertable {
     // MARK: - Private
 
     private func setupUI() {
-        if #available(iOS 13.0, *) {
-            view.backgroundColor = .systemBackground
-        } else {
-            view.backgroundColor = .white
-        }
         title = LocalizedStrings.transformersTitle.localized
+        view.backgroundColor = ColorPalette.defaulBackgroundColor
         setupNavigationBar()
         setupTableView()
     }
@@ -67,8 +62,12 @@ class TransformersViewController: UIViewController, Alertable {
     private func setupNavigationBar() {
         let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self,
                                                action: #selector(addButtonAction))
+        addBarButtonItem.accessibilityIdentifier = Accesibility.addBarButtonId
+
         let warBarButtonItem =  UIBarButtonItem(barButtonSystemItem: .compose, target: self,
                                                 action: #selector(warButtonAction))
+        warBarButtonItem.accessibilityIdentifier = Accesibility.warBarButtonId
+
         navigationItem.rightBarButtonItems = [addBarButtonItem, warBarButtonItem]
         navigationItem.leftBarButtonItem = editButtonItem
     }
@@ -118,7 +117,7 @@ class TransformersViewController: UIViewController, Alertable {
 
         viewModel.receivedWarResultMessage.bind { [weak self] errorMessage in
             guard let strongSelf = self, let errorMessage = errorMessage else { return }
-            strongSelf.showAlert(title: "War Result",
+            strongSelf.showAlert(title: LocalizedStrings.warResultTItle.localized,
                                  message: errorMessage)
         }
 
@@ -181,12 +180,19 @@ extension TransformersViewController: UITableViewDelegate {
 
 }
 
-// MARK: - TransformersUpdatable
+// MARK: - TransformersUpdateDelegate
 
-extension TransformersViewController: TransformersUpdatable {
+extension TransformersViewController: TransformersUpdateDelegate {
 
     func didCreateOrUpdateNewTransformer(transformer: Transformer) {
         viewModel.updateTransformerList(with: transformer)
     }
 
+}
+
+extension TransformersViewController{
+    struct Accesibility {
+        static let addBarButtonId = "addBarButtonItem"
+        static let warBarButtonId = "warBarButtonItem"
+    }
 }
