@@ -128,9 +128,13 @@ class EditTransformerViewModel: TransformerDetailViewModelProtocol {
         return true
     }
 
+    func shouldStartOnEditMode() -> Bool {
+        return false
+    }
+
     func saveTransformer() {
         // We update the transformer
-        guard let name = textInputModel(for: .name)?.value,
+        guard let name = textInputModel(for: .name)?.value, !name.isEmpty,
               let strength = valueInputModel(for: .strength)?.value,
               let intelligence = valueInputModel(for: .intelligence)?.value,
               let speed = valueInputModel(for: .speed)?.value,

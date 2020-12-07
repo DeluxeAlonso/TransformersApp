@@ -22,6 +22,21 @@ final class TransformerDetailInteractor: TransformerDetailInteractorProtocol {
 
     // MARK: - TransformerDetailInteractorProtocol
 
+    func createTransformer(with params: [String: Any], completion: @escaping (Result<Transformer, Error>) -> Void) {
+        guard let token = secureStorage.getAccessToken() else {
+            completion(.failure(APIError.invalidData))
+            return
+        }
+        transformerClient.createTransformer(with: params, accessToken: token) { result in
+            switch result {
+            case .success(let result):
+                completion(.success(result.transformer))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+
     func updateTransformer(with params: [String: Any], completion: @escaping (Result<Transformer, Error>) -> Void) {
         guard let token = secureStorage.getAccessToken() else {
             completion(.failure(APIError.invalidData))

@@ -38,6 +38,13 @@ class TransformerClient: TransformerClientProtocol, APIClient {
         }, completion: completion)
     }
 
+    func createTransformer(with params: [String: Any], accessToken: String, completion: @escaping (Result<TransformerResult, APIError>) -> Void) {
+        fetch(with: TransformerProvider.createTransformer(accessToken: accessToken, params: params).request, decode: { json -> TransformerResult? in
+            guard let result = json as? TransformerResult else { return nil }
+            return result
+        }, completion: completion)
+    }
+
     func updateTransformer(with params: [String: Any], accessToken: String, completion: @escaping (Result<TransformerResult, APIError>) -> Void) {
         fetch(with: TransformerProvider.updateTransformer(accessToken: accessToken, params: params).request, decode: { json -> TransformerResult? in
             guard let result = json as? TransformerResult else { return nil }

@@ -15,6 +15,7 @@ protocol TransformerDetailViewModelProtocol {
     var formSections: [TransformerFormSection] { get }
 
     func shouldAllowEditing() -> Bool
+    func shouldStartOnEditMode() -> Bool
 
     func textInputModel(for form: TransformerFormProtocol) -> TransformerTextCellViewModelProtocol
     func valueInputModel(for form: TransformerFormProtocol) -> TransformerValueCellViewModelProtocol
@@ -34,6 +35,9 @@ protocol TransformerDetailCoordinatorProtocol: class {
 
 protocol TransformerDetailInteractorProtocol {
 
-    func updateTransformer(with params: [String: Any], completion: @escaping (Result<Transformer, Error>) -> Void)
+    func createTransformer(with params: [String: Any],
+                           completion: @escaping (Result<Transformer, Error>) -> Void)
+    func updateTransformer(with params: [String: Any],
+                           completion: @escaping (Result<Transformer, Error>) -> Void)
 
 }

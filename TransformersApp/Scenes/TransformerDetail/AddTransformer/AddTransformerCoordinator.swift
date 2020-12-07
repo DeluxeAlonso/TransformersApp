@@ -20,8 +20,11 @@ class AddTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProtoc
     }
 
     func start() {
-        let viewModel = AddTransformerViewModel()
+        let interactor = TransformerDetailInteractor(secureStorage: SecureStorage.shared, transformerClient: TransformerClient())
+        let viewModel = AddTransformerViewModel(interactor: interactor)
+
         let viewController = TransformerDetailViewController(viewModel: viewModel)
+        viewController.showCloseButton = true
 
         viewController.coordinator = self
 

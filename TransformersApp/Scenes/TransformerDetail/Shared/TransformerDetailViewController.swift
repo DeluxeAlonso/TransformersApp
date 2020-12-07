@@ -12,12 +12,15 @@ class TransformerDetailViewController: UIViewController, Alertable {
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.allowsSelection = false
+        tableView.keyboardDismissMode = .onDrag
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
 
     private var viewModel: TransformerDetailViewModelProtocol
     weak var coordinator: TransformerDetailCoordinatorProtocol?
+
+    var showCloseButton: Bool = false
 
     // MARK: - Initializers
 
@@ -62,7 +65,15 @@ class TransformerDetailViewController: UIViewController, Alertable {
         if viewModel.shouldAllowEditing() {
             navigationItem.rightBarButtonItems = [saveBarButtonItem, editButtonItem]
         } else {
-            navigationItem.rightBarButtonItems = [saveBarButtonItem, editButtonItem]
+            navigationItem.rightBarButtonItems = [saveBarButtonItem]
+        }
+
+        tableView.setEditing(viewModel.shouldStartOnEditMode(), animated: false)
+
+        if showCloseButton {
+            let closeBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self,
+                                                     action: #selector(closeButtonAction))
+            navigationItem.leftBarButtonItem = closeBarButtonItem
         }
     }
 
@@ -84,7 +95,7 @@ class TransformerDetailViewController: UIViewController, Alertable {
             guard let strongSelf = self else { return }
             strongSelf.coordinator?.close()
         }
-        
+
         viewModel.receivedErrorMessage.bind { [weak self] errorMessage in
             guard let strongSelf = self, let errorMessage = errorMessage else { return }
             strongSelf.showAlert(title: LocalizedStrings.errorAlertTitle.localized,
@@ -96,6 +107,10 @@ class TransformerDetailViewController: UIViewController, Alertable {
 
     @objc func saveButtonAction() {
         viewModel.saveTransformer()
+    }
+
+    @objc func closeButtonAction() {
+        coordinator?.close()
     }
 
 }

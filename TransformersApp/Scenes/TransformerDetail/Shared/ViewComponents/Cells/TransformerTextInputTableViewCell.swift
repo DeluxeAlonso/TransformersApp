@@ -11,6 +11,7 @@ class TransformerTextInputTableViewCell: UITableViewCell {
 
     lazy var textfield: UITextField = {
         let textField = UITextField()
+        textField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
 
         return textField
     }()
@@ -33,15 +34,28 @@ class TransformerTextInputTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Lifecycle
+
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         textfield.isUserInteractionEnabled = editing
         textfield.resignFirstResponder()
     }
 
+    // MARK: - Reactive Behaviour
+
     private func setupBindings() {
         textfield.text = viewModel?.value
         textfield.placeholder = viewModel?.placeholderTitle
+    }
+
+    // MARK: - Actions
+
+    @objc func textFieldDidChange() {
+        guard let updatedText = textfield.text else { return }
+        print(updatedText)
+        viewModel?.value = updatedText
+
     }
 
 }
