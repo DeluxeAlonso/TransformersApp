@@ -9,7 +9,16 @@ import Foundation
 
 protocol TransformerDetailCoordinatorProtocol: class {
 
+    /**
+     Plainly closes the view controller. Used when the user manually closes the screen.
+     */
     func close()
+
+    /**
+     Closes the view controller and receives a resulting transformer parameter.
+
+     - Parameter resultingTransformer: Resulting transformer from add/edit operation.
+     */
     func close(with resultingTransformer: Transformer)
 
 }
@@ -25,7 +34,16 @@ protocol TransformerDetailInteractorProtocol {
 
 protocol TransformerDetailFactoryProtocol {
 
+    /**
+     Generates al the sections of the add/edit form.
+
+     - Returns: An array of sections.
+     */
     func getFormSections() -> [TransformerFormSection]
+
+    /**
+     - Returns: Array of all existing inputs in the add/edit form.
+     */
     func getAllInputs() -> [TransformerInputProtocol]
 
 }
@@ -45,8 +63,31 @@ protocol TransformerDetailViewModelProtocol: class {
     func shouldAllowEditing() -> Bool
     func shouldStartOnEditMode() -> Bool
 
+    /**
+     Returns an text input model given a text input identifier
+
+     - Parameter identifier: Identifier of the input.
+
+     - Returns: The input's cell model(view model).
+     */
     func textInputModel(for identifier: TransformerInputIdentifier) -> TransformerTextInputCellViewModelProtocol?
+
+    /**
+     Returns an value input model given a value input identifier
+
+     - Parameter identifier: Identifier of the input.
+
+     - Returns: The input's cell model(view model).
+     */
     func valueInputModel(for identifier: TransformerInputIdentifier) -> TransformerValueInputCellViewModelProtocol?
+
+    /**
+     Returns an type input model given a type input identifier
+
+     - Parameter identifier: Identifier of the input.
+
+     - Returns: The input's cell model(view model).
+     */
     func typeInputModel(for identifier: TransformerInputIdentifier) -> TransformerTypeInputCellViewModelProtocol?
 
     func input(for section: Int, at index: Int) -> TransformerInputProtocol
@@ -57,6 +98,11 @@ protocol TransformerDetailViewModelProtocol: class {
 
 extension TransformerDetailViewModelProtocol {
 
+    /**
+     Populates input models given an array of inputs
+
+     - Parameter inputs: Array of inputs.
+     */
     func createInputCellModels(for inputs: [TransformerInputProtocol]) {
         for input in inputs {
             switch input.type {
