@@ -10,7 +10,7 @@ import Foundation
 protocol TransformersViewModelProtocol {
 
     var viewState: Bindable<TransformersViewState> { get }
-    var receivedError: Bindable<Error?> { get }
+    var receivedErrorMessage: Bindable<String?> { get }
 
     var transformerCells: [TransformerCellViewModelProtocol] { get }
 

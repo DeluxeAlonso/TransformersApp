@@ -75,6 +75,8 @@ class TransformersViewController: UIViewController, Alertable {
         tableView.dataSource = self
         tableView.delegate = self
 
+        tableView.tableFooterView = LoadingFooterView()
+
         setupRefreshControl()
     }
 
@@ -90,7 +92,7 @@ class TransformersViewController: UIViewController, Alertable {
             tableView.tableFooterView = TitledFooterView(title: LocalizedStrings.emptyTransformersTitle.localized)
         case .populated:
             tableView.tableFooterView = UIView()
-        case .initial, .loading:
+        case .loading:
             tableView.tableFooterView = LoadingFooterView()
         case .error(let error):
             tableView.tableFooterView = TitledFooterView(title: error.localizedDescription)
@@ -100,18 +102,18 @@ class TransformersViewController: UIViewController, Alertable {
     // MARK: - Reactive Behavior
 
     private func setupBindings() {
-        viewModel.viewState.bindAndFire { [weak self] state in
+        viewModel.viewState.bind { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.configureView(with: state)
             strongSelf.tableView.reloadSections([.zero], with: .fade)
             strongSelf.tableView.refreshControl?.endRefreshing()
         }
 
-        viewModel.receivedError.bind { [weak self] error in
-            guard let strongSelf = self, let error = error else { return }
+        viewModel.receivedErrorMessage.bind { [weak self] errorMessage in
+            guard let strongSelf = self, let errorMessage = errorMessage else { return }
             strongSelf.tableView.refreshControl?.endRefreshing()
             strongSelf.showAlert(title: LocalizedStrings.errorAlertTitle.localized,
-                                 message: error.localizedDescription)
+                                 message: errorMessage)
         }
     }
 
