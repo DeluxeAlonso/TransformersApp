@@ -45,6 +45,10 @@ class TransformerTableViewCell: UITableViewCell {
         return label
     }()
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        print(traitCollection)
+    }
+
     var viewModel: TransformerCellViewModelProtocol? {
         didSet {
             setupBindings()
@@ -74,6 +78,13 @@ class TransformerTableViewCell: UITableViewCell {
     // MARK: - Private
 
     private func setupUI() {
+        let iconHeight: CGFloat
+
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            iconHeight = 64
+        } else {
+            iconHeight = 36
+        }
         contentView.addSubview(iconImageView)
         NSLayoutConstraint.activate(
             [
@@ -82,7 +93,7 @@ class TransformerTableViewCell: UITableViewCell {
                 iconImageView.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor, constant: 16),
                 iconImageView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: 16),
                 iconImageView.heightAnchor.constraint(equalTo: iconImageView.widthAnchor),
-                iconImageView.heightAnchor.constraint(equalToConstant: 36.0)
+                iconImageView.heightAnchor.constraint(equalToConstant: iconHeight)
             ]
         )
 

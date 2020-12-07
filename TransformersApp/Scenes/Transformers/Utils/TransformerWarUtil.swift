@@ -65,7 +65,7 @@ class TransformerWarUtil {
 
         if survivedAutobots.count > survivedDecepticons.count {
             return TransformerWarScore(numberOfBattles: numberOfBattles, winner: .autobots(winnersNames: totalSurvivorAutobots, losersNames: totalSurvivorDecepticons))
-        } else if survivedAutobots.count > survivedDecepticons.count {
+        } else if survivedAutobots.count < survivedDecepticons.count {
            return TransformerWarScore(numberOfBattles: numberOfBattles, winner: .decepticons(winnersNames: totalSurvivorDecepticons, losersNames: totalSurvivorAutobots))
         } else {
             return TransformerWarScore(numberOfBattles: numberOfBattles, winner: .draw)
