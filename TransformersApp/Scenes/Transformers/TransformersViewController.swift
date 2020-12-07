@@ -62,8 +62,12 @@ class TransformersViewController: UIViewController, Alertable {
     private func setupNavigationBar() {
         let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self,
                                                action: #selector(addButtonAction))
+        addBarButtonItem.accessibilityIdentifier = Accesibility.addBarButtonId
+
         let warBarButtonItem =  UIBarButtonItem(barButtonSystemItem: .compose, target: self,
                                                 action: #selector(warButtonAction))
+        warBarButtonItem.accessibilityIdentifier = Accesibility.warBarButtonId
+
         navigationItem.rightBarButtonItems = [addBarButtonItem, warBarButtonItem]
         navigationItem.leftBarButtonItem = editButtonItem
     }
@@ -184,4 +188,11 @@ extension TransformersViewController: TransformersUpdateDelegate {
         viewModel.updateTransformerList(with: transformer)
     }
 
+}
+
+extension TransformersViewController{
+    struct Accesibility {
+        static let addBarButtonId = "addBarButtonItem"
+        static let warBarButtonId = "warBarButtonItem"
+    }
 }
