@@ -63,6 +63,13 @@ class TransformersViewModel: TransformersViewModelProtocol {
         return transformers[index]
     }
 
+    func startWar() {
+        let warUtil = TransformerWarUtil(transformers: transformers)
+        let score = warUtil.startTransformerWar()
+
+        receivedWarResultMessage.value = warUtil.formatWarScore(score)
+    }
+
     func updateTransformerList(with transformer: Transformer) {
         let transformersIds = transformers.map { $0.id }
         if let existingIndex = transformersIds.firstIndex(of: transformer.id) {
@@ -70,13 +77,6 @@ class TransformersViewModel: TransformersViewModelProtocol {
         } else {
             transformers.append(transformer)
         }
-    }
-
-    func startWar() {
-        let warUtil = TransformerWarUtil(transformers: transformers)
-        let score = warUtil.startTransformerWar()
-
-        receivedWarResultMessage.value = warUtil.formatWarScore(score)
     }
 
     // MARK: - Private

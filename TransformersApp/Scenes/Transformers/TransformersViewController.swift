@@ -54,12 +54,8 @@ class TransformersViewController: UIViewController, Alertable {
     // MARK: - Private
 
     private func setupUI() {
-        if #available(iOS 13.0, *) {
-            view.backgroundColor = .systemBackground
-        } else {
-            view.backgroundColor = .white
-        }
         title = LocalizedStrings.transformersTitle.localized
+        view.backgroundColor = ColorPalette.defaulBackgroundColor
         setupNavigationBar()
         setupTableView()
     }
