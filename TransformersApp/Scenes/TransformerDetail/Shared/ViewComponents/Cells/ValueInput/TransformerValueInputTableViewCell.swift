@@ -19,7 +19,7 @@ class TransformerValueInputTableViewCell: UITableViewCell {
         return stepper
     }()
 
-    var viewModel: TransformerValueCellViewModelProtocol? {
+    var viewModel: TransformerValueInputCellViewModelProtocol? {
         didSet {
             setupBindings()
         }

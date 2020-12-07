@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol TransformersUpdatable {
+protocol TransformersUpdateDelegate: class {
 
     func didCreateOrUpdateNewTransformer(transformer: Transformer)
 
@@ -177,9 +177,9 @@ extension TransformersViewController: UITableViewDelegate {
 
 }
 
-// MARK: - TransformersUpdatable
+// MARK: - TransformersUpdateDelegate
 
-extension TransformersViewController: TransformersUpdatable {
+extension TransformersViewController: TransformersUpdateDelegate {
 
     func didCreateOrUpdateNewTransformer(transformer: Transformer) {
         viewModel.updateTransformerList(with: transformer)

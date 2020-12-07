@@ -13,9 +13,9 @@ class EditTransformerViewModel: TransformerDetailViewModelProtocol {
     private let interactor: TransformerDetailInteractorProtocol
     private let factory: TransformerDetailFactoryProtocol
 
-    var textInputFormCells: [TransformerTextCellViewModelProtocol] = []
-    var valueInputFormCells: [TransformerValueCellViewModelProtocol] = []
-    var typeInputFormCells: [TransformerTypeCellViewModelProtocol] = []
+    var textInputCells: [TransformerTextInputCellViewModelProtocol] = []
+    var valueInputCells: [TransformerValueInputCellViewModelProtocol] = []
+    var typeInputCells: [TransformerTypeInputCellViewModelProtocol] = []
 
     let savedTransformer: Bindable<Transformer?> = Bindable(nil)
     let startLoading: Bindable<Bool> = Bindable(false)
@@ -32,7 +32,7 @@ class EditTransformerViewModel: TransformerDetailViewModelProtocol {
 
         self.formSections = factory.getFormSections()
 
-        createFormCellModels(for: factory.getAllInputs())
+        createInputCellModels(for: factory.getAllInputs())
         updateFormValues(with: transformer)
     }
 

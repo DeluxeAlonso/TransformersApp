@@ -9,28 +9,28 @@ import Foundation
 
 class TransformerDetailFactory: TransformerDetailFactoryProtocol {
 
-    private let nameSectionInputs: [TransformerFormProtocol] = [NameTextInputForm()]
+    private let nameSectionInputs: [TransformerInputProtocol] = [NameTextInput()]
 
-    private let valueSectionInputs: [TransformerFormProtocol] = [
-        StrengthValueInputForm(),
-        IntelligenceValueInputForm(),
-        CourageValueInputForm(),
-        SpeedValueInputForm(),
-        EnduranceValueInputForm(),
-        RankValueInputForm(),
-        FirepowerValueInputForm(),
-        SkillValueInputForm()
+    private let valueSectionInputs: [TransformerInputProtocol] = [
+        StrengthValueInput(),
+        IntelligenceValueInput(),
+        CourageValueInput(),
+        SpeedValueInput(),
+        EnduranceValueInput(),
+        RankValueInput(),
+        FirepowerValueInput(),
+        SkillValueInput()
     ]
 
-    private let typeSectionInputs: [TransformerFormProtocol] = [TeamTypeInputForm()]
+    private let typeSectionInputs: [TransformerInputProtocol] = [TeamTypeInputForm()]
 
     func getFormSections() -> [TransformerFormSection] {
-        return [.name(forms: nameSectionInputs),
-                .type(forms: typeSectionInputs),
-                .value(forms: valueSectionInputs)]
+        return [.name(inputs: nameSectionInputs),
+                .type(inputs: typeSectionInputs),
+                .value(inputs: valueSectionInputs)]
     }
 
-    func getAllInputs() -> [TransformerFormProtocol] {
+    func getAllInputs() -> [TransformerInputProtocol] {
         return nameSectionInputs + valueSectionInputs + typeSectionInputs
     }
 

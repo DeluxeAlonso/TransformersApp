@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol TransformerTextCellViewModelProtocol: class {
+protocol TransformerTextInputCellViewModelProtocol: class {
 
     var identifier: TransformerInputIdentifier { get }
     var value: String { get set }
@@ -15,7 +15,7 @@ protocol TransformerTextCellViewModelProtocol: class {
 
 }
 
-final class TransformerTextCellViewModel: TransformerTextCellViewModelProtocol {
+final class TransformerTextInputCellViewModel: TransformerTextInputCellViewModelProtocol {
 
     let identifier: TransformerInputIdentifier
     let placeholderTitle: String

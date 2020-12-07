@@ -9,8 +9,8 @@ import Foundation
 
 enum TransformerFormSection {
     
-    case name(forms: [TransformerFormProtocol])
-    case type(forms: [TransformerFormProtocol])
-    case value(forms: [TransformerFormProtocol])
+    case name(inputs: [TransformerInputProtocol])
+    case type(inputs: [TransformerInputProtocol])
+    case value(inputs: [TransformerInputProtocol])
 
 }

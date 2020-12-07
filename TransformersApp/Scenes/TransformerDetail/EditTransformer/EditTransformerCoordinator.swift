@@ -14,7 +14,7 @@ class EditTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProto
     var navigationController: UINavigationController
 
     var transformer: Transformer!
-    var transformerUpdateable: TransformersUpdatable?
+    weak var updateDelegate: TransformersUpdateDelegate?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -37,7 +37,7 @@ class EditTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProto
     }
 
     func close(with resultingTransformer: Transformer) {
-        transformerUpdateable?.didCreateOrUpdateNewTransformer(transformer: resultingTransformer)
+        updateDelegate?.didCreateOrUpdateNewTransformer(transformer: resultingTransformer)
         close()
     }
 
