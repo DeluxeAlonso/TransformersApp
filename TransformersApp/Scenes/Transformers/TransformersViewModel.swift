@@ -12,6 +12,7 @@ class TransformersViewModel: TransformersViewModelProtocol {
     private let interactor: TransformersInteractorProtocol
 
     let viewState: Bindable<TransformersViewState> = Bindable(.loading)
+    let receivedWarResultMessage: Bindable<String?> = Bindable(nil)
     let receivedErrorMessage: Bindable<String?> = Bindable(nil)
 
     // MARK: - Computed Properties
@@ -60,6 +61,14 @@ class TransformersViewModel: TransformersViewModelProtocol {
 
     func transformer(at index: Int) -> Transformer {
         return transformers[index]
+    }
+
+    func startWar() {
+        let warUtil = TransformerWarUtil(transformers: transformers)
+        let score = warUtil.startTransformerWar()
+        print(score)
+
+        receivedWarResultMessage.value = "Number of battles: \(score.numberOfBattler) \n Winning Team: \(score.winner.winningTeamName) \n Losing Team: \(score.winner.losingTeamName)"
     }
 
     // MARK: - Private

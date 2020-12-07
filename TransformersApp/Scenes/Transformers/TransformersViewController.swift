@@ -109,6 +109,12 @@ class TransformersViewController: UIViewController, Alertable {
             strongSelf.tableView.refreshControl?.endRefreshing()
         }
 
+        viewModel.receivedWarResultMessage.bind { [weak self] errorMessage in
+            guard let strongSelf = self, let errorMessage = errorMessage else { return }
+            strongSelf.showAlert(title: "War Result",
+                                 message: errorMessage)
+        }
+
         viewModel.receivedErrorMessage.bind { [weak self] errorMessage in
             guard let strongSelf = self, let errorMessage = errorMessage else { return }
             strongSelf.tableView.refreshControl?.endRefreshing()
@@ -124,7 +130,7 @@ class TransformersViewController: UIViewController, Alertable {
     }
 
     @objc func warButtonAction() {
-
+        viewModel.startWar()
     }
 
     @objc func refreshControlAction() {
