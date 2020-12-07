@@ -10,7 +10,7 @@ Transformers app written in Swift 5 using the Transformers API.
 
 The app currently uses Cocoapods for dependencies managements.
 You should clone the repository and go to the folder where the Podfile is located and then run pod install. 
-Finally, open the workspace file and run the project.
+Finally, open the workspace file and run the project with command + R or command + U if you want to run the unit tests.
 
 ## Screenshots
 
