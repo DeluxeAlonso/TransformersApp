@@ -1,5 +1,5 @@
 //
-//  TransformerAddCoordinator.swift
+//  AddTransformerCoordinator.swift
 //  TransformersApp
 //
 //  Created by Alonso on 12/6/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TransformerAddCoordinator: Coordinator, TransformerDetailCoordinatorProtocol {
+class AddTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProtocol {
 
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?
@@ -20,7 +20,7 @@ class TransformerAddCoordinator: Coordinator, TransformerDetailCoordinatorProtoc
     }
 
     func start() {
-        let viewModel = TransformerAddViewModel()
+        let viewModel = AddTransformerViewModel()
         let viewController = TransformerDetailViewController(viewModel: viewModel)
 
         viewController.coordinator = self

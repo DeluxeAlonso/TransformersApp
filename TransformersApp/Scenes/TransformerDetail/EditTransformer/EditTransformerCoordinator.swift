@@ -1,5 +1,5 @@
 //
-//  TransformerEditCoordinator.swift
+//  EditTransformerCoordinator.swift
 //  TransformersApp
 //
 //  Created by Alonso on 12/6/20.
@@ -20,7 +20,7 @@ class EditTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProto
     }
 
     func start() {
-        let viewModel = EditTransformerViewModel()
+        let viewModel = EditTransformerViewModel(transformer)
         let viewController = TransformerDetailViewController(viewModel: viewModel)
 
         viewController.coordinator = self
@@ -28,6 +28,8 @@ class EditTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProto
         navigationController.pushViewController(viewController, animated: true)
     }
 
-    func close() {}
+    func close() {
+        navigationController.popViewController(animated: true)
+    }
 
 }

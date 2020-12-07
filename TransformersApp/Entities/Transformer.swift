@@ -17,7 +17,6 @@ struct Transformer: Codable {
     let courage: Int
     let firepower: Int
     let skill: Int
-
     let type: TransformerType
 
     var rating: Int {

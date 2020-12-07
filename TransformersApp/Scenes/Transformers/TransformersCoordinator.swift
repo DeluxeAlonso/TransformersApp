@@ -30,7 +30,7 @@ final class TransformersCoordinator: NSObject, TransformersCoordinatorProtocol, 
 
     func showTransformerAddForm() {
         let navigationController = UINavigationController()
-        let coordinator = TransformerAddCoordinator(navigationController: navigationController)
+        let coordinator = AddTransformerCoordinator(navigationController: navigationController)
 
         coordinator.presentingViewController = self.navigationController.topViewController
         coordinator.parentCoordinator = unwrappedParentCoordinator
@@ -40,7 +40,7 @@ final class TransformersCoordinator: NSObject, TransformersCoordinatorProtocol, 
     }
 
     func showTransformerEditForm(for transformer: Transformer) {
-        let coordinator = TransformerEditCoordinator(navigationController: navigationController)
+        let coordinator = EditTransformerCoordinator(navigationController: navigationController)
 
         coordinator.transformer = transformer
         coordinator.parentCoordinator = unwrappedParentCoordinator

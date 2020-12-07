@@ -7,6 +7,24 @@
 
 import Foundation
 
-class TransformerAddViewModel: TransformerDetailViewModelProtocol {
+class AddTransformerViewModel: TransformerDetailViewModelProtocol {
+
+    var formSections: [TransformerFormSection] = []
+
+    func textInputForm(at index: Int) -> [TransformerFormCellViewModelProtocol] {
+        return []
+    }
+
+    func valueInputForm(at index: Int) -> [TransformerFormCellViewModelProtocol] {
+        return []
+    }
+
+    func typeInputForm(at index: Int) -> [TransformerFormCellViewModelProtocol] {
+        return []
+    }
+
+    func shouldAllowEditing() -> Bool {
+        return false
+    }
 
 }
