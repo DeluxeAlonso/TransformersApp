@@ -26,14 +26,14 @@ class TransformerWarUtil {
         autobots = dividedTransformers.autobots
         decepticons = dividedTransformers.decepticons
 
-        if autobots.isEmpty {
+        if autobots.isEmpty && decepticons.isEmpty {
+            return  TransformerWarScore(numberOfBattles: 0, winner: .draw)
+        } else if autobots.isEmpty {
             let decepticonsNames = decepticons.map { $0.name }
             return TransformerWarScore(numberOfBattles: 0, winner: .decepticons(winnersNames: decepticonsNames, losersNames: []))
         } else if decepticons.isEmpty {
             let autobotsNames = autobots.map { $0.name }
             return TransformerWarScore(numberOfBattles: 0, winner: .autobots(winnersNames: autobotsNames, losersNames: []))
-        } else if autobots.isEmpty && decepticons.isEmpty {
-            return  TransformerWarScore(numberOfBattles: 0, winner: .draw)
         }
 
         let numberOfBattles = min(autobots.count, decepticons.count)

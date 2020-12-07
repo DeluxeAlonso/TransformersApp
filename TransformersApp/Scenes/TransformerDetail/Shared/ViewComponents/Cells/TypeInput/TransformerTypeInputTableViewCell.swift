@@ -23,9 +23,10 @@ class TransformerTypeInputTableViewCell: UITableViewCell {
         let button = UIButton()
         button.layer.borderColor = UIColor.gray.cgColor
         button.setImage(UIImage(named: "Autobot"), for: .normal)
-        button.imageView?.contentMode = .scaleAspectFill
+        button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(autobotButtonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.imageEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
 
         return button
     }()
@@ -34,9 +35,10 @@ class TransformerTypeInputTableViewCell: UITableViewCell {
         let button = UIButton()
         button.layer.borderColor = UIColor.gray.cgColor
         button.setImage(UIImage(named: "Decepticon"), for: .normal)
-        button.imageView?.contentMode = .scaleAspectFill
+        button.imageView?.contentMode = .scaleAspectFit
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(decepticonButtonAction), for: .touchUpInside)
+        button.imageEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
 
         return button
     }()
@@ -80,8 +82,15 @@ class TransformerTypeInputTableViewCell: UITableViewCell {
             buttonHeight = Constants.CompactButtonHeight
         }
 
-        autobotButton.constraintHeight(constant: buttonHeight)
-        decepticonButton.constraintHeight(constant: buttonHeight)
+        let autobotButtonHeightConstraint = autobotButton.heightAnchor.constraint(equalToConstant: buttonHeight)
+        let decepticonButtonHeightConstraint = decepticonButton.heightAnchor.constraint(equalToConstant: buttonHeight)
+
+        // Add a 999 priority to supress width constraint warning.
+        autobotButtonHeightConstraint.priority = .init(999)
+        decepticonButtonHeightConstraint.priority = .init(999)
+
+        autobotButtonHeightConstraint.isActive = true
+        decepticonButtonHeightConstraint.isActive = true
 
         stackView.addArrangedSubview(autobotButton)
         stackView.addArrangedSubview(decepticonButton)
@@ -170,8 +179,8 @@ class TransformerTypeInputTableViewCell: UITableViewCell {
 extension TransformerTypeInputTableViewCell {
 
     struct Constants {
-        static let RegularWidthRegularHeightButtonHeight: CGFloat = 64.0
-        static let CompactButtonHeight: CGFloat = 48.0
+        static let RegularWidthRegularHeightButtonHeight: CGFloat = 80.0
+        static let CompactButtonHeight: CGFloat = 64.0
     }
 
 }
