@@ -72,6 +72,7 @@
 		E2B74DC2257DE6B700AFA16F /* TransformerTypeInputCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DC1257DE6B700AFA16F /* TransformerTypeInputCellViewModel.swift */; };
 		E2B74DCA257DE72A00AFA16F /* TransformerTypeInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DC9257DE72A00AFA16F /* TransformerTypeInputTableViewCell.swift */; };
 		E2B74DCF257DEB5100AFA16F /* TransformerTypeInputForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DCE257DEB5100AFA16F /* TransformerTypeInputForms.swift */; };
+		E2B74DDB257E002F00AFA16F /* Transformer+MockInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DDA257E002F00AFA16F /* Transformer+MockInitializer.swift */; };
 		E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C32579EF83007BBCD2 /* AppDelegate.swift */; };
 		E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */; };
 		E2C948CD2579EF86007BBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CC2579EF86007BBCD2 /* Assets.xcassets */; };
@@ -182,6 +183,7 @@
 		E2B74DC1257DE6B700AFA16F /* TransformerTypeInputCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTypeInputCellViewModel.swift; sourceTree = "<group>"; };
 		E2B74DC9257DE72A00AFA16F /* TransformerTypeInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTypeInputTableViewCell.swift; sourceTree = "<group>"; };
 		E2B74DCE257DEB5100AFA16F /* TransformerTypeInputForms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTypeInputForms.swift; sourceTree = "<group>"; };
+		E2B74DDA257E002F00AFA16F /* Transformer+MockInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transformer+MockInitializer.swift"; sourceTree = "<group>"; };
 		E2C948C02579EF83007BBCD2 /* TransformersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C948C32579EF83007BBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -496,6 +498,14 @@
 			path = TypeInput;
 			sourceTree = "<group>";
 		};
+		E2B74DD9257E000D00AFA16F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E2B74DDA257E002F00AFA16F /* Transformer+MockInitializer.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		E2C948B72579EF83007BBCD2 = {
 			isa = PBXGroup;
 			children = (
@@ -538,6 +548,7 @@
 		E2C948D92579EF86007BBCD2 /* TransformersAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				E2B74DD9257E000D00AFA16F /* Mocks */,
 				E2C948DA2579EF86007BBCD2 /* TransformersAppTests.swift */,
 				E2C948DC2579EF86007BBCD2 /* Info.plist */,
 			);
@@ -954,6 +965,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2B74DDB257E002F00AFA16F /* Transformer+MockInitializer.swift in Sources */,
 				E2C948DB2579EF86007BBCD2 /* TransformersAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

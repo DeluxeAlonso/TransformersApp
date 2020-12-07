@@ -23,6 +23,7 @@ class TransformerTypeInputTableViewCell: UITableViewCell {
         let button = UIButton()
         button.layer.borderColor = UIColor.gray.cgColor
         button.setImage(UIImage(named: "Autobot"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
         button.addTarget(self, action: #selector(autobotButtonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
 
@@ -33,6 +34,7 @@ class TransformerTypeInputTableViewCell: UITableViewCell {
         let button = UIButton()
         button.layer.borderColor = UIColor.gray.cgColor
         button.setImage(UIImage(named: "Decepticon"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(decepticonButtonAction), for: .touchUpInside)
 

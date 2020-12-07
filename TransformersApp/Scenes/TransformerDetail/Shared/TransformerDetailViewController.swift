@@ -91,7 +91,12 @@ class TransformerDetailViewController: UIViewController, Alertable {
     }
 
     private func showActivityIndicator() {
-        let indicator = UIActivityIndicatorView(style: .white)
+        let indicator: UIActivityIndicatorView
+        if #available(iOS 13.0, *) {
+            indicator = UIActivityIndicatorView(style: .medium)
+        } else {
+            indicator = UIActivityIndicatorView(style: .gray)
+        }
         indicator.hidesWhenStopped = true
         indicator.startAnimating()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: indicator)
