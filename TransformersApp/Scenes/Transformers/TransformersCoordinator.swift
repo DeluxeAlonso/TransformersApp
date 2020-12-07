@@ -13,6 +13,8 @@ final class TransformersCoordinator: NSObject, TransformersCoordinatorProtocol, 
     var parentCoordinator: Coordinator?
     var navigationController: UINavigationController
 
+    var transFormerUpdateable: TransformersUpdatable?
+
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -28,12 +30,17 @@ final class TransformersCoordinator: NSObject, TransformersCoordinatorProtocol, 
         navigationController.pushViewController(viewController, animated: true)
     }
 
+    func setUpdateDelegate(_ delegate: TransformersUpdatable) {
+        self.transFormerUpdateable = delegate
+    }
+
     func showTransformerAddForm() {
         let navigationController = UINavigationController()
         let coordinator = AddTransformerCoordinator(navigationController: navigationController)
 
         coordinator.presentingViewController = self.navigationController.topViewController
         coordinator.parentCoordinator = unwrappedParentCoordinator
+        coordinator.transformerUpdateable = transFormerUpdateable
 
         unwrappedParentCoordinator.childCoordinators.append(coordinator)
         coordinator.start()
@@ -44,6 +51,7 @@ final class TransformersCoordinator: NSObject, TransformersCoordinatorProtocol, 
 
         coordinator.transformer = transformer
         coordinator.parentCoordinator = unwrappedParentCoordinator
+        coordinator.transformerUpdateable = transFormerUpdateable
 
         unwrappedParentCoordinator.childCoordinators.append(coordinator)
         coordinator.start()

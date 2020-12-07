@@ -14,6 +14,7 @@ class EditTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProto
     var navigationController: UINavigationController
 
     var transformer: Transformer!
+    var transformerUpdateable: TransformersUpdatable?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -33,6 +34,11 @@ class EditTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProto
 
     func close() {
         navigationController.popViewController(animated: true)
+    }
+
+    func close(with resultingTransformer: Transformer) {
+        transformerUpdateable?.didCreateOrUpdateNewTransformer(transformer: resultingTransformer)
+        close()
     }
 
 }

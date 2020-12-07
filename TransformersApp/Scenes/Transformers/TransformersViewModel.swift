@@ -63,10 +63,18 @@ class TransformersViewModel: TransformersViewModelProtocol {
         return transformers[index]
     }
 
+    func updateTransformerList(with transformer: Transformer) {
+        let transformersIds = transformers.map { $0.id }
+        if let existingIndex = transformersIds.firstIndex(of: transformer.id) {
+            transformers[existingIndex] = transformer
+        } else {
+            transformers.append(transformer)
+        }
+    }
+
     func startWar() {
         let warUtil = TransformerWarUtil(transformers: transformers)
         let score = warUtil.startTransformerWar()
-        print(score)
 
         receivedWarResultMessage.value = "Number of battles: \(score.numberOfBattler) \n Winning Team: \(score.winner.winningTeamName) \n Losing Team: \(score.winner.losingTeamName)"
     }

@@ -46,7 +46,7 @@ class EditTransformerViewModel: TransformerDetailViewModelProtocol {
         valueInputModel(for: .rank)?.value = transformer.rank
         valueInputModel(for: .skill)?.value = transformer.skill
         valueInputModel(for: .speed)?.value = transformer.speed
-        valueInputModel(for: .strength)?.value = transformer.courage
+        valueInputModel(for: .strength)?.value = transformer.strength
 
         typeInputModel(for: .team)?.value = transformer.type
     }

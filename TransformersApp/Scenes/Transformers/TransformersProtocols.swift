@@ -15,6 +15,8 @@ protocol TransformersViewModelProtocol {
 
     var transformerCells: [TransformerCellViewModelProtocol] { get }
 
+    func updateTransformerList(with transformer: Transformer)
+
     /**
      Retrieves all the current transformers.
      */
@@ -62,6 +64,8 @@ protocol TransformersInteractorProtocol {
 }
 
 protocol TransformersCoordinatorProtocol: class {
+
+    func setUpdateDelegate(_ delegate: TransformersUpdatable)
 
     /**
      Shows the form to create a brand new transformer.

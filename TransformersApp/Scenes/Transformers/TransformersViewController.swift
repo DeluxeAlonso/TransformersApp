@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol TransformersUpdatable {
+
+    func didCreateOrUpdateNewTransformer(transformer: Transformer)
+
+}
+
 class TransformersViewController: UIViewController, Alertable {
 
     lazy var tableView: UITableView = {
@@ -36,6 +42,7 @@ class TransformersViewController: UIViewController, Alertable {
         setupUI()
         setupBindings()
 
+        coordinator?.setUpdateDelegate(self)
         viewModel.getTransformers()
     }
 
@@ -170,6 +177,14 @@ extension TransformersViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let transformerToEdit = viewModel.transformer(at: indexPath.row)
         coordinator?.showTransformerEditForm(for: transformerToEdit)
+    }
+
+}
+
+extension TransformersViewController: TransformersUpdatable {
+
+    func didCreateOrUpdateNewTransformer(transformer: Transformer) {
+        viewModel.updateTransformerList(with: transformer)
     }
 
 }

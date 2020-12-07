@@ -10,6 +10,7 @@ import Foundation
 protocol TransformerDetailCoordinatorProtocol: class {
 
     func close()
+    func close(with resultingTransformer: Transformer)
 
 }
 

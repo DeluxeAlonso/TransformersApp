@@ -110,8 +110,8 @@ class TransformerDetailViewController: UIViewController, Alertable {
 
     private func setupBindings() {
         viewModel.savedTransformer.bind { [weak self] savedTransformer in
-            guard let strongSelf = self else { return }
-            strongSelf.coordinator?.close()
+            guard let strongSelf = self, let savedTransformer = savedTransformer else { return }
+            strongSelf.coordinator?.close(with: savedTransformer)
         }
 
         viewModel.startLoading.bind { [weak self] loading in
