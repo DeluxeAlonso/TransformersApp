@@ -82,3 +82,13 @@ protocol TransformersCoordinatorProtocol: class {
     func showTransformerEditForm(for transformer: Transformer)
 
 }
+
+protocol TransformersUpdateDelegate: class {
+
+    /**
+     Detects when a transformer has been created or edited
+     - Parameter transformer: Edited or newly created transformer.
+     */
+    func didCreateOrUpdateNewTransformer(transformer: Transformer)
+
+}

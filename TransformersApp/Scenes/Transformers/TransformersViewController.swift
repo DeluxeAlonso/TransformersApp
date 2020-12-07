@@ -7,12 +7,6 @@
 
 import UIKit
 
-protocol TransformersUpdateDelegate: class {
-
-    func didCreateOrUpdateNewTransformer(transformer: Transformer)
-
-}
-
 class TransformersViewController: UIViewController, Alertable {
 
     lazy var tableView: UITableView = {
