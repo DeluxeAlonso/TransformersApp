@@ -10,12 +10,13 @@ import Foundation
 protocol TransformersViewModelProtocol {
 
     var viewState: Bindable<TransformersViewState> { get }
-    var receivedError: Bindable<Error?> { get }
+    var receivedErrorMessage: Bindable<String?> { get }
 
     var transformerCells: [TransformerCellViewModelProtocol] { get }
 
     func getTransformers()
     func removeTransformer(at index: Int)
+    func transformer(at index: Int) -> Transformer
     
 }
 
@@ -27,5 +28,8 @@ protocol TransformersInteractorProtocol {
 }
 
 protocol TransformersCoordinatorProtocol: class {
+
+    func showTransformerAddForm()
+    func showTransformerEditForm(for transformer: Transformer)
 
 }

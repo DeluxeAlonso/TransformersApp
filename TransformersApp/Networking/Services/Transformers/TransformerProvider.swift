@@ -11,6 +11,8 @@ enum TransformerProvider {
 
     case getTransformers(accessToken: String)
     case deleteTransformer(accessToken: String, transformerId: String)
+    case createTransformer(accessToken: String, params: [String: Any])
+    case updateTransformer(accessToken: String, params: [String: Any])
 
 }
 
@@ -21,7 +23,7 @@ extension TransformerProvider: Endpoint {
 
     var path: String {
         switch self {
-        case .getTransformers:
+        case .getTransformers, .createTransformer, .updateTransformer:
             return "/transformers"
         case .deleteTransformer(_, let id):
             return "/transformers/\(id)"
@@ -30,7 +32,10 @@ extension TransformerProvider: Endpoint {
 
     var headers: [String : String]? {
         switch self {
-        case .getTransformers(let accessToken), .deleteTransformer(let accessToken, _):
+        case .getTransformers(let accessToken),
+             .deleteTransformer(let accessToken, _),
+             .updateTransformer(let accessToken, _),
+             .createTransformer(let accessToken, _):
             return ["Authorization": "Bearer \(accessToken)"]
         }
     }
@@ -39,6 +44,10 @@ extension TransformerProvider: Endpoint {
         switch self {
         case .getTransformers, .deleteTransformer:
             return nil
+        case .createTransformer(_, let params):
+            return params
+        case .updateTransformer(_, let params):
+            return params
         }
     }
 
@@ -46,6 +55,8 @@ extension TransformerProvider: Endpoint {
         switch self {
         case .getTransformers, .deleteTransformer:
             return .defaultEncoding
+        case .createTransformer, .updateTransformer:
+            return .jsonEncoding
         }
     }
 
@@ -55,6 +66,10 @@ extension TransformerProvider: Endpoint {
             return .get
         case .deleteTransformer:
             return .delete
+        case .createTransformer:
+            return .post
+        case .updateTransformer:
+            return .put
         }
     }
 

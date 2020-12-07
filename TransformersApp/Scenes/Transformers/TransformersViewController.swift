@@ -47,6 +47,11 @@ class TransformersViewController: UIViewController, Alertable {
     // MARK: - Private
 
     private func setupUI() {
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemBackground
+        } else {
+            view.backgroundColor = .white
+        }
         title = LocalizedStrings.transformersTitle.localized
         setupNavigationBar()
         setupTableView()
@@ -69,6 +74,16 @@ class TransformersViewController: UIViewController, Alertable {
 
         tableView.dataSource = self
         tableView.delegate = self
+
+        tableView.tableFooterView = LoadingFooterView()
+
+        setupRefreshControl()
+    }
+
+    private func setupRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlAction), for: .valueChanged)
+        tableView.refreshControl = refreshControl
     }
 
     private func configureView(with state: TransformersViewState) {
@@ -77,7 +92,7 @@ class TransformersViewController: UIViewController, Alertable {
             tableView.tableFooterView = TitledFooterView(title: LocalizedStrings.emptyTransformersTitle.localized)
         case .populated:
             tableView.tableFooterView = UIView()
-        case .initial, .loading:
+        case .loading:
             tableView.tableFooterView = LoadingFooterView()
         case .error(let error):
             tableView.tableFooterView = TitledFooterView(title: error.localizedDescription)
@@ -87,27 +102,33 @@ class TransformersViewController: UIViewController, Alertable {
     // MARK: - Reactive Behavior
 
     private func setupBindings() {
-        viewModel.viewState.bindAndFire { [weak self] state in
+        viewModel.viewState.bind { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.configureView(with: state)
             strongSelf.tableView.reloadSections([.zero], with: .fade)
+            strongSelf.tableView.refreshControl?.endRefreshing()
         }
 
-        viewModel.receivedError.bind { [weak self] error in
-            guard let strongSelf = self, let error = error else { return }
+        viewModel.receivedErrorMessage.bind { [weak self] errorMessage in
+            guard let strongSelf = self, let errorMessage = errorMessage else { return }
+            strongSelf.tableView.refreshControl?.endRefreshing()
             strongSelf.showAlert(title: LocalizedStrings.errorAlertTitle.localized,
-                                 message: error.localizedDescription)
+                                 message: errorMessage)
         }
     }
 
     // MARK: - Actions
 
     @objc func addButtonAction() {
-
+        coordinator?.showTransformerAddForm()
     }
 
     @objc func warButtonAction() {
 
+    }
+
+    @objc func refreshControlAction() {
+        viewModel.getTransformers()
     }
 
 }
@@ -141,6 +162,18 @@ extension TransformersViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let transformerToEdit = viewModel.transformer(at: indexPath.row)
+        coordinator?.showTransformerEditForm(for: transformerToEdit)
+    }
+
+}
+
+extension UIRefreshControl {
+
+    func endRefreshing(with delay: TimeInterval = 0.5) {
+        if isRefreshing {
+            perform(#selector(UIRefreshControl.endRefreshing), with: nil, afterDelay: delay)
+        }
     }
 
 }

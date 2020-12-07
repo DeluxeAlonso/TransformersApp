@@ -1,13 +1,14 @@
 //
-//  Transformer.swift
+//  AddTransformerRequest.swift
 //  TransformersApp
 //
-//  Created by Alonso on 12/4/20.
+//  Created by Alonso on 12/6/20.
 //
 
-struct Transformer: Codable {
+import Foundation
 
-    let id: String
+struct AddTransformerRequest: Encodable {
+
     let name: String
     let strength: Int
     let intelligence: Int
@@ -19,12 +20,7 @@ struct Transformer: Codable {
     let skill: Int
     let type: TransformerType
 
-    var rating: Int {
-        strength + intelligence + speed + endurance + firepower
-    }
-
     enum CodingKeys: String, CodingKey {
-        case id
         case name
         case strength
         case intelligence

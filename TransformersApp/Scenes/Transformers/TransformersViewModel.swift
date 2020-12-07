@@ -11,8 +11,8 @@ class TransformersViewModel: TransformersViewModelProtocol {
 
     private let interactor: TransformersInteractorProtocol
 
-    let viewState: Bindable<TransformersViewState> = Bindable(.initial)
-    let receivedError: Bindable<Error?> = Bindable(nil)
+    let viewState: Bindable<TransformersViewState> = Bindable(.loading)
+    let receivedErrorMessage: Bindable<String?> = Bindable(nil)
 
     // MARK: - Computed Properties
 
@@ -51,11 +51,15 @@ class TransformersViewModel: TransformersViewModelProtocol {
         interactor.deleteTransformer(with: transformerToDelete.id) { error in
             self.stopLoadingForCell(at: index)
             guard error == nil else {
-                self.receivedError.value = error
+                self.receivedErrorMessage.value = error?.localizedDescription
                 return
             }
             self.transformers.remove(at: index)
         }
+    }
+
+    func transformer(at index: Int) -> Transformer {
+        return transformers[index]
     }
 
     // MARK: - Private
