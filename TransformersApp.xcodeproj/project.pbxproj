@@ -72,11 +72,14 @@
 		E2B74DC2257DE6B700AFA16F /* TransformerTypeInputCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DC1257DE6B700AFA16F /* TransformerTypeInputCellViewModel.swift */; };
 		E2B74DCA257DE72A00AFA16F /* TransformerTypeInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DC9257DE72A00AFA16F /* TransformerTypeInputTableViewCell.swift */; };
 		E2B74DCF257DEB5100AFA16F /* TransformerTypeInputForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DCE257DEB5100AFA16F /* TransformerTypeInputForms.swift */; };
+		E2B74DDB257E002F00AFA16F /* Transformer+MockInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DDA257E002F00AFA16F /* Transformer+MockInitializer.swift */; };
+		E2B74DE3257E0A5E00AFA16F /* TransformersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DE2257E0A5E00AFA16F /* TransformersTests.swift */; };
+		E2B74DEB257E0A7700AFA16F /* MockTransformersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DEA257E0A7700AFA16F /* MockTransformersInteractor.swift */; };
+		E2B74DF0257E0AFC00AFA16F /* MockTransformerDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DEF257E0AFC00AFA16F /* MockTransformerDetailInteractor.swift */; };
 		E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C32579EF83007BBCD2 /* AppDelegate.swift */; };
 		E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */; };
 		E2C948CD2579EF86007BBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CC2579EF86007BBCD2 /* Assets.xcassets */; };
 		E2C948D02579EF86007BBCD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CE2579EF86007BBCD2 /* LaunchScreen.storyboard */; };
-		E2C948DB2579EF86007BBCD2 /* TransformersAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948DA2579EF86007BBCD2 /* TransformersAppTests.swift */; };
 		E2C948E62579EF86007BBCD2 /* TransformersAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948E52579EF86007BBCD2 /* TransformersAppUITests.swift */; };
 		E2C949022579F235007BBCD2 /* TransformersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C949012579F235007BBCD2 /* TransformersViewController.swift */; };
 		E2C949072579F241007BBCD2 /* TransformersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C949062579F241007BBCD2 /* TransformersViewModel.swift */; };
@@ -90,6 +93,9 @@
 		E2C949472579F6D5007BBCD2 /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C949462579F6D5007BBCD2 /* AuthClient.swift */; };
 		E2C9494F2579F6DC007BBCD2 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C9494E2579F6DC007BBCD2 /* AuthProvider.swift */; };
 		E2C949582579F916007BBCD2 /* AccessTokenResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C949572579F916007BBCD2 /* AccessTokenResult.swift */; };
+		E2CF3B00257E112600705CE5 /* AddTransformerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CF3AFF257E112500705CE5 /* AddTransformerTests.swift */; };
+		E2CF3B05257E113500705CE5 /* EditTransformerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CF3B04257E113500705CE5 /* EditTransformerTests.swift */; };
+		E2CF3B0A257E122100705CE5 /* TransformerDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CF3B09257E122100705CE5 /* TransformerDetailFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +188,10 @@
 		E2B74DC1257DE6B700AFA16F /* TransformerTypeInputCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTypeInputCellViewModel.swift; sourceTree = "<group>"; };
 		E2B74DC9257DE72A00AFA16F /* TransformerTypeInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTypeInputTableViewCell.swift; sourceTree = "<group>"; };
 		E2B74DCE257DEB5100AFA16F /* TransformerTypeInputForms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTypeInputForms.swift; sourceTree = "<group>"; };
+		E2B74DDA257E002F00AFA16F /* Transformer+MockInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transformer+MockInitializer.swift"; sourceTree = "<group>"; };
+		E2B74DE2257E0A5E00AFA16F /* TransformersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersTests.swift; sourceTree = "<group>"; };
+		E2B74DEA257E0A7700AFA16F /* MockTransformersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTransformersInteractor.swift; sourceTree = "<group>"; };
+		E2B74DEF257E0AFC00AFA16F /* MockTransformerDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTransformerDetailInteractor.swift; sourceTree = "<group>"; };
 		E2C948C02579EF83007BBCD2 /* TransformersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C948C32579EF83007BBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,7 +199,6 @@
 		E2C948CF2579EF86007BBCD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2C948D12579EF86007BBCD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2C948D62579EF86007BBCD2 /* TransformersAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransformersAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2C948DA2579EF86007BBCD2 /* TransformersAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersAppTests.swift; sourceTree = "<group>"; };
 		E2C948DC2579EF86007BBCD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2C948E12579EF86007BBCD2 /* TransformersAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransformersAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C948E52579EF86007BBCD2 /* TransformersAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersAppUITests.swift; sourceTree = "<group>"; };
@@ -206,6 +215,9 @@
 		E2C949462579F6D5007BBCD2 /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		E2C9494E2579F6DC007BBCD2 /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
 		E2C949572579F916007BBCD2 /* AccessTokenResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenResult.swift; sourceTree = "<group>"; };
+		E2CF3AFF257E112500705CE5 /* AddTransformerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransformerTests.swift; sourceTree = "<group>"; };
+		E2CF3B04257E113500705CE5 /* EditTransformerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransformerTests.swift; sourceTree = "<group>"; };
+		E2CF3B09257E122100705CE5 /* TransformerDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerDetailFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,7 +277,6 @@
 				E265B50A257D70780017F886 /* Shared */,
 				E22261BE257CC04E005F3273 /* AddTransformer */,
 				E22261BD257CC042005F3273 /* EditTransformer */,
-				E2B74D9B257DCEE800AFA16F /* TransformerDetailInteractor.swift */,
 			);
 			path = TransformerDetail;
 			sourceTree = "<group>";
@@ -310,6 +321,8 @@
 				E265B50C257D70A90017F886 /* ViewComponents */,
 				E222619D257CBFD2005F3273 /* TransformerDetailViewController.swift */,
 				E22261B5257CC03E005F3273 /* TransformerDetailProtocols.swift */,
+				E2B74D9B257DCEE800AFA16F /* TransformerDetailInteractor.swift */,
+				E2CF3B09257E122100705CE5 /* TransformerDetailFactory.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -496,6 +509,16 @@
 			path = TypeInput;
 			sourceTree = "<group>";
 		};
+		E2B74DD9257E000D00AFA16F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E2B74DDA257E002F00AFA16F /* Transformer+MockInitializer.swift */,
+				E2B74DEA257E0A7700AFA16F /* MockTransformersInteractor.swift */,
+				E2B74DEF257E0AFC00AFA16F /* MockTransformerDetailInteractor.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		E2C948B72579EF83007BBCD2 = {
 			isa = PBXGroup;
 			children = (
@@ -538,8 +561,11 @@
 		E2C948D92579EF86007BBCD2 /* TransformersAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				E2C948DA2579EF86007BBCD2 /* TransformersAppTests.swift */,
+				E2B74DD9257E000D00AFA16F /* Mocks */,
 				E2C948DC2579EF86007BBCD2 /* Info.plist */,
+				E2B74DE2257E0A5E00AFA16F /* TransformersTests.swift */,
+				E2CF3AFF257E112500705CE5 /* AddTransformerTests.swift */,
+				E2CF3B04257E113500705CE5 /* EditTransformerTests.swift */,
 			);
 			path = TransformersAppTests;
 			sourceTree = "<group>";
@@ -935,6 +961,7 @@
 				E2B74DC2257DE6B700AFA16F /* TransformerTypeInputCellViewModel.swift in Sources */,
 				E2B74DCA257DE72A00AFA16F /* TransformerTypeInputTableViewCell.swift in Sources */,
 				E2A31BEF257B195C00A415D5 /* LoadingFooterView.swift in Sources */,
+				E2CF3B0A257E122100705CE5 /* TransformerDetailFactory.swift in Sources */,
 				E2A31C2A257B509000A415D5 /* LocalizedStrings.swift in Sources */,
 				E2C949272579F451007BBCD2 /* Dictionary+PercentEscaped.swift in Sources */,
 				E222618E257C2234005F3273 /* EmptyResult.swift in Sources */,
@@ -954,7 +981,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2C948DB2579EF86007BBCD2 /* TransformersAppTests.swift in Sources */,
+				E2B74DF0257E0AFC00AFA16F /* MockTransformerDetailInteractor.swift in Sources */,
+				E2CF3B00257E112600705CE5 /* AddTransformerTests.swift in Sources */,
+				E2B74DEB257E0A7700AFA16F /* MockTransformersInteractor.swift in Sources */,
+				E2B74DE3257E0A5E00AFA16F /* TransformersTests.swift in Sources */,
+				E2B74DDB257E002F00AFA16F /* Transformer+MockInitializer.swift in Sources */,
+				E2CF3B05257E113500705CE5 /* EditTransformerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

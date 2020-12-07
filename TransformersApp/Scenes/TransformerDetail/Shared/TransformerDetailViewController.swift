@@ -91,7 +91,12 @@ class TransformerDetailViewController: UIViewController, Alertable {
     }
 
     private func showActivityIndicator() {
-        let indicator = UIActivityIndicatorView(style: .white)
+        let indicator: UIActivityIndicatorView
+        if #available(iOS 13.0, *) {
+            indicator = UIActivityIndicatorView(style: .medium)
+        } else {
+            indicator = UIActivityIndicatorView(style: .gray)
+        }
         indicator.hidesWhenStopped = true
         indicator.startAnimating()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: indicator)
@@ -158,15 +163,15 @@ extension TransformerDetailViewController: UITableViewDataSource {
         switch form.type {
         case .text:
             let cell = tableView.dequeueReusableCell(with: TransformerTextInputTableViewCell.self, for: indexPath)
-            cell.viewModel = viewModel.textInputModel(for: form)
+            cell.viewModel = viewModel.textInputModel(for: form.identifier)
             return cell
         case .value:
             let cell = tableView.dequeueReusableCell(with: TransformerValueInputTableViewCell.self, for: indexPath)
-            cell.viewModel = viewModel.valueInputModel(for: form)
+            cell.viewModel = viewModel.valueInputModel(for: form.identifier)
             return cell
         case .type:
             let cell = tableView.dequeueReusableCell(with: TransformerTypeInputTableViewCell.self, for: indexPath)
-            cell.viewModel = viewModel.typeInputFormModel(for: form)
+            cell.viewModel = viewModel.typeInputModel(for: form.identifier)
             return cell
         }
     }
