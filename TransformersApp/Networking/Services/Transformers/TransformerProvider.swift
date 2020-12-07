@@ -11,6 +11,7 @@ enum TransformerProvider {
 
     case getTransformers(accessToken: String)
     case deleteTransformer(accessToken: String, transformerId: String)
+    case updateTransformer(accessToken: String, params: [String: Any])
 
 }
 
@@ -21,7 +22,7 @@ extension TransformerProvider: Endpoint {
 
     var path: String {
         switch self {
-        case .getTransformers:
+        case .getTransformers, .updateTransformer:
             return "/transformers"
         case .deleteTransformer(_, let id):
             return "/transformers/\(id)"
@@ -30,7 +31,9 @@ extension TransformerProvider: Endpoint {
 
     var headers: [String : String]? {
         switch self {
-        case .getTransformers(let accessToken), .deleteTransformer(let accessToken, _):
+        case .getTransformers(let accessToken),
+             .deleteTransformer(let accessToken, _),
+             .updateTransformer(let accessToken, _):
             return ["Authorization": "Bearer \(accessToken)"]
         }
     }
@@ -39,6 +42,8 @@ extension TransformerProvider: Endpoint {
         switch self {
         case .getTransformers, .deleteTransformer:
             return nil
+        case .updateTransformer(_, let params):
+            return params
         }
     }
 
@@ -46,6 +51,8 @@ extension TransformerProvider: Endpoint {
         switch self {
         case .getTransformers, .deleteTransformer:
             return .defaultEncoding
+        case .updateTransformer:
+            return .jsonEncoding
         }
     }
 
@@ -55,6 +62,8 @@ extension TransformerProvider: Endpoint {
             return .get
         case .deleteTransformer:
             return .delete
+        case .updateTransformer:
+            return .put
         }
     }
 

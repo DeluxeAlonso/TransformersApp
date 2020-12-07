@@ -9,6 +9,13 @@ import Foundation
 
 class AddTransformerViewModel: TransformerDetailViewModelProtocol {
 
+    let savedTransformer: Bindable<Transformer?> = Bindable(nil)
+    let receivedErrorMessage: Bindable<String?> = Bindable(nil)
+
+    func saveTransformer() {
+        
+    }
+
     func textInputModel(for form: TransformerFormProtocol) -> TransformerTextCellViewModelProtocol {
         fatalError()
     }

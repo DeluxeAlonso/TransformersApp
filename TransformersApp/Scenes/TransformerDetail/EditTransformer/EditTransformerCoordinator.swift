@@ -20,7 +20,9 @@ class EditTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProto
     }
 
     func start() {
-        let viewModel = EditTransformerViewModel(transformer)
+        let interactor = TransformerDetailInteractor(secureStorage: SecureStorage.shared, transformerClient: TransformerClient())
+        let viewModel = EditTransformerViewModel(transformer, interactor: interactor)
+
         let viewController = TransformerDetailViewController(viewModel: viewModel)
 
         viewController.coordinator = self

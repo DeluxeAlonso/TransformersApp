@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TransformerDetailViewController: UIViewController {
+class TransformerDetailViewController: UIViewController, Alertable {
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -80,11 +80,22 @@ class TransformerDetailViewController: UIViewController {
     // MARK: - Reactive Behavior
 
     private func setupBindings() {
+        viewModel.savedTransformer.bind { [weak self] savedTransformer in
+            guard let strongSelf = self else { return }
+            strongSelf.coordinator?.close()
+        }
+        
+        viewModel.receivedErrorMessage.bind { [weak self] errorMessage in
+            guard let strongSelf = self, let errorMessage = errorMessage else { return }
+            strongSelf.showAlert(title: LocalizedStrings.errorAlertTitle.localized,
+                                 message: errorMessage)
+        }
     }
 
     // MARK: - Actions
 
     @objc func saveButtonAction() {
+        viewModel.saveTransformer()
     }
 
 }

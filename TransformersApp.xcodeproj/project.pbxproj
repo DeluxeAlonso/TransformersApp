@@ -23,6 +23,7 @@
 		E231ECB2257D991300D4D33F /* TransformerTextInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E231ECB1257D991300D4D33F /* TransformerTextInputTableViewCell.swift */; };
 		E231ECB7257DC12600D4D33F /* TransformerInputIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E231ECB6257DC12600D4D33F /* TransformerInputIdentifier.swift */; };
 		E231ECBF257DC23900D4D33F /* TransformerFormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E231ECBE257DC23900D4D33F /* TransformerFormType.swift */; };
+		E231ECC7257DC9FF00D4D33F /* TransformerResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E231ECC6257DC9FF00D4D33F /* TransformerResult.swift */; };
 		E254A64E257A00800058F6C6 /* DecodingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A64D257A00800058F6C6 /* DecodingType.swift */; };
 		E254A653257A017A0058F6C6 /* TransformersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A652257A017A0058F6C6 /* TransformersInteractor.swift */; };
 		E254A66D257A041F0058F6C6 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A66C257A041F0058F6C6 /* KeychainStorage.swift */; };
@@ -63,6 +64,8 @@
 		E2A31C3E257B543E00A415D5 /* TransformersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31C3D257B543E00A415D5 /* TransformersCoordinator.swift */; };
 		E2A31C43257B54E900A415D5 /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31C42257B54E900A415D5 /* SplashCoordinator.swift */; };
 		E2A31C50257B59FB00A415D5 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A31C4F257B59FB00A415D5 /* SplashView.swift */; };
+		E2B74D9C257DCEE800AFA16F /* TransformerDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74D9B257DCEE800AFA16F /* TransformerDetailInteractor.swift */; };
+		E2B74DA3257DD73300AFA16F /* EditTransformerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DA2257DD73300AFA16F /* EditTransformerRequest.swift */; };
 		E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C32579EF83007BBCD2 /* AppDelegate.swift */; };
 		E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */; };
 		E2C948CD2579EF86007BBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CC2579EF86007BBCD2 /* Assets.xcassets */; };
@@ -123,6 +126,7 @@
 		E231ECB1257D991300D4D33F /* TransformerTextInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTextInputTableViewCell.swift; sourceTree = "<group>"; };
 		E231ECB6257DC12600D4D33F /* TransformerInputIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerInputIdentifier.swift; sourceTree = "<group>"; };
 		E231ECBE257DC23900D4D33F /* TransformerFormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerFormType.swift; sourceTree = "<group>"; };
+		E231ECC6257DC9FF00D4D33F /* TransformerResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerResult.swift; sourceTree = "<group>"; };
 		E254A64D257A00800058F6C6 /* DecodingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingType.swift; sourceTree = "<group>"; };
 		E254A652257A017A0058F6C6 /* TransformersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersInteractor.swift; sourceTree = "<group>"; };
 		E254A66C257A041F0058F6C6 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 		E2A31C3D257B543E00A415D5 /* TransformersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersCoordinator.swift; sourceTree = "<group>"; };
 		E2A31C42257B54E900A415D5 /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
 		E2A31C4F257B59FB00A415D5 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		E2B74D9B257DCEE800AFA16F /* TransformerDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerDetailInteractor.swift; sourceTree = "<group>"; };
+		E2B74DA2257DD73300AFA16F /* EditTransformerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransformerRequest.swift; sourceTree = "<group>"; };
 		E2C948C02579EF83007BBCD2 /* TransformersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C948C32579EF83007BBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +253,7 @@
 				E265B50A257D70780017F886 /* Shared */,
 				E22261BE257CC04E005F3273 /* AddTransformer */,
 				E22261BD257CC042005F3273 /* EditTransformer */,
+				E2B74D9B257DCEE800AFA16F /* TransformerDetailInteractor.swift */,
 			);
 			path = TransformerDetail;
 			sourceTree = "<group>";
@@ -440,6 +447,14 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		E2B74DA0257DD6F200AFA16F /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				E2B74DA2257DD73300AFA16F /* EditTransformerRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		E2C948B72579EF83007BBCD2 = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +539,7 @@
 		E2C949102579F2D4007BBCD2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E2B74DA0257DD6F200AFA16F /* Requests */,
 				E2C949532579F82B007BBCD2 /* FeedResults */,
 				E2C949442579F6BD007BBCD2 /* Services */,
 				E2C949202579F412007BBCD2 /* Extensions */,
@@ -570,6 +586,7 @@
 				E2C949572579F916007BBCD2 /* AccessTokenResult.swift */,
 				E2A31BE2257B155E00A415D5 /* TransformersResult.swift */,
 				E222618D257C2234005F3273 /* EmptyResult.swift */,
+				E231ECC6257DC9FF00D4D33F /* TransformerResult.swift */,
 			);
 			path = FeedResults;
 			sourceTree = "<group>";
@@ -815,6 +832,7 @@
 			files = (
 				E2C949472579F6D5007BBCD2 /* AuthClient.swift in Sources */,
 				E231ECBF257DC23900D4D33F /* TransformerFormType.swift in Sources */,
+				E231ECC7257DC9FF00D4D33F /* TransformerResult.swift in Sources */,
 				E231ECB2257D991300D4D33F /* TransformerTextInputTableViewCell.swift in Sources */,
 				E2A31C05257B282900A415D5 /* SplashViewModel.swift in Sources */,
 				E254A64E257A00800058F6C6 /* DecodingType.swift in Sources */,
@@ -825,6 +843,7 @@
 				E2A31C0F257B289200A415D5 /* SplashInteractor.swift in Sources */,
 				E2A31BA6257AF26C00A415D5 /* Bindable.swift in Sources */,
 				E222619E257CBFD2005F3273 /* TransformerDetailViewController.swift in Sources */,
+				E2B74DA3257DD73300AFA16F /* EditTransformerRequest.swift in Sources */,
 				E254A69C257A05750058F6C6 /* SecureStorage.swift in Sources */,
 				E2A31C50257B59FB00A415D5 /* SplashView.swift in Sources */,
 				E2A31C3E257B543E00A415D5 /* TransformersCoordinator.swift in Sources */,
@@ -855,6 +874,7 @@
 				E2A31C34257B50C500A415D5 /* String+Localized.swift in Sources */,
 				E2C949172579F39E007BBCD2 /* APIError.swift in Sources */,
 				E231ECAD257D92F500D4D33F /* TransformerValueInputTableViewCell.swift in Sources */,
+				E2B74D9C257DCEE800AFA16F /* TransformerDetailInteractor.swift in Sources */,
 				E2A31BD4257B12DA00A415D5 /* TransformerClient.swift in Sources */,
 				E2A31C39257B529100A415D5 /* Coordinator.swift in Sources */,
 				E2A31B9B257ADC1500A415D5 /* AuthClientProtocol.swift in Sources */,

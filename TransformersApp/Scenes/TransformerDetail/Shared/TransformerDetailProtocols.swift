@@ -9,7 +9,12 @@ import Foundation
 
 protocol TransformerDetailViewModelProtocol {
 
+    var savedTransformer: Bindable<Transformer?> { get }
+    var receivedErrorMessage: Bindable<String?> { get }
+
     var formSections: [TransformerFormSection] { get }
+
+    func shouldAllowEditing() -> Bool
 
     func textInputModel(for form: TransformerFormProtocol) -> TransformerTextCellViewModelProtocol
     func valueInputModel(for form: TransformerFormProtocol) -> TransformerValueCellViewModelProtocol
@@ -17,11 +22,18 @@ protocol TransformerDetailViewModelProtocol {
 
     func form(for section: Int, at index: Int) -> TransformerFormProtocol
 
-    func shouldAllowEditing() -> Bool
-
+    func saveTransformer()
 
 }
 
 protocol TransformerDetailCoordinatorProtocol: class {
-    
+
+    func close()
+
+}
+
+protocol TransformerDetailInteractorProtocol {
+
+    func updateTransformer(with params: [String: Any], completion: @escaping (Result<Transformer, Error>) -> Void)
+
 }

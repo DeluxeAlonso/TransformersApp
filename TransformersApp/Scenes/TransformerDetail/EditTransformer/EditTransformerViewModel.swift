@@ -7,16 +7,24 @@
 
 import Foundation
 
+
 class EditTransformerViewModel: TransformerDetailViewModelProtocol {
 
-    var formSections: [TransformerFormSection]
+    private let transformer: Transformer
+    private let interactor: TransformerDetailInteractorProtocol
 
     private var textInputFormCells: [TransformerTextCellViewModelProtocol] = []
     private var valueInputFormCells: [TransformerValueCellViewModelProtocol] = []
     private var typeInputFormCells: [TransformerTypeCellViewModelProtocol] = []
 
-    init(_ transformer: Transformer) {
+    let savedTransformer: Bindable<Transformer?> = Bindable(nil)
+    let receivedErrorMessage: Bindable<String?> = Bindable(nil)
 
+    var formSections: [TransformerFormSection]
+
+    init(_ transformer: Transformer, interactor: TransformerDetailInteractorProtocol) {
+        self.transformer = transformer
+        self.interactor = interactor
         // Name Section
         let nameSectionForms: [TransformerFormProtocol] = [NameTextInputForm()]
 
@@ -122,23 +130,44 @@ class EditTransformerViewModel: TransformerDetailViewModelProtocol {
 
     func saveTransformer() {
         // We update the transformer
-        
+        guard let name = textInputModel(for: .name)?.value,
+              let strength = valueInputModel(for: .strength)?.value,
+              let intelligence = valueInputModel(for: .intelligence)?.value,
+              let speed = valueInputModel(for: .speed)?.value,
+              let endurance = valueInputModel(for: .endurance)?.value,
+              let rank = valueInputModel(for: .rank)?.value,
+              let courage = valueInputModel(for: .courage)?.value,
+              let firepower = valueInputModel(for: .firepower)?.value,
+              let skill = valueInputModel(for: .skill)?.value else {
+            // TODO: - Error
+            self.receivedErrorMessage.value = "There are some empty values."
+            return
+        }
+
+        let type = typeInputModel(for: .team)?.value ?? .autobot
+
+        let request: EditTransformerRequest = EditTransformerRequest(id: transformer.id, name: name, strength: strength, intelligence: intelligence, speed: speed, endurance: endurance, rank: rank, courage: courage, firepower: firepower, skill: skill, type: type)
+
+        guard let params  = request.dictionary else { fatalError() }
+
+        interactor.updateTransformer(with: params) { result in
+            switch result {
+            case .success(let transformer):
+                self.savedTransformer.value = transformer
+            case .failure(let error):
+                self.receivedErrorMessage.value = error.localizedDescription
+            }
+        }
     }
 
 }
 
-struct EditTransformerRequest: Encodable {
+extension Encodable {
 
-    let id: String
-    let name: String
-    let strength: Int
-    let intelligence: Int
-    let speed: Int
-    let endurance: Int
-    let rank: Int
-    let courage: Int
-    let firepower: Int
-    let skill: Int
-    let type: TransformerType
+    var dictionary: [String: Any]? {
+        guard let data = try? JSONEncoder().encode(self) else { return nil }
+
+        return (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)).flatMap { $0 as? [String: Any] }
+    }
 
 }

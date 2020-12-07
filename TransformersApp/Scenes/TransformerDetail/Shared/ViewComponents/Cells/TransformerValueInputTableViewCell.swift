@@ -36,6 +36,8 @@ class TransformerValueInputTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Reactive Behavior
+
     private func setupBindings() {
         guard let viewModel = viewModel else { return }
         textLabel?.text = viewModel.inputTitle
@@ -46,7 +48,9 @@ class TransformerValueInputTableViewCell: UITableViewCell {
     // MARK: - Actions
 
     @objc func stepperValueDidChange() {
-
+        let value = Int(stepper.value)
+        viewModel?.value = value
+        detailTextLabel?.text = "\(value)"
     }
 
 }
