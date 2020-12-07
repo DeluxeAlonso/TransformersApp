@@ -35,9 +35,16 @@ enum WarWinningTeam {
     }
 }
 
+enum SingleBattleResult {
+    case autobot
+    case decepticon
+    case draw
+    case finishDraw
+}
+
 struct TransformerWarScore {
 
-    let numberOfBattler: Int
+    let numberOfBattles: Int
     let winner: WarWinningTeam
 
 }

@@ -77,7 +77,7 @@ class EditTransformerViewModel: TransformerDetailViewModelProtocol {
 
         let request: EditTransformerRequest = EditTransformerRequest(id: transformer.id, name: name, strength: strength, intelligence: intelligence, speed: speed, endurance: endurance, rank: rank, courage: courage, firepower: firepower, skill: skill, type: type)
 
-        guard let params  = request.dictionary else { fatalError() }
+        guard let params = request.dictionary else { fatalError() }
 
         startLoading.value = true
         interactor.updateTransformer(with: params) { result in

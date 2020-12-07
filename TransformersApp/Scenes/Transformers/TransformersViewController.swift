@@ -181,20 +181,12 @@ extension TransformersViewController: UITableViewDelegate {
 
 }
 
+// MARK: - TransformersUpdatable
+
 extension TransformersViewController: TransformersUpdatable {
 
     func didCreateOrUpdateNewTransformer(transformer: Transformer) {
         viewModel.updateTransformerList(with: transformer)
-    }
-
-}
-
-extension UIRefreshControl {
-
-    func endRefreshing(with delay: TimeInterval = 0.5) {
-        if isRefreshing {
-            perform(#selector(UIRefreshControl.endRefreshing), with: nil, afterDelay: delay)
-        }
     }
 
 }

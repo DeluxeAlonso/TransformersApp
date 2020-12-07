@@ -76,7 +76,7 @@ class TransformersViewModel: TransformersViewModelProtocol {
         let warUtil = TransformerWarUtil(transformers: transformers)
         let score = warUtil.startTransformerWar()
 
-        receivedWarResultMessage.value = "Number of battles: \(score.numberOfBattler) \n Winning Team: \(score.winner.winningTeamName) \n Losing Team: \(score.winner.losingTeamName)"
+        receivedWarResultMessage.value = warUtil.formatWarScore(score)
     }
 
     // MARK: - Private

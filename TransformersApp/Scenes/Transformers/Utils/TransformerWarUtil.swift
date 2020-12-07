@@ -12,12 +12,10 @@ class TransformerWarUtil {
     private var transformers: [Transformer]
 
     private var autobots: [Transformer] = []
-    private var removedAutobots: [Transformer] = []
+    private var survivedAutobots: [Transformer] = []
 
     private var decepticons: [Transformer] = []
-    private var removedDecepticons: [Transformer] = []
-
-    private var survivors: [Transformer] = []
+    private var survivedDecepticons: [Transformer] = []
 
     init(transformers: [Transformer]) {
         self.transformers = transformers
@@ -28,60 +26,76 @@ class TransformerWarUtil {
         autobots = dividedTransformers.autobots
         decepticons = dividedTransformers.decepticons
 
+        if autobots.isEmpty {
+            let decepticonsNames = decepticons.map { $0.name }
+            return TransformerWarScore(numberOfBattles: 0, winner: .decepticons(winnersNames: decepticonsNames, losersNames: []))
+        } else if decepticons.isEmpty {
+            let autobotsNames = autobots.map { $0.name }
+            return TransformerWarScore(numberOfBattles: 0, winner: .autobots(winnersNames: autobotsNames, losersNames: []))
+        } else if autobots.isEmpty && decepticons.isEmpty {
+            return  TransformerWarScore(numberOfBattles: 0, winner: .draw)
+        }
+
         let numberOfBattles = min(autobots.count, decepticons.count)
 
         for i in 1 ... min(autobots.count, decepticons.count) {
             let autobot = autobots.removeFirst()
             let decepticon = decepticons.removeFirst()
 
-            guard let battle = startBattle(autobot: autobot, decepticon: decepticon) else {
-                return TransformerWarScore(numberOfBattler: i, winner: .draw)
-            }
-
-            if battle.type == .autobot {
-                removedAutobots.append(battle)
-            } else {
-                removedDecepticons.append(battle)
+            let battle = performSingleBattle(autobot: autobot, decepticon: decepticon)
+            switch battle {
+            case .autobot:
+                survivedAutobots.append(autobot)
+            case .decepticon:
+                survivedDecepticons.append(decepticon)
+            case .finishDraw:
+                return TransformerWarScore(numberOfBattles: i, winner: .draw)
+            case .draw:
+                break
             }
         }
 
-        let removedAutobotsNames = removedAutobots.map { $0.name }
+        let survivedAutobotsNames = survivedAutobots.map { $0.name }
         let skippedAutobotsNames = autobots.map { $0.name }
-        let totalSurvivorAutobots = removedAutobotsNames + skippedAutobotsNames
+        let totalSurvivorAutobots = survivedAutobotsNames + skippedAutobotsNames
 
-        let removedDecepticonsNames = removedDecepticons.map { $0.name }
+        let survivedDecepticonsNames = survivedDecepticons.map { $0.name }
         let skippedDecepticonsNames = decepticons.map { $0.name }
-        let totalSurvivorDecepticons = removedDecepticonsNames + skippedDecepticonsNames
+        let totalSurvivorDecepticons = survivedDecepticonsNames + skippedDecepticonsNames
 
-        if removedAutobots.count > removedDecepticons.count {
-            return TransformerWarScore(numberOfBattler: numberOfBattles, winner: .autobots(winnersNames: totalSurvivorAutobots, losersNames: totalSurvivorDecepticons))
-        } else if removedAutobots.count > removedDecepticons.count {
-           return TransformerWarScore(numberOfBattler: numberOfBattles, winner: .decepticons(winnersNames: totalSurvivorDecepticons, losersNames: totalSurvivorAutobots))
+        if survivedAutobots.count > survivedDecepticons.count {
+            return TransformerWarScore(numberOfBattles: numberOfBattles, winner: .autobots(winnersNames: totalSurvivorAutobots, losersNames: totalSurvivorDecepticons))
+        } else if survivedAutobots.count > survivedDecepticons.count {
+           return TransformerWarScore(numberOfBattles: numberOfBattles, winner: .decepticons(winnersNames: totalSurvivorDecepticons, losersNames: totalSurvivorAutobots))
         } else {
-            return TransformerWarScore(numberOfBattler: numberOfBattles, winner: .draw)
+            return TransformerWarScore(numberOfBattles: numberOfBattles, winner: .draw)
         }
     }
 
-    func startBattle(autobot: Transformer, decepticon: Transformer) -> Transformer? {
+    func performSingleBattle(autobot: Transformer, decepticon: Transformer) -> SingleBattleResult {
         let autobotHasReservedName = Contants.ReservedNames.contains(autobot.name)
         let decepticonHasReservedName = Contants.ReservedNames.contains(decepticon.name)
 
         switch (autobotHasReservedName, decepticonHasReservedName) {
         case (true, true):
-            return nil
+            return .finishDraw
         case (true, false):
-            return autobot
+            return .autobot
         case (false, true):
-            return decepticon
+            return .decepticon
         default:
             break
         }
 
+        if autobot == decepticon {
+            return .draw
+        }
+
         switch autobot < decepticon {
         case true:
-            return decepticon
+            return .decepticon
         case false:
-            return autobot
+            return .autobot
         }
     }
 
@@ -91,6 +105,19 @@ class TransformerWarUtil {
         let decepticons = transformers.filter { $0.type == .decepticon }.sorted { $0.rank > $1.rank }
 
         return (autobots, decepticons)
+    }
+
+    func formatWarScore(_ score: TransformerWarScore) -> String {
+        let winnersTeamText: String
+        let losersTeamText: String
+        switch score.winner {
+        case .autobots(let winnersNames, let losersNames), .decepticons(let winnersNames, let losersNames):
+            winnersTeamText = winnersNames.joined(separator: ", ")
+            losersTeamText = losersNames.joined(separator: ", ")
+            return "Number of battles: \(score.numberOfBattles) \n\n Winning Team (\(score.winner.winningTeamName)): \(winnersTeamText) \n\n Losing Team (\(score.winner.losingTeamName)): \(losersTeamText)"
+        case .draw:
+            return "It was a draw!"
+        }
     }
 
 }
