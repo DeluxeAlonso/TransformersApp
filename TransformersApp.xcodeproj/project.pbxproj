@@ -28,9 +28,8 @@
 		E254A653257A017A0058F6C6 /* TransformersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A652257A017A0058F6C6 /* TransformersInteractor.swift */; };
 		E254A66D257A041F0058F6C6 /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A66C257A041F0058F6C6 /* KeychainStorage.swift */; };
 		E254A69C257A05750058F6C6 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E254A69B257A05750058F6C6 /* SecureStorage.swift */; };
-		E265B4FC257D6F0F0017F886 /* TransformerTextInputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E265B4FB257D6F0F0017F886 /* TransformerTextInputForm.swift */; };
-		E265B501257D6F330017F886 /* TransformerValueInputForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E265B500257D6F330017F886 /* TransformerValueInputForm.swift */; };
-		E265B50F257D70D40017F886 /* TransformerFormCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E265B50E257D70D40017F886 /* TransformerFormCellViewModel.swift */; };
+		E265B4FC257D6F0F0017F886 /* TransformerTextInputForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = E265B4FB257D6F0F0017F886 /* TransformerTextInputForms.swift */; };
+		E265B501257D6F330017F886 /* TransformerValueInputForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = E265B500257D6F330017F886 /* TransformerValueInputForms.swift */; };
 		E265B514257D71090017F886 /* TransformerFormProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E265B513257D71090017F886 /* TransformerFormProtocol.swift */; };
 		E281A7CF257D724C006EFB54 /* TransformerFormSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E281A7CE257D724C006EFB54 /* TransformerFormSection.swift */; };
 		E28E7AB2257B5E8100D910EB /* SplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28E7AB1257B5E8100D910EB /* SplashBuilder.swift */; };
@@ -67,6 +66,12 @@
 		E2B74D9C257DCEE800AFA16F /* TransformerDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74D9B257DCEE800AFA16F /* TransformerDetailInteractor.swift */; };
 		E2B74DA3257DD73300AFA16F /* EditTransformerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DA2257DD73300AFA16F /* EditTransformerRequest.swift */; };
 		E2B74DA8257DDA6700AFA16F /* AddTransformerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DA7257DDA6700AFA16F /* AddTransformerRequest.swift */; };
+		E2B74DAD257DE5F400AFA16F /* Encodable+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DAC257DE5F400AFA16F /* Encodable+Dictionary.swift */; };
+		E2B74DB5257DE64D00AFA16F /* TransformerValueInputCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DB4257DE64D00AFA16F /* TransformerValueInputCellViewModel.swift */; };
+		E2B74DBA257DE69100AFA16F /* TransformerTextInputCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DB9257DE69100AFA16F /* TransformerTextInputCellViewModel.swift */; };
+		E2B74DC2257DE6B700AFA16F /* TransformerTypeInputCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DC1257DE6B700AFA16F /* TransformerTypeInputCellViewModel.swift */; };
+		E2B74DCA257DE72A00AFA16F /* TransformerTypeInputTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DC9257DE72A00AFA16F /* TransformerTypeInputTableViewCell.swift */; };
+		E2B74DCF257DEB5100AFA16F /* TransformerTypeInputForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74DCE257DEB5100AFA16F /* TransformerTypeInputForms.swift */; };
 		E2C948C42579EF83007BBCD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C32579EF83007BBCD2 /* AppDelegate.swift */; };
 		E2C948C62579EF83007BBCD2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */; };
 		E2C948CD2579EF86007BBCD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C948CC2579EF86007BBCD2 /* Assets.xcassets */; };
@@ -132,9 +137,8 @@
 		E254A652257A017A0058F6C6 /* TransformersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformersInteractor.swift; sourceTree = "<group>"; };
 		E254A66C257A041F0058F6C6 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
 		E254A69B257A05750058F6C6 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
-		E265B4FB257D6F0F0017F886 /* TransformerTextInputForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTextInputForm.swift; sourceTree = "<group>"; };
-		E265B500257D6F330017F886 /* TransformerValueInputForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerValueInputForm.swift; sourceTree = "<group>"; };
-		E265B50E257D70D40017F886 /* TransformerFormCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerFormCellViewModel.swift; sourceTree = "<group>"; };
+		E265B4FB257D6F0F0017F886 /* TransformerTextInputForms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTextInputForms.swift; sourceTree = "<group>"; };
+		E265B500257D6F330017F886 /* TransformerValueInputForms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerValueInputForms.swift; sourceTree = "<group>"; };
 		E265B513257D71090017F886 /* TransformerFormProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerFormProtocol.swift; sourceTree = "<group>"; };
 		E281A7CE257D724C006EFB54 /* TransformerFormSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerFormSection.swift; sourceTree = "<group>"; };
 		E28E7AB1257B5E8100D910EB /* SplashBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBuilder.swift; sourceTree = "<group>"; };
@@ -172,6 +176,12 @@
 		E2B74D9B257DCEE800AFA16F /* TransformerDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerDetailInteractor.swift; sourceTree = "<group>"; };
 		E2B74DA2257DD73300AFA16F /* EditTransformerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransformerRequest.swift; sourceTree = "<group>"; };
 		E2B74DA7257DDA6700AFA16F /* AddTransformerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransformerRequest.swift; sourceTree = "<group>"; };
+		E2B74DAC257DE5F400AFA16F /* Encodable+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Dictionary.swift"; sourceTree = "<group>"; };
+		E2B74DB4257DE64D00AFA16F /* TransformerValueInputCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerValueInputCellViewModel.swift; sourceTree = "<group>"; };
+		E2B74DB9257DE69100AFA16F /* TransformerTextInputCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTextInputCellViewModel.swift; sourceTree = "<group>"; };
+		E2B74DC1257DE6B700AFA16F /* TransformerTypeInputCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTypeInputCellViewModel.swift; sourceTree = "<group>"; };
+		E2B74DC9257DE72A00AFA16F /* TransformerTypeInputTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTypeInputTableViewCell.swift; sourceTree = "<group>"; };
+		E2B74DCE257DEB5100AFA16F /* TransformerTypeInputForms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformerTypeInputForms.swift; sourceTree = "<group>"; };
 		E2C948C02579EF83007BBCD2 /* TransformersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C948C32579EF83007BBCD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2C948C52579EF83007BBCD2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -308,8 +318,9 @@
 			isa = PBXGroup;
 			children = (
 				E265B513257D71090017F886 /* TransformerFormProtocol.swift */,
-				E265B4FB257D6F0F0017F886 /* TransformerTextInputForm.swift */,
-				E265B500257D6F330017F886 /* TransformerValueInputForm.swift */,
+				E265B4FB257D6F0F0017F886 /* TransformerTextInputForms.swift */,
+				E265B500257D6F330017F886 /* TransformerValueInputForms.swift */,
+				E2B74DCE257DEB5100AFA16F /* TransformerTypeInputForms.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -325,9 +336,9 @@
 		E265B50D257D70BA0017F886 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				E265B50E257D70D40017F886 /* TransformerFormCellViewModel.swift */,
-				E231ECAC257D92F500D4D33F /* TransformerValueInputTableViewCell.swift */,
-				E231ECB1257D991300D4D33F /* TransformerTextInputTableViewCell.swift */,
+				E2B74DB3257DE62C00AFA16F /* TypeInput */,
+				E2B74DB2257DE62600AFA16F /* ValueInput */,
+				E2B74DB1257DE61A00AFA16F /* TextInput */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -458,6 +469,33 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
+		E2B74DB1257DE61A00AFA16F /* TextInput */ = {
+			isa = PBXGroup;
+			children = (
+				E231ECB1257D991300D4D33F /* TransformerTextInputTableViewCell.swift */,
+				E2B74DB9257DE69100AFA16F /* TransformerTextInputCellViewModel.swift */,
+			);
+			path = TextInput;
+			sourceTree = "<group>";
+		};
+		E2B74DB2257DE62600AFA16F /* ValueInput */ = {
+			isa = PBXGroup;
+			children = (
+				E231ECAC257D92F500D4D33F /* TransformerValueInputTableViewCell.swift */,
+				E2B74DB4257DE64D00AFA16F /* TransformerValueInputCellViewModel.swift */,
+			);
+			path = ValueInput;
+			sourceTree = "<group>";
+		};
+		E2B74DB3257DE62C00AFA16F /* TypeInput */ = {
+			isa = PBXGroup;
+			children = (
+				E2B74DC1257DE6B700AFA16F /* TransformerTypeInputCellViewModel.swift */,
+				E2B74DC9257DE72A00AFA16F /* TransformerTypeInputTableViewCell.swift */,
+			);
+			path = TypeInput;
+			sourceTree = "<group>";
+		};
 		E2C948B72579EF83007BBCD2 = {
 			isa = PBXGroup;
 			children = (
@@ -560,6 +598,7 @@
 				E2C9493F2579F694007BBCD2 /* CharacterSet+Filtering.swift */,
 				E2C949212579F42C007BBCD2 /* URLRequest+ContentType.swift */,
 				E2C949262579F451007BBCD2 /* Dictionary+PercentEscaped.swift */,
+				E2B74DAC257DE5F400AFA16F /* Encodable+Dictionary.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -848,6 +887,7 @@
 				E222619E257CBFD2005F3273 /* TransformerDetailViewController.swift in Sources */,
 				E2B74DA3257DD73300AFA16F /* EditTransformerRequest.swift in Sources */,
 				E254A69C257A05750058F6C6 /* SecureStorage.swift in Sources */,
+				E2B74DB5257DE64D00AFA16F /* TransformerValueInputCellViewModel.swift in Sources */,
 				E2A31C50257B59FB00A415D5 /* SplashView.swift in Sources */,
 				E2A31C3E257B543E00A415D5 /* TransformersCoordinator.swift in Sources */,
 				E2C949022579F235007BBCD2 /* TransformersViewController.swift in Sources */,
@@ -864,7 +904,7 @@
 				E281A7CF257D724C006EFB54 /* TransformerFormSection.swift in Sources */,
 				E2A31BAD257AF43800A415D5 /* UIView+Layout.swift in Sources */,
 				E22261B6257CC03E005F3273 /* TransformerDetailProtocols.swift in Sources */,
-				E265B4FC257D6F0F0017F886 /* TransformerTextInputForm.swift in Sources */,
+				E265B4FC257D6F0F0017F886 /* TransformerTextInputForms.swift in Sources */,
 				E2A31C0A257B287D00A415D5 /* SplashProtocols.swift in Sources */,
 				E2A31BBF257AF5EF00A415D5 /* Transformer.swift in Sources */,
 				E254A653257A017A0058F6C6 /* TransformersInteractor.swift in Sources */,
@@ -876,21 +916,25 @@
 				E22261C5257CC112005F3273 /* EditTransformerCoordinator.swift in Sources */,
 				E2A31BB4257AF5AE00A415D5 /* TransformerTableViewCell.swift in Sources */,
 				E2A31C34257B50C500A415D5 /* String+Localized.swift in Sources */,
+				E2B74DAD257DE5F400AFA16F /* Encodable+Dictionary.swift in Sources */,
 				E2C949172579F39E007BBCD2 /* APIError.swift in Sources */,
 				E231ECAD257D92F500D4D33F /* TransformerValueInputTableViewCell.swift in Sources */,
 				E2B74D9C257DCEE800AFA16F /* TransformerDetailInteractor.swift in Sources */,
 				E2A31BD4257B12DA00A415D5 /* TransformerClient.swift in Sources */,
 				E2A31C39257B529100A415D5 /* Coordinator.swift in Sources */,
 				E2A31B9B257ADC1500A415D5 /* AuthClientProtocol.swift in Sources */,
+				E2B74DBA257DE69100AFA16F /* TransformerTextInputCellViewModel.swift in Sources */,
 				E28E7AB2257B5E8100D910EB /* SplashBuilder.swift in Sources */,
 				E2A31BCE257B116B00A415D5 /* Dequeuable.swift in Sources */,
 				E2A31BF4257B197300A415D5 /* TitledFooterView.swift in Sources */,
 				E2A31BB9257AF5C000A415D5 /* TransformerCellViewModel.swift in Sources */,
 				E2A31BA0257AEEE600A415D5 /* TransformersViewState.swift in Sources */,
-				E265B501257D6F330017F886 /* TransformerValueInputForm.swift in Sources */,
+				E2B74DCF257DEB5100AFA16F /* TransformerTypeInputForms.swift in Sources */,
+				E265B501257D6F330017F886 /* TransformerValueInputForms.swift in Sources */,
 				E22261C0257CC105005F3273 /* AddTransformerCoordinator.swift in Sources */,
+				E2B74DC2257DE6B700AFA16F /* TransformerTypeInputCellViewModel.swift in Sources */,
+				E2B74DCA257DE72A00AFA16F /* TransformerTypeInputTableViewCell.swift in Sources */,
 				E2A31BEF257B195C00A415D5 /* LoadingFooterView.swift in Sources */,
-				E265B50F257D70D40017F886 /* TransformerFormCellViewModel.swift in Sources */,
 				E2A31C2A257B509000A415D5 /* LocalizedStrings.swift in Sources */,
 				E2C949272579F451007BBCD2 /* Dictionary+PercentEscaped.swift in Sources */,
 				E222618E257C2234005F3273 /* EmptyResult.swift in Sources */,

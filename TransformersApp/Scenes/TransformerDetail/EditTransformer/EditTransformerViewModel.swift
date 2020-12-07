@@ -28,6 +28,9 @@ class EditTransformerViewModel: TransformerDetailViewModelProtocol {
         // Name Section
         let nameSectionForms: [TransformerFormProtocol] = [NameTextInputForm()]
 
+        // Input
+        let typeSectionForms: [TransformerFormProtocol] = [TeamTypeInputForm()]
+
         // Value Section
         let valueSectionForms: [TransformerFormProtocol] = [
             StrengthValueInputForm(),
@@ -41,9 +44,10 @@ class EditTransformerViewModel: TransformerDetailViewModelProtocol {
         ]
 
         formSections = [.name(forms: nameSectionForms),
+                        .type(forms: typeSectionForms),
                         .value(forms: valueSectionForms)]
 
-        let allForms = nameSectionForms + valueSectionForms
+        let allForms = nameSectionForms + typeSectionForms + valueSectionForms
 
         createFormCellModels(for: allForms)
         updateFormValues(with: transformer)
@@ -162,16 +166,6 @@ class EditTransformerViewModel: TransformerDetailViewModelProtocol {
                 self.receivedErrorMessage.value = error.localizedDescription
             }
         }
-    }
-
-}
-
-extension Encodable {
-
-    var dictionary: [String: Any]? {
-        guard let data = try? JSONEncoder().encode(self) else { return nil }
-
-        return (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)).flatMap { $0 as? [String: Any] }
     }
 
 }

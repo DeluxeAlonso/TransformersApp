@@ -25,6 +25,9 @@ class AddTransformerViewModel: TransformerDetailViewModelProtocol {
         // Name Section
         let nameSectionForms: [TransformerFormProtocol] = [NameTextInputForm()]
 
+        // Input
+        let typeSectionForms: [TransformerFormProtocol] = [TeamTypeInputForm()]
+
         // Value Section
         let valueSectionForms: [TransformerFormProtocol] = [
             StrengthValueInputForm(),
@@ -38,9 +41,10 @@ class AddTransformerViewModel: TransformerDetailViewModelProtocol {
         ]
 
         formSections = [.name(forms: nameSectionForms),
+                        .type(forms: typeSectionForms),
                         .value(forms: valueSectionForms)]
 
-        let allForms = nameSectionForms + valueSectionForms
+        let allForms = nameSectionForms + typeSectionForms + valueSectionForms
 
         createFormCellModels(for: allForms)
     }

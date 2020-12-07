@@ -83,6 +83,7 @@ class TransformerDetailViewController: UIViewController, Alertable {
 
         tableView.register(cellType: TransformerTextInputTableViewCell.self)
         tableView.register(cellType: TransformerValueInputTableViewCell.self)
+        tableView.register(cellType: TransformerTypeInputTableViewCell.self)
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -147,7 +148,9 @@ extension TransformerDetailViewController: UITableViewDataSource {
             cell.viewModel = viewModel.valueInputModel(for: form)
             return cell
         case .type:
-            fatalError()
+            let cell = tableView.dequeueReusableCell(with: TransformerTypeInputTableViewCell.self, for: indexPath)
+            cell.viewModel = viewModel.typeInputFormModel(for: form)
+            return cell
         }
     }
 
