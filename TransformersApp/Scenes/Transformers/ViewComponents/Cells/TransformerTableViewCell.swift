@@ -81,9 +81,9 @@ class TransformerTableViewCell: UITableViewCell {
         let iconHeight: CGFloat
 
         if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
-            iconHeight = 64
+            iconHeight = Constants.RegularWidthRegularHeightIconHeight
         } else {
-            iconHeight = 36
+            iconHeight = Constants.CompactIconHeight
         }
         contentView.addSubview(iconImageView)
         NSLayoutConstraint.activate(
@@ -147,6 +147,15 @@ class TransformerTableViewCell: UITableViewCell {
             guard let strongSelf = self else { return }
             strongSelf.configureUI(with: state)
         }
+    }
+
+}
+
+extension TransformerTableViewCell {
+
+    struct Constants {
+        static let RegularWidthRegularHeightIconHeight: CGFloat = 64
+        static let CompactIconHeight: CGFloat = 36
     }
 
 }

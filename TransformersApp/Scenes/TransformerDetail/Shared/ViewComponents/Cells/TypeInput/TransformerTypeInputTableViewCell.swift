@@ -23,7 +23,7 @@ class TransformerTypeInputTableViewCell: UITableViewCell {
         let button = UIButton()
         button.layer.borderColor = UIColor.gray.cgColor
         button.setImage(UIImage(named: "Autobot"), for: .normal)
-        button.imageView?.contentMode = .scaleAspectFit
+        button.imageView?.contentMode = .scaleAspectFill
         button.addTarget(self, action: #selector(autobotButtonAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
 
@@ -34,7 +34,7 @@ class TransformerTypeInputTableViewCell: UITableViewCell {
         let button = UIButton()
         button.layer.borderColor = UIColor.gray.cgColor
         button.setImage(UIImage(named: "Decepticon"), for: .normal)
-        button.imageView?.contentMode = .scaleAspectFit
+        button.imageView?.contentMode = .scaleAspectFill
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(decepticonButtonAction), for: .touchUpInside)
 
@@ -73,8 +73,15 @@ class TransformerTypeInputTableViewCell: UITableViewCell {
         contentView.addSubview(stackView)
         stackView.fillSuperview(padding: .init(top: 8, left: 8, bottom: 8, right: 8))
 
-        autobotButton.constraintHeight(constant: 48)
-        decepticonButton.constraintHeight(constant: 48)
+        let buttonHeight: CGFloat
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            buttonHeight = Constants.RegularWidthRegularHeightButtonHeight
+        } else {
+            buttonHeight = Constants.CompactButtonHeight
+        }
+
+        autobotButton.constraintHeight(constant: buttonHeight)
+        decepticonButton.constraintHeight(constant: buttonHeight)
 
         stackView.addArrangedSubview(autobotButton)
         stackView.addArrangedSubview(decepticonButton)
@@ -156,6 +163,15 @@ class TransformerTypeInputTableViewCell: UITableViewCell {
 
     @objc func decepticonButtonAction() {
         selectDecepticonTeam()
+    }
+
+}
+
+extension TransformerTypeInputTableViewCell {
+
+    struct Constants {
+        static let RegularWidthRegularHeightButtonHeight: CGFloat = 64.0
+        static let CompactButtonHeight: CGFloat = 48.0
     }
 
 }
