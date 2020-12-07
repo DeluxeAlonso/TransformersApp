@@ -42,7 +42,6 @@ class TransformersViewController: UIViewController, Alertable {
         setupUI()
         setupBindings()
 
-        coordinator?.setUpdateDelegate(self)
         viewModel.getTransformers()
     }
 
@@ -114,7 +113,7 @@ class TransformersViewController: UIViewController, Alertable {
 
         viewModel.receivedWarResultMessage.bind { [weak self] errorMessage in
             guard let strongSelf = self, let errorMessage = errorMessage else { return }
-            strongSelf.showAlert(title: "War Result",
+            strongSelf.showAlert(title: LocalizedStrings.warResultTItle.localized,
                                  message: errorMessage)
         }
 

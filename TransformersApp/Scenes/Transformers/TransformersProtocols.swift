@@ -70,8 +70,6 @@ protocol TransformersInteractorProtocol {
 
 protocol TransformersCoordinatorProtocol: class {
 
-    func setUpdateDelegate(_ delegate: TransformersUpdateDelegate)
-
     /**
      Shows the form to create a brand new transformer.
      */

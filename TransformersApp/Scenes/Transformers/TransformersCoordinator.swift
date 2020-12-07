@@ -26,12 +26,10 @@ final class TransformersCoordinator: NSObject, TransformersCoordinatorProtocol, 
         let viewController = TransformersViewController(viewModel: viewModel)
         viewController.coordinator = self
 
+        updateDelegate = viewController
+
         navigationController.delegate = self
         navigationController.pushViewController(viewController, animated: true)
-    }
-
-    func setUpdateDelegate(_ delegate: TransformersUpdateDelegate) {
-        self.updateDelegate = delegate
     }
 
     func showTransformerAddForm() {

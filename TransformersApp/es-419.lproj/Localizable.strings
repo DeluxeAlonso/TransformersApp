@@ -6,7 +6,22 @@
   
 */
 
+"name" = "Nombre";
+"strength" = "Fuerza";
+"intelligence" = "Inteligencia";
+"speed" = "Velocidad";
+"endurance" = "Resistencia";
+"rank" = "Rango";
+"courage" = "Coraje";
+"firepower" = "Poder";
+"skill" = "Habilidad";
+"team" = "Equipo";
+
 "transformersTitle" = "Transformers";
 "emptyTransformersTitle" = "No hay transformers que mostrar";
 
+"emptyInputsTitle" = "Hay campos sin llenar.";
+
 "errorAlertTitle" = "Error";
+
+"warResultTItle" = "War Result";

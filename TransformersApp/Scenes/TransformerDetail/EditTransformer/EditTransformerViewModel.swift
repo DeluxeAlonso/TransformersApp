@@ -71,7 +71,7 @@ class EditTransformerViewModel: TransformerDetailViewModelProtocol {
               let firepower = valueInputModel(for: .firepower)?.value,
               let skill = valueInputModel(for: .skill)?.value,
               let type = typeInputModel(for: .team)?.value else {
-            self.receivedErrorMessage.value = "There are some empty values."
+            self.receivedErrorMessage.value = LocalizedStrings.emptyInputsTitle.localized
             return
         }
 
