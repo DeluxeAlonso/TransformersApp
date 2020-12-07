@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TransformersViewModel: TransformersViewModelProtocol {
+final class TransformersViewModel: TransformersViewModelProtocol {
 
     private let interactor: TransformersInteractorProtocol
 

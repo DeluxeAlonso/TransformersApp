@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TransformersInteractor: TransformersInteractorProtocol {
+final class TransformersInteractor: TransformersInteractorProtocol {
 
     private let secureStorage: SecureStorageProtocol
     private let transformerClient: TransformerClientProtocol

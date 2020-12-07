@@ -40,7 +40,7 @@ class TransformerDetailViewController: UIViewController, Alertable {
     }
 
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()

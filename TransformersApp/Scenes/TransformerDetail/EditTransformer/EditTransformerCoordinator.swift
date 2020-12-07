@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProtocol {
+final class EditTransformerCoordinator: Coordinator, TransformerDetailCoordinatorProtocol {
 
     var childCoordinators: [Coordinator] = []
     var parentCoordinator: Coordinator?

@@ -20,7 +20,7 @@ protocol TransformerCellViewModelProtocol {
 
 }
 
-class TransformerCellViewModel: TransformerCellViewModelProtocol {
+final class TransformerCellViewModel: TransformerCellViewModelProtocol {
 
     let name: String
     let rating: String
