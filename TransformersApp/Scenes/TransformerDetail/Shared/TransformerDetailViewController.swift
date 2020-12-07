@@ -22,6 +22,10 @@ class TransformerDetailViewController: UIViewController, Alertable {
 
     var showCloseButton: Bool = false
 
+    deinit {
+        print("AAAKAKAKAAK")
+    }
+
     // MARK: - Initializers
 
     init(viewModel: TransformerDetailViewModelProtocol) {

@@ -74,6 +74,14 @@ class TransformersViewController: UIViewController, Alertable {
 
         tableView.dataSource = self
         tableView.delegate = self
+
+        setupRefreshControl()
+    }
+
+    private func setupRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlAction), for: .valueChanged)
+        tableView.refreshControl = refreshControl
     }
 
     private func configureView(with state: TransformersViewState) {
@@ -96,10 +104,12 @@ class TransformersViewController: UIViewController, Alertable {
             guard let strongSelf = self else { return }
             strongSelf.configureView(with: state)
             strongSelf.tableView.reloadSections([.zero], with: .fade)
+            strongSelf.tableView.refreshControl?.endRefreshing()
         }
 
         viewModel.receivedError.bind { [weak self] error in
             guard let strongSelf = self, let error = error else { return }
+            strongSelf.tableView.refreshControl?.endRefreshing()
             strongSelf.showAlert(title: LocalizedStrings.errorAlertTitle.localized,
                                  message: error.localizedDescription)
         }
@@ -113,6 +123,10 @@ class TransformersViewController: UIViewController, Alertable {
 
     @objc func warButtonAction() {
 
+    }
+
+    @objc func refreshControlAction() {
+        viewModel.getTransformers()
     }
 
 }
@@ -148,6 +162,16 @@ extension TransformersViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let transformerToEdit = viewModel.transformer(at: indexPath.row)
         coordinator?.showTransformerEditForm(for: transformerToEdit)
+    }
+
+}
+
+extension UIRefreshControl {
+
+    func endRefreshing(with delay: TimeInterval = 0.5) {
+        if isRefreshing {
+            perform(#selector(UIRefreshControl.endRefreshing), with: nil, afterDelay: delay)
+        }
     }
 
 }
