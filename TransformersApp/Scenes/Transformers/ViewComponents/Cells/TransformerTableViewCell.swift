@@ -45,10 +45,6 @@ class TransformerTableViewCell: UITableViewCell {
         return label
     }()
 
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        print(traitCollection)
-    }
-
     var viewModel: TransformerCellViewModelProtocol? {
         didSet {
             setupBindings()
